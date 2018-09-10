@@ -40,14 +40,15 @@ $\R^2$ which are diffeomorphic to the unit circle $\S^1$. If we let
 $\text{Imm}(\S^1,\R^2)$ denote the space of all \textit{immersion}
 from the inut circle into the plane, we can define the space we
 want to consider as
-\begin{equation*}
+\begin{equation}
+  \label{eq:curves}
   B :=
   \left\{
     q(\S^1) \mid q \in \text{Imm}(\S^1,\R^2)
   \right\}.
-\end{equation*}
+\end{equation}
 Here we simply think of $q(\S^1) \subset \R^2$ as a subspace and forget
-about the actual map $q$. (Keeping this mapping in mind, we could
+about the actual map $q$. (Keeping this mapping in mind we could
 define the space in another way; but this is not so important right
 now.)
 
@@ -56,32 +57,79 @@ For ordinary finite dimensional manifolds $B$, Lee defines the tangent
 space at a point $p \in B$ through the notation of
 \textit{derivations}; this is a rather abstract construction, but is
 nice to work with. Using this, one can define the notion of a
-tanget vector to a curve in $B$ passing through the point $p$. Then,
-one can define an equivalence relation on the space of such curves and
+tanget vector to a path in $B$ passing through the point $p$. Then,
+one can define an equivalence relation on the space of such paths and
 obtain an equivalent definition of the tanget space, which is more
-intuitive. One can also work the other way around
+intuitive. One can also work the other way around and start by
+defining the notion of tanget vector to paths in $B$ (as is done on
+Wiki). We briefly do that here:
 
-...
-
-Imagine for a moment that
-one way to define the tangent space $T_p$ at a point $p \in B$, is to
-consider tangent vectors to curves/paths passing through the point
-$p$. If $\gamma \colon [0,1] \rightarrow B$ is some path in $B$ we
-consider
+For a neighbourhood $U \subset B$ containing $p$ we have a smooth coordinate
+chart $\phi\colon U \rightarrow \R^n$. For a path $\gamma \colon
+[-\epsilon,\epsilon] \rightarrow B$ with $\phi(0) = p$, it makes perfect sense to consider
+differentiability of the map $\phi \circ \gamma \colon
+[0,1]\rightarrow \R^n$. Now, the relation
 \begin{equation*}
-  \gamma'(x)
-  % := \frac{\partial }{\partial t} \gamma(t) \bigg\rvert_{t=x}
-  := \frac{\partial }{\partial t} \bigg\rvert_{t=x} \gamma(t),
+  \gamma_1 \sim \gamma_2 \iff
+  (\phi \circ \gamma_1)'(0) = (\phi \circ \gamma_2)'(0),
 \end{equation*}
-and define and equivalence relation as $\gamma_1 \sim \gamma_2$
-whenever $\gamma'_1(0)=\gamma'_2(0)$
+defines an equivalence relation on the collection of all such paths
+$\gamma$. An equivalence class of such paths, denoted by $[\gamma'_p]$ (or simply
+$\gamma'_p$), is called a \textit{tangent vector}
+at the point $p$. The collection of all tanget vectors make up the
+tanget space $T_pB$ at $p$.
 
-...
+Returning to $B$ being as defined in (\ref{eq:curves}), we now
+want to determine what the tangent spaces look like at a point $q \in B$ by
+following the construction above (taking for
+granted that $B$ actually is a (Fr\'echet) manifold, and
+that the following definitions/constructions make sense). Firstly, a
+path in $B$ is now a map $\gamma\colon [-\epsilon,\epsilon] \rightarrow B$ such that
+$\gamma(t)$ is a curve $q_t \in B$ for all $t \in
+[-\epsilon,\epsilon]$, with $\gamma(0) =q$. For each of the $q_t$ we
+can think of them as parametrized by $x \mapsto q_t(x)$, $x \in
+\S^1$. Then, if the curve $\gamma$ is such that for each fixed
+$x \in \S^1 $ the map $t \mapsto q_{t}(x) \in \R^2$ is differentiable,
+we can define $\gamma'_q$ as the mapping
+\begin{equation*}
+  \gamma'_q := x \mapsto \frac{\partial }{\partial t} \bigg\vert_{t=0}q_t(x).
+\end{equation*}
+Thus each $\gamma'_q$ is a mapping from the unit circle into $\R^2$,
+which mean that we can think of a tangent vector to a curve $q \in B$
+as a vector field on $\S^1$ (though of as $\subset \R^2$).
 
-Taking for granted that $B$ actually is a (Fr\'echet) manifold, we now
-want to determine what the tangent spaces look like.
 
 \paragraph{Question / considerations / imprecisions.}
+Above we made an intuitively reasonable construction, but ignored some
+of technicalities, which we list here.
+\begin{itemize}
+\item Equivalence classes: We should define the tangent vectors as
+  equivalence classes of path in $B$; this should all determine a
+  unique vector field.
+\item The manifold structure of $B$: We simply used the intuitive idea
+  to differentiate in ``time'' for each fixed point on a curve,
+  $q_t(x)$. However, as we have not specified the chart for the
+  manifold $B$, it is not obvious that this construction corresponds
+  to the one made in the finite dimensional case. Technically we
+  would need a chart $\phi \colon U \rightarrow F$, with $F$ some
+  Fr\'echet space and then show some sort of Fr\'echet-differentiability of the
+  composite function $\phi \circ \gamma$.
+\item We mentioned that in the finite dimensional case the two
+  definitions (through derivates and tangents to curves, respectively)
+  are equivalent. It is not obvious that this also hold in the
+  infinite dimensional case.
+\item At the beginning we eliminated the knowledge of the
+  parametrization of a curve $q \in B$ to make the definition of $B$
+  simpler. However, we actually use a parametrization later, and thus
+  we should make sure that reparametrizations does not matter for the
+  construction of the tangent space. (It does not, as it would just
+  move the vector field around $\S^1$ according to the
+  reparametrization.
+\item Are there any smoothness assumptions (or something) about vector
+  field we need to validate?
+\item Is it correctly formulated that we need to think of $\S^1
+  \subset \R^2$ to make sense of a vector field on the circle?
+\end{itemize}
 
 
 
