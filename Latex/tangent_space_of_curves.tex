@@ -11,6 +11,7 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\C}{\mathbb{C}}
+\renewcommand{\S}{\mathbb{S}}
 \renewcommand{\P}{\text{P}}
 
 \renewcommand{\phi}{\varphi}
@@ -21,13 +22,70 @@
 \setlength{\parskip}{1em}
 \setlength{\parindent}{0em}
 
-\title{Title}
-\author{author}
+\title{The tangent space of closed curves in $\R^2$}
+\author{Mads and Anders}
 \date{\today}
 
 \begin{document}
-\maketitle
+% \maketitle
 
-Test
+\section*{The tangent space of closed curves in $\R^2$}
+\label{sec:tangent-space-closed}
+
+
+\paragraph{Constructing the space of closed curves.}
+Intuitively, we want to consider the space of all (smooth) closed
+curves in $\R^2$. This can be seen as the space of all submanifolds in
+$\R^2$ which are diffeomorphic to the unit circle $\S^1$. If we let
+$\text{Imm}(\S^1,\R^2)$ denote the space of all \textit{immersion}
+from the inut circle into the plane, we can define the space we
+want to consider as
+\begin{equation*}
+  B :=
+  \left\{
+    q(\S^1) \mid q \in \text{Imm}(\S^1,\R^2)
+  \right\}.
+\end{equation*}
+Here we simply think of $q(\S^1) \subset \R^2$ as a subspace and forget
+about the actual map $q$. (Keeping this mapping in mind, we could
+define the space in another way; but this is not so important right
+now.)
+
+\paragraph{The tangent space of B.}
+For ordinary finite dimensional manifolds $B$, Lee defines the tangent
+space at a point $p \in B$ through the notation of
+\textit{derivations}; this is a rather abstract construction, but is
+nice to work with. Using this, one can define the notion of a
+tanget vector to a curve in $B$ passing through the point $p$. Then,
+one can define an equivalence relation on the space of such curves and
+obtain an equivalent definition of the tanget space, which is more
+intuitive. One can also work the other way around
+
+...
+
+Imagine for a moment that
+one way to define the tangent space $T_p$ at a point $p \in B$, is to
+consider tangent vectors to curves/paths passing through the point
+$p$. If $\gamma \colon [0,1] \rightarrow B$ is some path in $B$ we
+consider
+\begin{equation*}
+  \gamma'(x)
+  % := \frac{\partial }{\partial t} \gamma(t) \bigg\rvert_{t=x}
+  := \frac{\partial }{\partial t} \bigg\rvert_{t=x} \gamma(t),
+\end{equation*}
+and define and equivalence relation as $\gamma_1 \sim \gamma_2$
+whenever $\gamma'_1(0)=\gamma'_2(0)$
+
+...
+
+Taking for granted that $B$ actually is a (Fr\'echet) manifold, we now
+want to determine what the tangent spaces look like.
+
+\paragraph{Question / considerations / imprecisions.}
+
+
+
+
+
 
 \end{document}
