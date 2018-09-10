@@ -22,6 +22,9 @@
 \setlength{\parskip}{1em}
 \setlength{\parindent}{0em}
 
+% Tikz
+\usepackage{pgfplots}
+
 \title{The tangent space of closed curves in $\R^2$}
 \author{Mads and Anders}
 \date{\today}
@@ -136,8 +139,36 @@ of technicalities, which we list here.
 \end{itemize}
 
 
+\section*{Test section}
+\label{sec:test-section}
 
-
+\begin{center}
+  \begin{tikzpicture}
+    \begin{axis}[axis lines=none, axis equal,
+      width=0.9\textwidth,
+      xmin=-3,xmax=10,
+      ymin=-3,ymax=3,
+      % grid=both,
+      ]
+      \addplot [domain=0:360,samples=100]({2*cos(x)},{2*sin(x)});
+      \addplot[domain=0:360,samples=200]({7 +
+        (1-cos(x*2)/2)*1.8*sin(x)},{(1-sin(x*4)/2)*1.8*cos(x)});
+      \addplot[gray, domain=0:360,samples=200]({7 +
+        (1-0.8*cos(x*2)/2)*1.8*sin(x)},{(1-sin(x*4)/2)*1.8*cos(x)});
+      \addplot[gray, domain=0:360,samples=200]({7 +
+        (1-0.6*cos(x*2)/2)*1.8*sin(x)},{(1-sin(x*4)/2)*1.8*cos(x)});
+      \addplot[gray, domain=0:360,samples=200]({7 +
+        (1-0.4*cos(x*2)/2)*1.8*sin(x)},{(1-sin(x*4)/2)*1.8*cos(x)});
+      \addplot[gray, domain=0:360,samples=200]({7 +
+        (1-0.2*cos(x*2)/2)*1.8*sin(x)},{(1-sin(x*4)/2)*1.8*cos(x)});
+      \addplot[domain=0:360,samples=200]({7 +
+        (1-0*cos(x*2)/2)*1.8*sin(x)},{(1-sin(x*4)/2)*1.8*cos(x)});
+      \node[anchor=west] (source) at (axis cs:1.0,2.5){}; \node
+      (destination) at (axis cs:5.5,2.5){}; \draw[->](source) to
+      [out=40,in=140] (destination);
+    \end{axis}
+  \end{tikzpicture}
+\end{center}
 
 
 \end{document}
