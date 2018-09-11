@@ -24,6 +24,9 @@
 
 % Tikz
 \usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{external}
+\tikzexternalize % activate!
 
 \title{The tangent space of closed curves in $\R^2$}
 \author{Mads and Anders}
@@ -153,16 +156,6 @@ of technicalities, which we list here.
       \addplot [domain=0:360,samples=100]({2*cos(x)},{2*sin(x)});
       \addplot[domain=0:360,samples=200]({7 +
         (1-cos(x*2)/2)*1.8*sin(x)},{(1-sin(x*4)/2)*1.8*cos(x)});
-      \addplot[gray, domain=0:360,samples=200]({7 +
-        (1-0.8*cos(x*2)/2)*1.8*sin(x)},{(1-sin(x*4)/2)*1.8*cos(x)});
-      \addplot[gray, domain=0:360,samples=200]({7 +
-        (1-0.6*cos(x*2)/2)*1.8*sin(x)},{(1-sin(x*4)/2)*1.8*cos(x)});
-      \addplot[gray, domain=0:360,samples=200]({7 +
-        (1-0.4*cos(x*2)/2)*1.8*sin(x)},{(1-sin(x*4)/2)*1.8*cos(x)});
-      \addplot[gray, domain=0:360,samples=200]({7 +
-        (1-0.2*cos(x*2)/2)*1.8*sin(x)},{(1-sin(x*4)/2)*1.8*cos(x)});
-      \addplot[domain=0:360,samples=200]({7 +
-        (1-0*cos(x*2)/2)*1.8*sin(x)},{(1-sin(x*4)/2)*1.8*cos(x)});
       \node[anchor=west] (source) at (axis cs:1.0,2.5){}; \node
       (destination) at (axis cs:5.5,2.5){}; \draw[->](source) to
       [out=40,in=140] (destination);
@@ -170,5 +163,56 @@ of technicalities, which we list here.
   \end{tikzpicture}
 \end{center}
 
+\begin{center}
+  \begin{tikzpicture}
+    \begin{axis}[axis lines=none, axis equal,
+      width=1\textwidth,
+      xmin=4,xmax=10,
+      ymin=-4,ymax=4,
+      ]
+      \addplot[domain=0:360,samples=200]({7 +
+        (1-cos(x*2)/2)*1.8*sin(x)},{(1-sin(x*4)/2)*1.8*cos(x)});
+
+      \addplot[domain=0:360,samples=200]({7 +
+        (1-0*cos(x*2)/2)*1.8*sin(x)},{1.2*(1-sin(x*4)/2)*1.8*cos(x)});
+
+      \foreach \t in {1,...,4}
+      \addplot[gray, domain=0:360,samples=200]
+      ({7 + (1-(1-\t /5)*cos(x*2)/2)*1.8*sin(x)},
+      {(1 + \t /25)*(1-sin(x*4)/2)*1.8*cos(x)});
+
+      \foreach \q in {1,...,72}
+      \addplot[->, red, domain=0:2.5,samples=5]
+      ({7 + (1-(1-x /5)*cos(\q *5*2)/2)*1.8*sin(\q *5)},
+      {(1 + x /25)*(1-sin(\q *5*4)/2)*1.8*cos(\q *5)});
+    \end{axis}
+  \end{tikzpicture}
+\end{center}
+
+
+\begin{center}
+  \begin{tikzpicture}
+    \begin{axis}[axis lines=none, axis equal,
+      width=1\textwidth,
+      xmin=4,xmax=10,
+      ymin=-4,ymax=4,
+      ]
+      \addplot[domain=0:360,samples=200]({7 +1 +
+        2*sin(x)},{2*cos(x)});
+
+      \foreach \q in {1,...,72}
+      \addplot[->, red, domain=0:2.5,samples=5]
+      ({7 + (1-(1-x /5)*sin(\q *5)*2},
+      {(1 + x /25)*2*cos(\q *5)});
+    \end{axis}
+  \end{tikzpicture}
+\end{center}
+
+
 
 \end{document}
+
+
+% Local Variables:
+% TeX-command-extra-options: -shell-escape
+% End:
