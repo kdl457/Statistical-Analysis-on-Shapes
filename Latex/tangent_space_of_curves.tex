@@ -201,13 +201,12 @@ of technicalities, which we list here.
         2*sin(x)},{2*cos(x)});
 
       \foreach \q in {1,...,72}
-      \addplot[->, red, domain=0:2.5,samples=5]
+      \addplot[->, green, domain=0:2.5,samples=5]
       ({7 + (1-(1-x /5)*sin(\q *5)*2},
       {(1 + x /25)*2*cos(\q *5)});
     \end{axis}
   \end{tikzpicture}
 \end{center}
-
 
 
 \end{document}
