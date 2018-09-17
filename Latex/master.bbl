@@ -16,5 +16,29 @@
   {}
 \endgroup
 
-\sortlist[entry]{nyt/global/}\endsortlist
+\sortlist[entry]{nyt/global/}
+  \entry{RiemannLee}{book}{}
+    \name{author}{1}{}{%
+      {{hash=LJM}{%
+         family={Lee},
+         family_i={L\bibinitperiod},
+         given={John\bibnamedelima M},
+         given_i={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{LJM1}
+    \strng{fullhash}{LJM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1997}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{Riemannian Manifolds}
+    \field{volume}{1}
+    \field{year}{1997}
+  \endentry
+\endsortlist
 \endinput

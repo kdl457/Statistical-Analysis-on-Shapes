@@ -1,7 +1,65 @@
-\chapter*{Preliminaries}
+\chapter{Preliminaries}
 \addcontentsline{toc}{chapter}{Preliminaries}
 
-Prelims
+\section{Notation}
+
+In the following $M$ denotes a smooth manifold and $TM$ is the tangent bundle of $M$ and $\mathcal{T}(M)$ denotes the space of all vector fields on $M$. For $I \subset \R$, $\gamma: \; I \rightarrow M$ is a curve in $M$, i.a. a smooth map.  
+
+\section{Connections}
+
+To consider the geodesic distance between two points in a manifold, geodesics need to be defined in a coordinate-invariant way such that the distance is independent of the coordinate charts. One property of geodesics in a Euclidean space, straight lines, is that they have acceleration $0$. In order to make sense of acceleration of a curve in a manifold, we need to be able to compute "differences" between tangent spaces along the curve. \textit{Connections} are exactly a way of making computations between tangent spaces possible - they allow us to differentiate vector fields along curves.\\[0.2 cm]
+Since our use of connections is to define geodesics, we define connections in the tangent bundle of a manifold (instead of defining them generally on smooth sections of vector bundles) follwing chapter $4$ of \citet{RiemannLee}. 
+
+\begin{definition}
+A connection in $TM$ is a map
+\begin{align*}
+\Delta \, : \, \mathcal{T}(M) \times \mathcal{T}(M) \rightarrow \mathcal{T}(M),
+\end{align*}
+written $(X, Y) \mapsto \Delta_X Y$ satisfying (for $f$, $g \in C^\infty(M)$ and $a$, $b \in \R$);
+\begin{align*}
+& a) \; \Delta_{fX_1 + gX_2} Y = f\Delta_{X_1} Y + g\Delta_{X_2} Y \; \; \; \; & \text{(linearity over} \; C^\infty(M) \, \text{in} \, X) \\
+& b) \; \Delta_X (aY_1 + bY_2) = a\Delta_X Y_1 + b\Delta_X Y_2 & \text{(linearity over} \; \R \, \text{in} \, Y) \\
+& c) \; \Delta_X (fY) = f\Delta_X Y + (Xf)Y & \text{product rule}
+\end{align*}
+\end{definition}
+
+In accordance with connections allowing "differences" between tangent spaces, $ \Delta_X Y $ is called the $\textit{covariant derivative of Y in the direction of X}$. To use connections to derivate along curves, we need the definition of a \textit{vector field along a curve}, which is a smooth map $V: \, I \rightarrow TM$ such that $V(t) \in T_{\gamma(t} M$ for all $t \in I$. The prime example of a vector field along a curve is its velocity, $\dot{\gamma}(t) \in T_{\gamma(t} M$, which acts on functions, $f \in C^\infty(M)$, by
+\begin{align*}
+\dot{\gamma}(t) f = \frac{\text{d}}{\text{dt}} (f \circ \gamma)(t).
+\end{align*} 
+We denote by $\mathcal{T}(\gamma)$ all vector fields along $\gamma$. 
+To define geodesics all we now need is to define what is means to take the covariant derivative of $V \in \mathcal{T}(\gamma)$ along $\gamma$. This covariant derivative is noted $D_t V$ and is has the following properties.
+
+\begin{lemma}
+Let $\Delta$ be a linear connection on $M$. For each $\gamma: \; I \rightarrow M$, $\Delta$ determines a unique operator
+\begin{align*}
+D_t: \; \mathcal{T}(\gamma) \rightarrow \mathcal{T}(\gamma),
+\end{align*} 
+satisfying (for $f$, $g \in C^\infty(I)$ and $a$, $b \in \R$);
+\begin{align*}
+& a) \; D_t(aV + bW) = aD_tV + bD_tW \; \; \; \; & \text{(linearity over} \; \R \\
+& b) \; D_t(fV) = \dot{f}V + fD_tV & \text{(product rule)} \\
+& c) \; \text{If V is extendible, then for any extension} \, \tilde{V} \, \text{of V}, \; \; D_tV(t) = \Delta_{\dot{\gamma}(t)} \tilde{V}.
+\end{align*}
+\end{lemma}
+\begin{proof}
+Proof of Lemma 4.9 in \citet{RiemannLee}
+\end{proof}
+
+$V$ is said to be extendible if it can be constructed by any vector field on $M$, $\tilde{V}$ by letting $V(t) := \tilde{V}_{\gamma(t)}$. This is not always the case; if $V$ is the velocity of an intersecting curve $\gamma$ with different covariant derivative at the intersection times. The covariant derivative of the velocity of a curve is now used to define a geodesic.
+
+\begin{definition}
+Let $\Delta$ be a linear connection on $M$ and $\gamma$ a curve in $M$. The acceleration of $\gamma$ is $D_t \dot{\gamma}(t)$. If this vector field is zero, $D_t \dot{\gamma}(t) \equiv 0$, then $\gamma(t)$ is a geodesic with respect to $\Delta$
+\end{definition}
+
+It follows from Theorem $4.10$ in \Citet{RiemannLee} that for any manifold, $M$, with a linear connection, for any $p \in M$ and $V \in T_pM$ and $t_0 \in \R$ there exists an un-extendable geodesic, $\gamma_V: \; I \rightarrow M$, with $\gamma(0) = p$ and $\dot{\gamma}(0) = V$. The geodseic is called the (maximal) geodesic with initial value $p$ and initial velocity $V$. \\[0.2 cm]
+
+In this construction of geodesics the only necessary structure of $M$ is that it should be a smooth manifold. When $M$ is also equipped with a Riemannian metric, making $M$ a Riemannian manifold, the choice of connection (determining the geodesics) should in some way respect the metric. Geodesics resulting from this specific choice of connection are called \textit{Riemannian geodesics}.
+
+
+
+
+
 
 \newpage
 \thispagestyle{empty}
