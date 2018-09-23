@@ -56,6 +56,41 @@ It follows from Theorem $4.10$ in \Citet{RiemannLee} that for any manifold, $M$,
 
 In this construction of geodesics the only necessary structure of $M$ is that it should be a smooth manifold. When $M$ is also equipped with a Riemannian metric, making $M$ a Riemannian manifold, the choice of connection (determining the geodesics) should in some way respect the metric. Geodesics resulting from this specific choice of connection are called \textit{Riemannian geodesics}.
 
+\section{Riemannian Geodesics}
+
+Let $M$ be Riemannian manifold with metric $g$. To define Riemannian geodesics, we must first choose a specific connection on $M$ with two properties - \textit{compatability w.r.t. $g$} and \textit{symmetric} (these properties arise when trying to generalize the tangential conenction of a manifold submersed in $\R^n$).
+
+\begin{definition}
+A conneciton on $M$ is \textit{compatible with g} if the product rule
+\begin{align*}
+\Delta_X (Y, Z) = \langle \Delta_X Y, Z \rangle + \langle Y, \Delta_X Z \rangle
+\end{align*}
+holds for all vector fields, $X, Y$ and $Z$.
+\end{definition}
+
+By Lemma $5.2$ in \Citet{RiemannLee} this condiiton is equivalnt with
+\begin{align*}
+\frac{d}{dt} \langle V, W \rangle = \langle D_t V, W \rangle + \langle V, D_t W \rangle,
+\end{align*} 
+for $V, W$ being vector fields along any curve $\gamma$. \\[0.2 cm]
+
+The defintion of a symmetric connection involves the Lie bracket of two vector fields. If we think of vector fields on $M$, $X, Y$, as derivtations acting on $C^\infty (M)$, then the Lie brakcet of $X$ and $Y$, $[X , Y]$, is the vector field (derivation) which acts on $f \in C^\infty (M)$ by
+
+\begin{align*}
+[X , Y] (f) := X(Y(f)) - Y(X(f)),
+\end{align*}
+where $X(f) \in C^\infty (M)$ is the function which evaluated at $p$ is the derivative of $f$ at $p$ in the direction of $X(p)$. 
+
+\begin{definition}
+A connection on $M$ is \textit{symmetric} if 
+\begin{align*}
+\Delta_X Y - \Delta_Y X \equiv [X, Y].
+\end{align*}
+\end{definition}
+
+(Note that interchanging $X$ and $Y$ makes sense, since $[X, Y] = - [Y, X]$.) A symmetric connection is also called \textit{torsion free}, which corresponds to the vector fields along any curve not being "twisted" when they are parallel transported along the curve. By the Fundamental Theorem of Riemannian Geometry, given any Riemannian manifold $(M,g)$, there exists a unique connection, $\Delta$, on $M$ that is symmetric and compatible with $M$. This connection is called the Riemannian connection of the Levi-Civita connection, and geodesics with respect to this connection are calle Riemannian geodesics. Since this choice of connection is unique, geodesics in a Riemannian manifold will always mean Riemannina geodesics.   
+
+
 
 
 
