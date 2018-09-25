@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.6)  23 SEP 2018 18:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.6)  25 SEP 2018 17:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2446,8 +2446,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{subsection.1.
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.32 
-     ]
+l.29 \end{align*}
+                 ]
 Overfull \hbox (8.42677pt too wide) in paragraph at lines 43--43
 [] 
  []
@@ -2462,15 +2462,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 55--56
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.64 A
-       conneciton on $M$ is \textit{compatible with g} if the product rulepdfTe
-X warning (ext4): destination with the same identifier (name{subsection.1.2.3})
- has been already used, duplicate ignored
+l.62 
+     pdfTeX warning (ext4): destination with the same identifier (name{subsecti
+on.1.2.3}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.64 A
-       conneciton on $M$ is \textit{compatible with g} if the product rule]
+l.62 
+     ]
 Underfull \hbox (badness 10000) in paragraph at lines 74--76
 
  []
@@ -2487,9 +2486,9 @@ subsection.1.3.2}) has been already used, duplicate ignored
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.99 \newpage
-             ]) [6
+             ] [6
 
-]
+])
 
 FiXme Summary: Number of notes: 0,
 (FiXme)        Number of warnings: 0,
@@ -2525,7 +2524,7 @@ Here is how much of TeX's memory you used:
  55044 multiletter control sequences out of 15000+600000
  13103 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,14n,83p,10408b,1702s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,14n,83p,10408b,1611s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
@@ -2539,7 +2538,7 @@ exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
 xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
 ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texli
 ve/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (13 pages, 183948 bytes).
+Output written on master.pdf (13 pages, 183482 bytes).
 PDF statistics:
  179 PDF objects out of 1000 (max. 8388607)
  145 compressed objects within 2 object streams
