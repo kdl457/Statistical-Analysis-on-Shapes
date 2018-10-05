@@ -1,0 +1,11 @@
+README
+
+Things to write:
+
+- Preliminaries (connections, exponential funciton, curvature, ...)
+- Example of finite dimensional space
+- Define variance and mean on fin. dim. space 
+- Space of immersions + quotient space
+- Why does the L^2 metric not work?
+- Metrics that work: almost local metrics
+- Can we meaningfully define variance and mean on infinite dimensional space
