@@ -16,4 +16,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.4}Curvature}{6}{section.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{7}{section*.3}
+\contentsline {chapter}{Bibliography}{9}{section*.3}

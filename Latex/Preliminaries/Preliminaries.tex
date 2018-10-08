@@ -3,7 +3,7 @@
 
 \section{Notation}
 
-In the following $M$ denotes a smooth manifold and $TM$ is the tangent bundle of $M$ and $\mathcal{T}(M)$ denotes the space of all vector fields on $M$. For $I \subset \R$, $\gamma: \; I \rightarrow M$ is a curve in $M$, i.a. a smooth map.  
+In the following $M$ denotes a smooth manifold and $TM$ is the tangent bundle of $M$ and $\mathcal{T}(M)$ denotes the space of all vector fields on $M$. For $I \subset \R$, $\gamma: \; I \rightarrow M$ is a curve in $M$, i.e. a smooth map.  
 
 \section{Connections}
 
@@ -98,6 +98,37 @@ The exponential map pushes a point $p \in M$ a unit distance in the direction of
 
 \section{Curvature}
 
+When defining statistical propoerties such as mean and variance on Riemannian manifolds, measuring geometric propoerties of the manifold is needed. It is therefore of interest to determine on which manifolds these measurements are identical - that is to determine which manifolds are (locally) isomorphic. One way of determining this is to find a local invariant property of a manifold which is preserved by isometries (such that measurements of length are preserved). This property will be the \textit{curvature}. \\[0.2 cm]
+
+Let $M = \R^n$ equipped with the Euclidean metric and consider a vector field $Z$. Given two other vector fields, $X$ and $Y$, we can now differentiate $Z$ first along $X$ and then along $Y$ by using the Riemannian connection;
+\begin{align*}
+\nabla_Y \nabla_X Z,
+\end{align*}
+and in the opposite order by $\nabla_X \nabla_Y Z$. If $R^n = R^2$ and $X$ and $Y$ where just vector fields corresponding to local coordinates then, by commutativity of second order derivatives,
+\begin{align*}
+\nabla_Y \nabla_X Z - \nabla_X \nabla_Y Z = \nabla_Y (\partial_1 Z^k \partial_k) - \nabla_X (\partial_2 Z^k \partial_k) = \partial_2 \partial_1 Z^k \partial_k - \partial_1 \partial_2 Z^k \partial_k = 0.
+\end{align*}
+But if $X$ and $Y$ are arbitrary vector fields, this identity does not necessarily hold, since
+\begin{align*}
+\nabla_Y \nabla_X Z - \nabla_X \nabla_Y Z = XYZ^k \partial_k - YXZ^k \partial_k = (XYZ^k - YXZ^k)\partial_k,
+\end{align*}
+where $XYZ^k = X \left( Z \left( Z^k \right) \right)$ to ease notation. The action of the Lie bracket of $X$ and $Y$ is recognized in the parenthesis, and thus for $\R^n$ the following identity holds;
+\begin{align}\label{flat}
+\nabla_Y \nabla_X Z - \nabla_X \nabla_Y Z = \nabla_{[X,Y]} Z.
+\end{align}
+Since this identity depends on the Levi-Civita connection, it holds for all manifolds isometric to $\R^n$, and manifolds for which \ref{flat} holds will be called \textit{flat} manifolds. To define the curvature of a manifold is then to determine how "un-flat" the manifold is, by considering the \textit{curvature transformation}, $R: \; \mathcal{T}(M) \times \mathcal{T}(M) \times \mathcal{T}(M) \rightarrow \mathcal{T}(M)$, defined by
+\begin{align*}
+R(X,Y)Z =  \nabla_Y \nabla_X Z - \nabla_X \nabla_Y Z - \nabla_{[X,Y]} Z,
+\end{align*}
+which is identically zero for flat manifolds. The curvature transformation can then be used to determine the curvature of a given vector field by defining the \textit{curvature tensor};
+
+\begin{definition}
+The curvature on a Riemannian manifold is
+\begin{align*}
+Rm(X,Y,Z,W) = \langle R(X,Y)Z, W \rangle,
+\end{align*}
+with $\langle \cdot ,  \cdot \rangle $ being the inner product determined by the Riemannian metric.
+\end{definition}
 
 
 
