@@ -19,7 +19,7 @@ written $(X, Y) \mapsto \nabla_X Y$ satisfying (for $f$, $g \in C^\infty(M)$ and
 \begin{align*}
 & a) \; \nabla_{fX_1 + gX_2} Y = f\nabla_{X_1} Y + g\nabla_{X_2} Y \; \; \; \; & \text{(linearity over} \; C^\infty(M) \, \text{in} \, X) \\
 & b) \; \nabla_X (aY_1 + bY_2) = a\nabla_X Y_1 + b\nabla_X Y_2 & \text{(linearity over} \; \R \, \text{in} \, Y) \\
-& c) \; \nabla_X (fY) = f\nabla_X Y + (Xf)Y & \text{product rule}
+& c) \; \nabla_X (fY) = f\nabla_X Y + (Xf)Y & \text{(product rule)}
 \end{align*}
 \end{definition}
 
@@ -56,7 +56,7 @@ It follows from Theorem $4.10$ in \Citet{RiemannLee} that for any manifold, $M$,
 
 In this construction of geodesics the only necessary structure of $M$ is that it should be a smooth manifold. When $M$ is also equipped with a Riemannian metric, making $M$ a Riemannian manifold, the choice of connection (determining the geodesics) should in some way respect the metric. Geodesics resulting from this specific choice of connection are called \textit{Riemannian geodesics}.
 
-\section{Riemannian Geodesics}
+\section{Riemannian Geodesics and the Exponential Map}
 
 Let $M$ be Riemannian manifold with metric $g$. To define Riemannian geodesics, we must first choose a specific connection on $M$ with two properties - \textit{compatability w.r.t. $g$} and \textit{symmetric} (these properties arise when trying to generalize the tangential conenction of a manifold submersed in $\R^n$).
 
@@ -88,10 +88,15 @@ A connection on $M$ is \textit{symmetric} if
 \end{align*}
 \end{definition}
 
-(Note that interchanging $X$ and $Y$ makes sense, since $[X, Y] = - [Y, X]$.) A symmetric connection is also called \textit{torsion free}, which corresponds to the vector fields along any curve not being "twisted" when they are parallel transported along the curve. By the Fundamental Theorem of Riemannian Geometry, given any Riemannian manifold $(M,g)$, there exists a unique connection, $\nabla$, on $M$ that is symmetric and compatible with $M$. This connection is called the Riemannian connection of the Levi-Civita connection, and geodesics with respect to this connection are calle Riemannian geodesics. Since this choice of connection is unique, geodesics in a Riemannian manifold will always mean Riemannina geodesics.   
+(Note that interchanging $X$ and $Y$ makes sense, since $[X, Y] = - [Y, X]$.) A symmetric connection is also called \textit{torsion free}, which corresponds to the vector fields along any curve not being "twisted" when they are parallel transported along the curve. By the Fundamental Theorem of Riemannian Geometry, given any Riemannian manifold $(M,g)$, there exists a unique connection, $\nabla$, on $M$ that is symmetric and compatible with $M$. This connection is called the Riemannian connection of the Levi-Civita connection, and geodesics with respect to this connection are called Riemannian geodesics. Since this choice of connection is unique, geodesics in a Riemannian manifold will always mean Riemannian geodesics. Such geodesics can be used to define the exponential map, $\exp: \; TM \rightarrow M$.  
 
+\begin{definition}
+Given a point $p$ in a Riemannian manifold, $M$, and a vector $v \in T_p M$, the \textit{exponential map} is defined by $\exp_p (v) = \gamma_v(1)$ where $\gamma$ is the unique geodesic with $\gamma(0) = p$ and $\dot{\gamma}(0) = v$.
+\end{definition}
 
+The exponential map pushes a point $p \in M$ a unit distance in the direction of $v$ along the geodesic $\gamma$. Since $\dot{\gamma}(0) = v$, the differential of $\exp_p$ at $p$ is $v$, and so $\exp_p$ is a local diffeomorphism by the implicit function theorem. A Riemannian manifold is said to be \textit{geodesically complete} if every un-exentedable geodesic is defined on all of $\R$, and it follows from the Hopf-Rinow theorem that a manifold is geodesically complete if and only if, there exists a $p \in M$ such that $\exp$ is defined on all of $T_p M$. 
 
+\section{Curvature}
 
 
 

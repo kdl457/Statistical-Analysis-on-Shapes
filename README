@@ -2,7 +2,9 @@ README
 
 Things to write:
 
-- Preliminaries (connections, exponential funciton, curvature, ...)
+- Preliminaries (connections, exponential function, curvature, ...)
+	- Exponential function - MADS
+	- Defining curvature by geodesics - MADS
 - Example of finite dimensional space
 - Define variance and mean on fin. dim. space 
 - Space of immersions + quotient space
