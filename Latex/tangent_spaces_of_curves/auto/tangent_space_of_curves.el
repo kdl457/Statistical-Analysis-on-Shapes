@@ -46,7 +46,7 @@
     "sec:defin-metr-tang"
     "eq:tang-orbit"
     "sec:short-constr-tang")
-   (LaTeX-add-environments
+   (LaTeX-add-amsthm-newtheorems
     "theorem"
     "lemma"
     "proposition"
@@ -54,6 +54,9 @@
     "definition"
     "example"
     "remark"
-    "note"))
+    "note")
+   (LaTeX-add-amsthm-newtheoremstyles
+    "break"
+    "Break"))
  :latex)
 
