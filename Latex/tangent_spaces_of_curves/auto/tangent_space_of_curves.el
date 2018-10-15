@@ -12,8 +12,8 @@
     "xcolor"
     "soul"
     "enumerate"
+    "verbatim"
     "amsthm"
-    "xpatch"
     "graphicx")
    (TeX-add-symbols
     "Z"
@@ -26,14 +26,18 @@
     "diff")
    (LaTeX-add-labels
     "sec:manifold-curves"
-    "sec:tangent-space-closed"
-    "eq:curves"
-    "sec:defin-metr-tang"
-    "eq:tang-orbit"
+    "sec:parametrized-curves"
     "sec:defin-metr-tang-2"
     "prop:horizontal-path"
     "eq:canon-repar"
-    "sec:test-section-2")
+    "remark:ortho-decom"
+    "def:tang-quotient"
+    "eq:tang-quotient"
+    "eq:length-quotient"
+    "sec:test-section-2"
+    "sec:quest--cons"
+    "sec:defin-metr-tang"
+    "eq:tang-orbit")
    (LaTeX-add-environments
     "theorem"
     "lemma"

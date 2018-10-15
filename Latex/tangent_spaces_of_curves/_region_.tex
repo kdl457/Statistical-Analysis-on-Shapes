@@ -1,11 +1,10 @@
-\documentclass[a4,danish]{article}
+\message{ !name(tangent_space_of_curves.tex)}\documentclass[a4,danish]{article}
 
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{xcolor}
 \usepackage{soul}
 \usepackage{enumerate}
-\usepackage{verbatim}
 
 % Def, theorems, etc.
 \usepackage{amsthm}
@@ -60,6 +59,9 @@
 \date{\today}
 
 \begin{document}
+
+\message{ !name(tangent_space_of_curves.tex) !offset(-3) }
+
 % \maketitle
 
 
@@ -82,15 +84,31 @@ When our interest is upon the \textit{shape}, we are not really interested in th
 \subsection*{The manifold of parametrized curves -- $\I(\S^1, \R^2)$}
 \label{sec:parametrized-curves}
 
-The first structure we want to impose on our manifold of curves is tangent spaces and tangent vector to our elements in the space.
 
-For ordinary finite dimensional manifolds $M$ \hl{we have so far worked with} the definition of tangents vectors as \textit{derivatives}. This is a rather abstract construction, but it is
-nice to work with. Fortunalety we know that this definition corresponds to the more geometrically intuitive definition 
-Lee defines the tangent
+...
+Intuitively, we want to consider the space of all (smooth) closed
+curves in $\R^2$. This can be seen as the space of all submanifolds in
+$\R^2$ which are diffeomorphic to the unit circle $\S^1$. If we let
+$\text{Imm}(\S^1,\R^2)$ denote the space of all \textit{immersion}
+from the inut circle into the plane, we can define the space we
+want to consider as
+\begin{equation}
+  \label{eq:curves}
+  B :=
+  \left\{
+    q(\S^1) \mid q \in \text{Imm}(\S^1,\R^2)
+  \right\}.
+\end{equation}
+Here we simply think of $q(\S^1) \subset \R^2$ as a subspace and forget
+about the actual map $q$. (Keeping this mapping in mind we could
+define the space in another way; but this is not so important right
+now.)
+
+\paragraph{The tangent space of B.}
+For ordinary finite dimensional manifolds $B$, Lee defines the tangent
 space at a point $p \in B$ through the notation of
-\textit{derivations};
-
-Using this, one can define the notion of a
+\textit{derivations}; this is a rather abstract construction, but is
+nice to work with. Using this, one can define the notion of a
 tanget vector to a path in $B$ passing through the point $p$. Then,
 one can define an equivalence relation on the space of such paths and
 obtain an equivalent definition of the tanget space, which is more
@@ -410,11 +428,8 @@ from which \eqref{eq:length-quotient} follows immediately by definition.
   % \caption[]{}
 \end{figure}
 
-\begin{comment}
 
-\section{Question / considerations / imprecisions}
-\label{sec:quest--cons}
-
+\paragraph{Question / considerations / imprecisions.}
 Above we made an intuitively reasonable construction, but ignored some
 of technicalities, which we list here.
 \begin{itemize}
@@ -550,7 +565,7 @@ the induced metric is
   \right\rangle | q_{\theta}|\diff \theta \diff t.
   \end{aligned}
 \end{equation*}
-\end{comment}
+
 
 \end{document}
 
@@ -558,3 +573,5 @@ the induced metric is
 
 
 
+
+\message{ !name(tangent_space_of_curves.tex) !offset(-577) }
