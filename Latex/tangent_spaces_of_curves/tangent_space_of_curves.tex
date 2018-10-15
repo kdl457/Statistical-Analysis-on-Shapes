@@ -53,6 +53,8 @@
 
 % Figures -- use this instead of full file path because of git.
 \usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
 \graphicspath{{../figures/}}
 
 \title{The tangent space of closed curves in $\R^2$}
@@ -68,7 +70,7 @@
 
 A 2-dimensional shape can be thought of as a closed (smooth) curve in $\R^2$. Thus, we want to define a manifold structure on the space of these curves. Doing this mathematically correct is rather technical because we need to consider quotient spaces of infinite dimensional manifolds. In our exposition we shall to a large extend ``define our way out of this'' by, for example, defining tangent vectors of curves instead of deducing how these look like from the formal definition of the underlying manifold. We shall motivate our definitons geometrically and then deduce some properties from these definitons -- properties, which can also be deduced from the formal definitions. At the end of this section we briefly address what we miss with our more informal treatment.
 
-A shape in $\R^2$ can either be thought of as a parametrized object, e.g., as a function $\S^1 \ni \theta \mapsto c(\theta) \in \R^2$; but it can also be thought of as an unparametrized object, e.g., the \textit{image} of such a function $\text{Im}(c) \subset \R^2$. We impose some smoothness structure on the curves and define the spaces we want to consider formally as
+A shape in $\R^2$ can either be thought of as a parametrized object, e.g., as a function $\S^1 \ni \theta \mapsto c(\theta) \in \R^2$; but it can also be thought of as an unparametrized object, e.g., the \textit{image} of such a function $\text{Im}(c) \subset \R^2$ (as illustrated in Figure~\ref{fig:circle-mapping}). We impose some smoothness structure on the curves and define the spaces we want to consider formally as
 \begin{equation*}
   \begin{aligned}
     \I & := \I(\S^1, \R^2)  :=  \{ ...? \}, \\
@@ -79,104 +81,104 @@ $\I$ is the space of \textit{immersion} of the unit circle into $\R^2$, and $\ma
 
 When our interest is upon the \textit{shape}, we are not really interested in the underlying parametrization of this shape, and so we are mostly interested in the space $\mathcal{I}$. However, it is easiest to construct a manifold structure on $\I$ and then deduce one on $\mathcal{I}$, so we start by considering the parametrized space of immersions. 
 
+\begin{figure}
+  \label{fig:circle-mapping}
+  \centerline{\includegraphics[width=0.9\linewidth]{circle_mapping.pdf}}
+  \caption{A simple shape. We can think of a shape as the whole mapping, or simply as the subset to the right.}
+\end{figure}
+
 \subsection*{The manifold of parametrized curves -- $\I(\S^1, \R^2)$}
 \label{sec:parametrized-curves}
 
 The first structure we want to impose on our manifold of curves is tangent spaces and tangent vector to our elements in the space.
 
-For ordinary finite dimensional manifolds $M$ \hl{we have so far worked with} the definition of tangents vectors as \textit{derivatives}. This is a rather abstract construction, but it is
-nice to work with. Fortunalety we know that this definition corresponds to the more geometrically intuitive definition 
-Lee defines the tangent
-space at a point $p \in B$ through the notation of
-\textit{derivations};
+For ordinary finite dimensional manifolds $M$ \hl{we have so far worked with} the definition of tangents vectors as \textit{derivatives}. This is a rather abstract construction, which, however, turns out to be nice to work with. Fortunalety, we know that this definition corresponds to the more geometrically intuitive definition of tangent vectors at a point $m \in M$ as derivatives of paths going through $m$. We shall use this a motivation for our definition of tangent vectors to points in $\I$.
 
-Using this, one can define the notion of a
-tanget vector to a path in $B$ passing through the point $p$. Then,
-one can define an equivalence relation on the space of such paths and
-obtain an equivalent definition of the tanget space, which is more
-intuitive. One can also work the other way around and start by
-defining the notion of tanget vector to paths in $B$ (as is done on
-Wiki). We briefly do that here:
-
-For a neighbourhood $U \subset B$ containing $p$ we have a smooth coordinate
-chart $\phi\colon U \rightarrow \R^n$. For a path $\gamma \colon
-[-\epsilon,\epsilon] \rightarrow B$ with $\phi(0) = p$, it makes perfect sense to consider
-differentiability of the map $\phi \circ \gamma \colon
-[0,1]\rightarrow \R^n$. Now, the relation
+Consider a point $c\in \I$ and a path in $\I$ defined around $0$ that goes through the point $c$. This path is a map
+\begin{equation}
+  \label{eq:path-in-imm}
+  [-\epsilon, \epsilon] \ni t \mapsto  q(t, \blank) :=  (\theta\mapsto q(t, \theta)) \in \I,
+  \quad q(0,\theta) = c(\theta),
+\end{equation}
+i.e., for each $t$ we get a parametrized curve, and at 0 we get the curve $c$. We can also think of this a (smooth) map
 \begin{equation*}
-  \gamma_1 \sim \gamma_2 \iff
-  (\phi \circ \gamma_1)'(0) = (\phi \circ \gamma_2)'(0),
+  [-\epsilon, \epsilon] \times \S^1  \ni (t, \theta) \mapsto q(t, \theta) \in \R^2.
 \end{equation*}
-defines an equivalence relation on the collection of all such paths
-$\gamma$. An equivalence class of such paths, denoted by $[\gamma'_p]$ (or simply
-$\gamma'_p$), is called a \textit{tangent vector}
-at the point $p$. The collection of all tanget vectors make up the
-tanget space $T_pB$ at $p$.
+As in the finite dimensional case we can now take the \textit{time derivate} of our path and evaluate this at 0; of course, this is technically not obvious, as our constructed path maps into a function space, but we shall here simply take this derivative to be understood pointwise:
 
-Returning to $B$ being as defined in (\ref{eq:curves}), we now
-want to determine what the tangent spaces look like at a point $q \in B$ by
-following the construction above (taking for
-granted that $B$ actually is a (Fr\'echet) manifold, and
-that the following definitions/constructions make sense). Firstly, a
-path in $B$ is now a map $\gamma\colon [-\epsilon,\epsilon] \rightarrow B$ such that
-$\gamma(t)$ is a curve $q_t \in B$ for all $t \in
-[-\epsilon,\epsilon]$, with $\gamma(0) =q$. For each of the $q_t$ we
-can think of them as parametrized by $x \mapsto q_t(x)$, $x \in
-\S^1$. Then, if the curve $\gamma$ is such that for each fixed
-$x \in \S^1 $ the map $t \mapsto q_{t}(x) \in \R^2$ is differentiable,
-we can define $\gamma'_q$ as the mapping
-\begin{equation*}
-  \gamma'_q := x \mapsto \frac{\partial }{\partial t} \bigg\vert_{t=0}q_t(x).
-\end{equation*}
-Thus each $\gamma'_q$ is a mapping from the unit circle into $\R^2$,
-which mean that we can think of a tangent vector to a curve $q \in B$
-as a vector field on $\S^1$ (though of as $\subset \R^2$).
-
-
-
-
-
-
-\section*{Defining a metric on the tangent space of curves 2}
-\label{sec:defin-metr-tang-2}
-
-
-
-\begin{definition}[The L2 metric on $\I$]
-  The \textit{L2 metric} $G^2_c$ at the point $c \in \I$ is defined as
+\begin{definition}
+  The tangent space $T_{c}\I$ to an element $c \in \I$ consists of all function
+  $h\colon \S^1 \rightarrow \R^2$ such that
   \begin{equation*}
-    G^2_c(h,k) := \int_{\S^{1}} \left\langle{h(\theta)
-    , k(\theta)}\right\rangle |c_{\theta}| \diff \theta,
+    h(\theta) = q_t(0, \theta) := \frac{\partial }{\partial t} \bigg\vert_{t=0} q(t,\theta),
+  \end{equation*}
+  where $q$ is some path passing through $c$ at 0 (as defined in \eqref{eq:path-in-imm}).
+\end{definition}
+
+By this definition, we can essentially think of tangent vectors in $\I$ as vector fields on the circle. Figure~\ref{fig:def-tang-imm} illustrates the idea behind the definition. 
+
+\begin{figure}
+  \centering
+  \begin{subfigure}{.49\textwidth}
+    \centering
+    \includegraphics[width=1\linewidth]{path.pdf}
+  \end{subfigure}
+  \begin{subfigure}{.49\textwidth}
+    \centering
+    \includegraphics[width=0.8\linewidth]{circle_vectorfield.pdf}
+  \end{subfigure}
+  \caption{Illustration of tangent vectors in $\I$. The left illustration shows a path in the space of curves and how to obtain a tangent vector from this. The right illustration shows how to think of this tangent vector as a vector field on the circle.}
+  \label{fig:def-tang-imm}
+\end{figure}
+
+We want to make our space of curves into a Riemmanian manifold so the next step is to impose a metric
+\hl{[why do we/others call it a metric -- shouldn't it be an inner product?]}
+on the tangent spaces. Because the tangent spaces are function spaces, the most obvious metric to use is some version of the $\mathrm{L}^2$ metric. 
+
+\begin{definition}
+  The \textit{$\mathrm{G}$ metric} or \textit{$\mathrm{G}_c$ metric} at the point $c \in \I$ is defined as
+  \begin{equation*}
+    \mathrm{G}_c(h,k) := 
+    \left(
+      \int_{\S^{1}} \left\langle{h(\theta)
+          , k(\theta)}\right\rangle |c_{\theta}| \diff \theta
+    \right)^{\frac{1}{2}},
   \end{equation*}
   $h,k \in T_cB = C^{\infty}(\S^1,\R^2)$.
 \end{definition}
 
-Because this metric is invariant under reparametrizations it also induces a metric
-on the quotient space $B = \I/\text{Diff}(\S^1)$ and thus 
-determines a length measure on the paths in $B$
-\hl{[define this]}. We want to find an expression for this, using
-parametrized representatives from $\I$. For a parametrized curve $c
-\in \I$ we write $C = \text{Im}(c) =: \pi(c) \in B$ for the projection
-onto the quotient space. For any path $t \mapsto q(t, \blank) \in
-\I$ running through the space of parametrized curves, this induces
-a path in $B$ by simply projecting the path down to $t \mapsto \pi(q(t,
-\blank))$. 
+Adding the parameter derivative $c_{\theta}$ makes the metric invariant to reparametrizations which is essential when we want to let this fall down as a metric on $\mathcal{I}$. From this definition it is straightforward to define a notion of \textit{length} of a path in $\I$ which again allows us to define a \textit{distance} between two point in our space of curves. By defintion, the pointwise time derivative at $t$ of a path $t \mapsto q(t, \blank)$ in $\I$ is a tangent vector to the curve $q(t,\blank)$, so the following definition makes sense.
 
-In ... it is shown that ... We here give some intuitive, geometric
-arguments for why this should be true.
+\begin{definition}
+  \label{def:length-in-imm}
+  Let $t \mapsto q(t,\blank)$ be a path in $\I$ with $t \in [0,1]$. The \textit{length} of the path $q$ with respect to the $\mathrm{G}$ metric  is
+  \begin{equation*}
+    L(q) := \int_{0}^{1} \mathrm{G}_{q(t,\blank)}(q_t,q_t) \diff t =
+    \int_{0}^{1}
+    \left(
+      \int_{\S^{1}} \|q_t\|^2 |q_{\theta}| \diff \theta
+    \right)^{\frac{1}{2}}
+    \diff t.
+  \end{equation*}
+  The \textit{geodesic distance} \hl{[geodesic?]} between to curves $b,c \in \I$ (with respect to the $\mathrm{G}$ metric) is
+  \begin{equation*}
+    D(b,c) := \inf_{q \in \mathcal{Q}} L(q),
+  \end{equation*}
+  where $\mathcal{Q}$ denotes all paths $q$, such that $q(0,\blank)=b$ and $q(1,\blank)=c$.
+\end{definition}
 
-We know that a tangent vector $h$ to a curve $c \in \I$ can be visualized
-as a vector field on the circle. By definition, this vector field is
-derived from a path $t \mapsto q(t,\blank)$ in $\I$ as $h =q_t(0,\blank)$.
-At each of the
-timepoints, $t$, we get a particular parametrized curve $\theta
-\mapsto q(t,\theta)$. We cannot directly use such a path to define
-tangent vectors of the \textit{quotient space} $B$ because this path is
+
+\subsection*{The manifold of unparametrized curves -- $\mathcal{I}(\S^1, \R^2)$}
+\label{sec:manif-unpar-curv}
+
+Using the setup from the previous section, we now define a manifold structure on $\mathcal{I}$. As it is easiest to represent element of this space with element from $\I$, we are particularly interested in how to calculate the length of a path in $\mathcal{I}$ directly from a parametrized representative of this path in $\I$. For a parametrized curve $c \in \I$ we write $\pi(c) := \mathrm{Im}(c)\in \mathcal{I}$ for the projection onto the quotient space, and we refer to $c\in\I$ as a \textit{(parametrized) representative} for $\pi(c) \in \mathcal{I}$. Similarly for a path $q = q(t, \blank) \in \I$ we construct the projection $\pi(q) = \pi(q(t,\blank)) \in \mathcal{I}$ and refer to $q$ as a representative for $\pi(q)$.
+
+First of all we need to know how the tangent vectors of the quotient space $\mathcal{I}$ look like. We cannot directly use the same approach as in the previous subsection, because our definition of tangent vector would then be 
 sensitive to reparametrizations: Consider a time-dependent
 reparametrization $\phi(t,\theta)$, or, equivalently, a path $t \mapsto \phi(t,
 \blank)$ in $\text{Diff}(\S^1)$; then the two paths $t \mapsto
 \pi(q(t, \blank))$ and $t \mapsto \pi(q(t, \phi(t, \blank)))$ are
-identical in $B$ but give rise to two different vector fields.
+identical in $\mathcal{I}$ but give rise to two different vector fields.
 
 To make better sense of the tangents vectors of the quotient space, we
 use the following result.
@@ -187,10 +189,10 @@ use the following result.
   time-dependent reparametrization $t \mapsto \phi(t, \blank) \in
   \mathrm{Diff}(\S^{1})$ such that the path
   \begin{equation*}
-    t \mapsto r(t, \theta):=q(t, \phi(t,\theta))
+    t \mapsto \tilde{q}(t, \theta):=q(t, \phi(t,\theta))
   \end{equation*}
   fulfills
-  $\langle e_t, e_{\theta}\rangle=0$ for all $(t,\theta) \in [0,1]\times \S^1$, and such that $\phi(0, \theta)=\theta$. Furthermore, it holds that 
+  $\langle \tilde{q}_t, \tilde{q}_{\theta}\rangle=0$ for all $(t,\theta) \in [0,1]\times \S^1$, and such that $\phi(0, \theta)=\theta$. Furthermore, it holds that 
   \begin{equation}
     \label{eq:canon-repar}
     \phi_t = a \circ \phi
@@ -206,7 +208,9 @@ use the following result.
 
 \begin{remark}
   \label{remark:ortho-decom}
-  Note that for every vector field $h \in T_c(\I)$, determined from the path $q$, we can make a pointwise decomposition of $h$ onto $q_{\theta}(0, \blank)$ and $iq_{\theta}(0, \blank)$ by using the pointwise orthogonal projection. Explicitly we have that
+  \begin{enumerate}
+  \item  When we write $\tilde{q}$ in the following, we shall we refer to a path obtained from another path $q$ by reparametrizing with $\phi$ above. 
+  \item Note that for every vector field $h \in T_c(\I)$, determined from the path $q$, we can make a pointwise decomposition of $h$ onto $q_{\theta}(0, \blank)$ and $iq_{\theta}(0, \blank)$ by using the pointwise orthogonal projection. Explicitly we have that
   \begin{equation*}
     h = q_t = p_{q_{\theta}}(q_{t}) + p_{iq_{\theta}}(q_{t}), 
   \end{equation*}
@@ -219,50 +223,64 @@ use the following result.
     h(\theta) = q_t(0,\theta) = p_{q_{\theta}(0,\theta)}(q_{t}(0,\theta)) +
     p_{iq_{\theta}(0,\theta)}(q_{t}(0,\theta)).
   \end{equation*}
-  From this we see that the time derivative of the reparametrization in the previous Proposition is the coefficient function for the projection onto the parameter derivative of the original path $q$; this becomes relevant in a moment. 
+  From this we see that the time derivative of the reparametrization in the previous Proposition is the coefficient function for the projection onto the parameter derivative of the original path $q$; this becomes relevant in a moment.
+\end{enumerate}
 \end{remark}
 
-\hl{(We need some sort of parametrization when we talk about tangent vectors of of $B$ because it matters at ``what point the arrows are attached''.)}
-
-We can use this result to define tangent vectors to elements of $B$ in
+We can use this result to define tangent vectors to elements of $\mathcal{I}$ in
 a consistent way:
 
 \begin{definition}
   \label{def:tang-quotient}
-  A \textit{tangent vector} $h$ to an element $C = \pi(c) \in B$ is defined as a vector fields obtained from some path $t \mapsto q(t, \blank) \in \I$, with $\pi(q(0,\blank)) = C$, by
+  A \textit{tangent vector} $h$ to an element $\pi(c) \in \mathcal{I}$ is defined as a vector fields obtained from some path $(-\epsilon, \epsilon) \ni t \mapsto q(t, \blank) \in \I$, with $q(0,\blank) = c$, by
   \begin{equation}
     \label{eq:tang-quotient}
-    h(\theta) = \frac{\partial }{\partial t} \bigg\vert_{t=0} q(t, \phi(t,\theta)),
+    h(\theta) = \frac{\partial }{\partial t} \bigg\vert_{t=0} \tilde{q}(t,\theta)
+    = \frac{\partial }{\partial t} \bigg\vert_{t=0} q(t, \phi(t,\theta)),
   \end{equation}
-  where $\phi$ is the reparametrization from Proposition~\ref{prop:horizontal-path}. 
+  with $\tilde{q}$ and $\phi$ given in accordance with remark~\ref{remark:ortho-decom}.
+
+  \hl{[NB: Does this actually solve the problem about define the ubiquity in defining tangent vectors? Not clear that applying $\phi$ to a reparametrization of $q$ will yield the same result? However, it shows that we can always think of are path as moving orthonormally; but maybe we should compine this definition with the proposition below?]}
 \end{definition}
 
 First we note that this gives us the following visualization of the tangents spaces of $B$.
 
 \begin{proposition}
-The tangent space to an element $C = \pi(c) \in B$ consists of orthonormal vector fields on the circle, i.e.,
+The tangent space to an element $\pi(c) \in \mathcal{I}$ consists of orthonormal vector fields on the circle, i.e.,
   \begin{equation*}
-    T_C(B) = 
+    T_{\pi(c)}(\mathcal{I}) = 
     \left\{
       b i c_{\theta} \mid b \in C^{\infty}(\S^1,\R)
     \right\}.
   \end{equation*}
-  If the 
 \end{proposition}
 
 \begin{proof}
   This follows from Definition~\ref{def:tang-quotient} and the property of the reparametrization $\phi$. 
 \end{proof}
 
-\hl{By this construction, we now have a way of transforming a path $t \mapsto q(t,\blank) \in \I$ into a path $q(t, \phi(t, \blank))$ such that every tangent vector in $\I$ along this path will also be a tanget vector in ... [YES, need to define this! -- make it an analog construction of the one in $\I$] ... In $\I$ we could just differentiate along a the path $q$ to obtain tangents vectors at each point and then define the length of the path as the integral over the pointwise norm of these tangent vectors; we can not directly do the same when thinking of $q$ as a path in $B$ because we can not be sure that differentiating this path will yield a valid tangent vector in this space in accordance with Defition~x. However, we can simply use the same horizontalization trick to make a suitably definition.}
+As the length of a path in $\mathcal{I}$ is our primary concern, we skip straight to this without actually defining the inner product on the tangent spaces. The central idea is to mimic Definition~\ref{def:length-in-imm} on the reparametrized path $\tilde{q}$; and though we don't bother to go trough a inner product on the tangent spaces, we note that by this construction the time derivative of the path $\tilde{q}$ is a valid tangent vector in $\mathcal{I}$ at every point $\pi(q(t,\blank))$
 
-
-
-
-From the above defintion we also get an explicit formula for the length of a path in $B$ with the metric $\mathcal{G}^2$ when this path is obtained from a path in $\I$.
+\begin{definition}
+  The \textit{length} in $\mathcal{I}$ of a path $\mathrm{q}=\pi(q)$ is
+  \begin{equation*}
+    \mathcal{L}(\mathrm{q})= \mathcal{L}(\pi(q)) := L(\tilde{q}) = 
+    \int_{0}^{1}
+    \left(
+      \int_{\S^{1}} \|\tilde{q}_t\|^2 |\tilde{q}_{\theta}| \diff \theta
+    \right)^{\frac{1}{2}}
+    \diff t,
+  \end{equation*}
+  with $\tilde{q}(t,\theta)=q(t,\phi(\theta))$ as in remark~\ref{remark:ortho-decom}. 
+  The \textit{geodesic distance} between to shapes $\mathrm{b}, \mathrm{c} \in \mathcal{I}$ represented by $c,b \in \I$, is
+  \begin{equation*}
+    \mathcal{D}(\mathrm{b},\mathrm{c}) = \mathcal{D}(\pi(b),\pi(c)) := \inf_{q \in \mathrm{Q}} \mathcal{L}(q),
+  \end{equation*}
+  where $\mathrm{Q}$ denotes all paths $\mathrm{q}$ in $\mathcal{I}$, such that $\mathrm{q}(0)=\pi(b)$ and $\mathrm{q}(1)=\pi(c)$. 
+\end{definition}
 
 \begin{proposition}
-    $\mathcal{L}$ is well-defined and for any representative $t \mapsto q(t, \blank) \in \I $ of the path $t \mapsto \tilde{q}(t) \in B$ the length can be calculated as
+    $\mathcal{L}$ is well-defined, and for any representative $t \mapsto q(t, \blank) \in \I $ of the path $t \mapsto \tilde{q}(t) \in B$ the length can be calculated as
     \begin{equation}
       \label{eq:length-quotient}
     \mathcal{L}(\tilde{q}) = \int_{0}^{1} 
@@ -391,24 +409,108 @@ From the above defintion we also get an explicit formula for the length of a pat
 from which \eqref{eq:length-quotient} follows immediately by definition. 
 \end{proof}
 
+\hl{Some concluding text...}
 
-\section*{Test section 2}
-\label{sec:test-section-2}
+\subsection*{\hl{Comparing this to the formal construction as a Frechet manifold}}
+\label{sec:hlcomp-this-form}
 
-\begin{figure}
-  \centerline{\includegraphics[width=0.7\linewidth]{circle_mapping.pdf}}
-  % \caption[]{}
-\end{figure}
+\hl{... a lot of references ...}
 
-\begin{figure}
-  \centerline{\includegraphics[width=0.7\linewidth]{path.pdf}}
-  % \caption[]{}
-\end{figure}
+\subsection*{The L2 metric vanishes}
+\label{sec:l2-metric-vanishes}
 
-\begin{figure}
-  \centerline{\includegraphics[width=0.7\linewidth]{circle_vectorfield.pdf}}
-  % \caption[]{}
-\end{figure}
+\hl{Some introductory text...}
+
+Definition of the length of the path $\phi$ directly from the path alone:
+\begin{equation*}
+  L(\phi) = \int_{0}^{1} \int_{\S^{1}}
+  \frac{\langle\phi_{t},i \phi_{\theta}\rangle^2}{|\phi_{\theta}|}  \diff \theta \diff t
+\end{equation*}
+Rewrite this as
+\begin{equation*}
+  \int_{0}^{1} \int_{\S^{1}}
+  \left(
+    \frac{\langle\phi_{t},i
+      \phi_{\theta}\rangle}{|\phi_{t}||\phi_{\theta}|}
+  \right)^2
+  |\phi_t|^2   |\phi_{\theta}|
+  \diff \theta \diff t
+  =
+  \int_{0}^{1} \int_{\S^{1}}
+  \cos(\alpha(\phi_t, i\phi_{\theta}))^2
+  |\phi_t|^2   |\phi_{\theta}|
+  \diff \theta \diff t,
+\end{equation*}
+with $\alpha(x,y)$ denoting the angle between $x$ and $y$. When
+constructing a zigzag-path the angle will be \hl{(approximately?)}
+constant in $\theta$ and $t$,
+and it is given by
+\begin{equation*}
+  n = \tan(\alpha).
+\end{equation*}
+We have that
+\begin{equation*}
+  \cos(\arctan(n)) = (1+n^2)^{-1/2}
+  = O(n^{-1}),
+\end{equation*}
+so we can write
+\begin{equation*}
+  L(\phi) = O(n^{-2})
+  \int_{0}^{1} \int_{\S^{1}}
+  |\phi_t|^2   |\phi_{\theta}|
+  \diff \theta \diff t,
+\end{equation*}
+in this case. To show that such a zigzag path has arbitrary
+small length we just need to show that the integral does not grow
+faster than $n^2$.
+
+As an example, take the simply case where we expand the circle $e^{i\pi\theta}$ to
+$2e^{i\pi\theta}$. The zigzag path in then concretely given as
+\begin{equation*}
+  \phi(t,\theta) = e^{i\pi\theta}
+    \sum_{k=0}^{n-1}
+    h^{n,k}(t,\theta) + g^{n,k}(t,\theta)
+\end{equation*}
+where
+\begin{equation*}
+  \begin{aligned}
+    h^{n,k}(t,\theta) & := 1_{[\frac{k}{n},\frac{k}{n} +
+      \frac{1}{2n})}(\theta) \left( 1+2t(n\theta-k) \right), \\
+    g^{n,k}(t,\theta) & := 1_{[\frac{k}{n} + \frac{1}{2n},\frac{k+1}{n})}(\theta)
+    \left( 1+2t(1-n\theta-k) \right).
+  \end{aligned}
+\end{equation*}
+
+We have that
+\begin{equation*}
+  \begin{aligned}
+    |\phi_t| & = \sum_{k=0}^{n-1} |h^{n,k}_t| + \sum_{k=0}^{n-1}
+    |g^{n,k}_t|, \\
+    |\phi_{\theta}| & = \sum_{k=0}^{n-1} |h^{n,k}_{\theta} + h^{n,k} | +
+    \sum_{k=0}^{n-1}
+    |g^{n,k}_{\theta} + g^{n,k} |,
+  \end{aligned}
+\end{equation*}
+so by symmetry
+\begin{equation*}
+  \begin{aligned}
+    \int_{0}^{1}
+    |\phi_t|^2   |\phi_{\theta}|
+    \diff \theta
+    & =
+    2n \int_{0}^{\frac{1}{2n}} |h^{n,0}_t|^2 |h^{n,0}_{\theta} + h^{n,0} |
+    \diff \theta \\
+    & = 2n \int_{0}^{\frac{1}{2n}}
+    (2n\theta)^2(2tn+1+t2n\theta) \diff \theta \\
+    & = \int_{0}^1
+    u^2(2tn+1+t u) \diff \theta \\
+    & = O(n),
+  \end{aligned}
+\end{equation*}
+for $t\in[0,1]$ which gives the result.
+
+
+
 
 \begin{comment}
 
@@ -550,7 +652,39 @@ the induced metric is
   \right\rangle | q_{\theta}|\diff \theta \diff t.
   \end{aligned}
 \end{equation*}
+
+\section{Short construction of tangent vectors from alternative definition}
+\label{sec:short-constr-tang}
+
+Lee defines the tangent
+space at a point $p \in B$ through the notation of
+\textit{derivations};
+
+Using this, one can define the notion of a
+tanget vector to a path in $B$ passing through the point $p$. Then,
+one can define an equivalence relation on the space of such paths and
+obtain an equivalent definition of the tanget space, which is more
+intuitive. One can also work the other way around and start by
+defining the notion of tanget vector to paths in $B$ (as is done on
+Wiki). We briefly do that here:
+
+For a neighbourhood $U \subset B$ containing $p$ we have a smooth coordinate
+chart $\phi\colon U \rightarrow \R^n$. For a path $\gamma \colon
+[-\epsilon,\epsilon] \rightarrow B$ with $\phi(0) = p$, it makes perfect sense to consider
+differentiability of the map $\phi \circ \gamma \colon
+[0,1]\rightarrow \R^n$. Now, the relation
+\begin{equation*}
+  \gamma_1 \sim \gamma_2 \iff
+  (\phi \circ \gamma_1)'(0) = (\phi \circ \gamma_2)'(0),
+\end{equation*}
+defines an equivalence relation on the collection of all such paths
+$\gamma$. An equivalence class of such paths, denoted by $[\gamma'_p]$ (or simply
+$\gamma'_p$), is called a \textit{tangent vector}
+at the point $p$. The collection of all tanget vectors make up the
+tanget space $T_pB$ at $p$.
+
 \end{comment}
+
 
 \end{document}
 

@@ -14,7 +14,9 @@
     "enumerate"
     "verbatim"
     "amsthm"
-    "graphicx")
+    "graphicx"
+    "caption"
+    "subcaption")
    (TeX-add-symbols
     "Z"
     "Q"
@@ -26,18 +28,24 @@
     "diff")
    (LaTeX-add-labels
     "sec:manifold-curves"
+    "fig:circle-mapping"
     "sec:parametrized-curves"
-    "sec:defin-metr-tang-2"
+    "eq:path-in-imm"
+    "fig:def-tang-imm"
+    "def:length-in-imm"
+    "sec:manif-unpar-curv"
     "prop:horizontal-path"
     "eq:canon-repar"
     "remark:ortho-decom"
     "def:tang-quotient"
     "eq:tang-quotient"
     "eq:length-quotient"
-    "sec:test-section-2"
+    "sec:hlcomp-this-form"
+    "sec:l2-metric-vanishes"
     "sec:quest--cons"
     "sec:defin-metr-tang"
-    "eq:tang-orbit")
+    "eq:tang-orbit"
+    "sec:short-constr-tang")
    (LaTeX-add-environments
     "theorem"
     "lemma"
