@@ -12,6 +12,8 @@
     "xcolor"
     "soul"
     "enumerate"
+    "amsthm"
+    "xpatch"
     "graphicx")
    (TeX-add-symbols
     "Z"
@@ -19,10 +21,27 @@
     "R"
     "N"
     "C"
+    "I"
+    "blank"
     "diff")
    (LaTeX-add-labels
+    "sec:manifold-curves"
     "sec:tangent-space-closed"
     "eq:curves"
-    "sec:test-section-2"))
+    "sec:defin-metr-tang"
+    "eq:tang-orbit"
+    "sec:defin-metr-tang-2"
+    "prop:horizontal-path"
+    "eq:canon-repar"
+    "sec:test-section-2")
+   (LaTeX-add-environments
+    "theorem"
+    "lemma"
+    "proposition"
+    "corollary"
+    "definition"
+    "example"
+    "remark"
+    "note"))
  :latex)
 

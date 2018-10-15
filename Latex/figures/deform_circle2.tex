@@ -1,0 +1,101 @@
+\documentclass[border=-10mm]{standalone}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\begin{document}
+
+\begin{tikzpicture}
+  \begin{axis}[axis lines=none, axis equal,
+    xmin=-4,xmax=4,
+    ymin=-4,ymax=4,
+    samples=5
+    ]
+
+    \foreach \t in {0.3,0.6,0.9}{
+      \foreach \n in {1,...,10}{
+        \addplot[gray!30,domain=0:(1/(2*10))](
+        {cos((\n +10*x)*360/10)*(1+\t *2*(10 * x ))},
+        {sin((\n +10*x)*360/10)*(1+\t *2*(10 * x ))});
+        \foreach \n in {1,...,10}
+        \addplot[gray!30,domain=0:(1/(2*10))](
+        {cos((\n -10*x)*360/10)*(1+\t *2*(10 * x ))},
+        {sin((\n -10*x)*360/10)*(1+\t *2*(10 * x ))});
+      }
+    }
+
+    \foreach \t in {0.3,0.6,1}{
+      \foreach \n in {1,...,10}{
+        \addplot[gray!90,domain=0:(1/(2*10))](
+        {cos((\n +10*x)*360/10 + 180/10)*(2-\t *2*(10 * x ))},
+        {sin((\n +10*x)*360/10 + 180/10)*(2-\t *2*(10 * x ))});
+        \foreach \n in {1,...,10}
+        \addplot[gray!90,domain=0:(1/(2*10))](
+        {cos((\n -10*x)*360/10 + 180/10)*(2-\t *2*(10 * x ))},
+        {sin((\n -10*x)*360/10 + 180/10)*(2-\t *2*(10 * x ))});
+      }
+    }
+
+    \addplot[samples=100,domain=0:360]({cos(x)},{sin(x)});
+    \addplot[samples=100,domain=0:360]({2*cos(x)},{2*sin(x)});
+
+    % \foreach \t in {1,...,4}
+    % \addplot[gray!30, domain=0:360]
+    % ({
+    %   cos(x)*( \t /5*(1+sin((x+45)*20))/2) + (1+sin((x +
+    %   26)*2)/2*1)*cos(x)*
+    %   (1-\t /5*(1+sin((x+45)*20))/2)
+    % },
+    % {
+    %   sin(x)*( \t /5*(1+sin((x+45)*20))/2) + (1+sin((x +26)*2)/2*1)*sin(x)*
+    %   (1- \t /5*(1+sin((x+45)*20))/2)
+    % });
+
+    % % \addplot[gray!30, domain=0:360]
+    % % ({
+    % %   cos(x)*(1- 5 /5*(1+sin(x*20))/2) + (1+sin((x +
+    % %   26)*2)/2*1)*cos(x)*
+    % %   (5 /5*(1+sin(x*20))/2)
+    % % },
+    % % {
+    % %   sin(x)*(1- 5 /5*(1+sin(x*20))/2) + (1+sin((x +26)*2)/2*1)*sin(x)*
+    % %   (5 /5*(1+sin(x*20))/2)
+    % % });
+
+    % %   Path 1
+    % \foreach \t in {1,...,4}
+    % \addplot[gray!90,   domain=0:360]
+    % ({
+    %   cos(x)*(1- \t /5*(1+sin(x*20))/2) + (1+sin((x +
+    %   26)*2)/2*1)*cos(x)*
+    %   (\t /5*(1+sin(x*20))/2)
+    % },
+    % {
+    %   sin(x)*(1- \t /5*(1+sin(x*20))/2) + (1+sin((x +26)*2)/2*1)*sin(x)*
+    %   (\t /5*(1+sin(x*20))/2)
+    % });
+
+    % \addplot[gray!90,   domain=0:360]
+    % ({
+    %   cos(x)*(1- 5 /5*(1+sin(x*20))/2) + (1+sin((x +
+    %   26)*2)/2*1)*cos(x)*
+    %   (5 /5*(1+sin(x*20))/2)
+    % },
+    % {
+    %   sin(x)*(1- 5 /5*(1+sin(x*20))/2) + (1+sin((x +26)*2)/2*1)*sin(x)*
+    %   (5 /5*(1+sin(x*20))/2)
+    % });
+
+    % % q0 and q1
+    % \addplot[domain=0:360]
+    % ({cos(x)},{sin(x)});
+
+    % \addplot[domain=0:36]
+    % ({(1+sin((x *10 + 26)*2)/2*1)*cos(x *10)},{(1+sin((x *10 +
+    %   26)*2)/2*1)*sin(x *10)});
+  \end{axis}
+\end{tikzpicture}
+
+\end{document}
+
+
