@@ -6,8 +6,8 @@ Things to write:
 	- Exponential function - MADS
 	- Defining curvature by geodesics - MADS
 - Example of finite dimensional space
-- Define variance and mean on fin. dim. space 
-- Space of immersions + quotient space
-- Why does the L^2 metric not work?
+- Define variance and mean on fin. dim. space (Intrinsic...)
+- Space of immersions + quotient space - ANDERS
+- Why does the L^2 metric not work? - ANDERS
 - Metrics that work: almost local metrics
 - Can we meaningfully define variance and mean on infinite dimensional space
