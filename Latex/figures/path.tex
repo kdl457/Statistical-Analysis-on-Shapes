@@ -1,4 +1,4 @@
-\documentclass{standalone}
+\documentclass[border={-30pt -10pt -30pt -10pt}]{standalone}
 \usepackage{pgfplots}
 \usepackage{tikz}
 
@@ -7,17 +7,18 @@
 \begin{tikzpicture}
   \begin{axis}[axis lines=none, axis equal,
     width=1\textwidth,
-    xmin=4,xmax=10,
-    ymin=-4,ymax=4,
+    xmin=6,xmax=8,
+    % ymin=-4,ymax=4,
+    samples=200
     ]
-    \addplot[domain=0:360,samples=200]({7 +
+    \addplot[domain=0:360]({7 +
       (1-cos(x*2)/2)*1.8*sin(x)},{(1-sin(x*4)/2)*1.8*cos(x)});
 
-    \addplot[domain=0:360,samples=200]({7 +
+    \addplot[domain=0:360]({7 +
       (1-0*cos(x*2)/2)*1.8*sin(x)},{1.2*(1-sin(x*4)/2)*1.8*cos(x)});
 
     \foreach \t in {1,...,4}
-    \addplot[gray, domain=0:360,samples=200]
+    \addplot[gray, domain=0:360]
     ({7 + (1-(1-\t /5)*cos(x*2)/2)*1.8*sin(x)},
     {(1 + \t /25)*(1-sin(x*4)/2)*1.8*cos(x)});
 

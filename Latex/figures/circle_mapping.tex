@@ -1,13 +1,11 @@
-\documentclass{standalone}
+\documentclass[border={0pt -30pt 0pt -15pt}]{standalone}
 \usepackage{pgfplots}
 \usepackage{tikz}
 
 \begin{document}
   \begin{tikzpicture}
     \begin{axis}[axis lines=none, axis equal,
-      width=0.9\textwidth,
-      xmin=-3,xmax=10,
-      ymin=-3,ymax=3,
+      xmin=-3,xmax=10
       % grid=both,
       ]
       \addplot [domain=0:360,samples=100]({2*cos(x)},{2*sin(x)});
