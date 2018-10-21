@@ -62,9 +62,18 @@ The problem at hand is the following: we wish to construct a notion of distance 
 \begin{align*}
 G_f^\Phi (h,k) = \int_M \Phi(\text{Vol}(f), H_f, K_f) \bar{g}(h,k) \text{vol}(f^* \bar{g}),
 \end{align*}
-where $\Phi: \; \R^3 \rightarrow \R_{> 0}$ is smooth, $\text{Vol}(f) = \int_M \text{vol}(f^* \bar{g})$  is the total volume of $f(M)$, $H_f$ is the mean curvature of $f$ and $K_f$ is the Gauss curvature of $f$. Both $H_f$ and $K_f$ are local invariant properties with respect to the Riemanninan metric, $g$, and so $\Phi$ is often chosen to only depend on one of the two curvatures. 
+where $\Phi: \; \R^3 \rightarrow \R_{> 0}$ is smooth, $\text{Vol}(f) = \int_M \text{vol}(f^* \bar{g})$ is the total volume of $f(M)$, $H_f$ is the mean curvature of $f$ and $K_f$ is the Gauss curvature of $f$. Both $H_f$ and $K_f$ are local invariant properties with respect to the Riemanninan metric, defined to be the trce and the determinant of the Weingarten mapping, respectively, and so $\Phi$ is often chosen to only depend on one of the two curvatures. \\[0.2 cm]
+The total volume of $f$, $\text{Vol}(f)$, is defined via the volume form induced by the pullback metric, $f^*\bar{g}$, so this definition of almost-local metrics only applies to manifolds which posses a volume form. All compact, oriented manifolds do this (\hl{Reference?}), and almost local metrics are often defined for this class of manifolds. In the case of $f \in B_e(S^1, \R^2)$, the volume form on $S^1$ induced by $f$, is given by vol$(f^*\bar{g}) = \left| f_\theta \right| d \theta$. (\hl{Reference to Riemannian Geometries on Spaces of PLane Curves 2.2}) \\[0.2 cm] 
+Vol$(f)$ is a non-local property of $f$, and thus the metrics are not only dependent on the local properties, $K_f, H_f$, but must be $\textit{almost}$ local metrics. \\[0.2 cm]
+Note that if $\Phi$ depends only on $f$ through Vol$(f)$ then $G_f^\Phi (h,k)$ is equal to the L$^2$-metric (up to a constant) (\hl{is this obvious from our definition of the L$^2$ metric ?}). But if $\Phi$ actually depends on either curvature and the total volume, then point-separation is achieved under certain conditions imposed on $\Phi$;
 
+\begin{theorem}
+If $\Phi(\text{Vol} \, (f), H_f, K_f) \geq A H_f$ for some $A > 0$, then $G_f^\Phi$ induces a point-separating metric on $B_e(S^1, \R^2)$.
+\end{theorem}
 
+\begin{proof}
+\hl{Reference - perhaps explain heuristically?}
+\end{proof}
 
 
 
