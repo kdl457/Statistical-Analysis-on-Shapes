@@ -1,0 +1,77 @@
+\documentclass[a4,danish]{article}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{enumerate}
+
+\newtheoremstyle{break}
+	{\topsep}{\topsep}
+	{\bfseries}{}
+	{\newline}{}
+\theoremstyle{break}
+\newtheorem{theorem}[subsection]{Theorem}
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{proposition}[subsection]{Proposition}
+\newtheorem{corollary}[subsection]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[subsection]{Definition}
+\newtheoremstyle{Break}
+	{\topsep}{\topsep}
+	{}{}
+	{\bfseries}{}
+	{\newline}{}
+\theoremstyle{Break}
+\newtheorem{example}[subsection]{Example}
+\newtheorem{remark}[subsection]{Remark}
+\newtheorem{note}[subsection]{Note}
+\setcounter{secnumdepth}{0}
+\usepackage{xpatch}
+\xpatchcmd{\proof}{\ignorespaces}{\mbox{}\\\ignorespaces}{}{}
+
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand{\S}{\mathbb{S}}
+\renewcommand{\P}{\text{P}}
+
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+% Figures -- use this instead of full file path because of git.
+\usepackage{graphicx}
+\graphicspath{{../figures/}}
+
+\begin{document}
+% \maketitle
+
+\section*{Mean and variance}
+\label{sec:mean_and_variance}
+
+In order to perform statistics on shapes we must first try to define central statistical concepts on manifolds. In this section we focus on a geodsically complete Riemannian manifold, $(M, g)$, of dimension $n$, and present ways of defining the mean, variance and covariance of $M$-valued random variables. Given an underlying probability space, $(\Omega, \mathcal{F}, P)$, a $M$-valued random variable is a $\mathcal{F}/\mathcal{B}(M)$ measurable map, $X: \, \Omega \rightarrow M$, and we denote by $x = X(\omega)$ a realization of $X$ on $M$.\\[0.2 cm]
+In order to perform statistics on $M$ we need to construct a measure on $M$. This measure is induced by the metric $g$ in the following way. Let $x = (x^1, \ldots , x^n)$ be representation of $x \in M$ in local coordinates, and let $\frac{\partial}{\partial x} = (\frac{\partial}{\partial x^1}, \ldots , \frac{\partial}{\partial x^n})$ be the corresponding basis of $T_x M$. The metric $g$ is then expressed in this basis by the matrix $G = [g_{ij}(x)]$ where $g_{ij}(x) = \langle \frac{\partial}{\partial x^i} , \frac{\partial}{\partial x^j} \rangle = g\left(\frac{\partial}{\partial x^i}, \frac{\partial}{\partial x^j}\right)$. The measure on $M$ is then defined by \hl{ $d M(x) = \sqrt{\left| \det G(x) \right|} dx$ }. $X$ is said to have density $p_X$ w.r.t. $d M$ if
+\begin{align*}
+P(X \in \mathcal{A}) = \int_{\mathcal{A}} p_X(y) d M(y),
+\end{align*}
+holds for all $\mathcal{A} \in \mathcal{B}(M)$ and if the integral over $M$ is equal to $1$. Here
+$p_X$ is a density in the usual sense. It is a real-valued, positive and integrable function. If $\pi$ is a chart of the manifold, then $r := \pi(X(\omega))$ defines a random vector with density, $\rho_r$, w.r.t to the Lebesgue measure given by $\rho_r (y) = p_X (y) \sqrt{\left| \det G(y) \right|}$. If $\phi: \, M \rightarrow \R$ is a $\mathcal{B}(M)/ \mathcal{B}(\R)$-measurable map, then $\phi(X)$ deifnes a real-valued random variable for which the expection is
+\begin{align*}
+\mathbb{E} (\phi(X)) = \int_M \phi(y) p_X(y) d M(y).
+\end{align*}
+Unfortunately, we cannot define the expectation of $M$-valued random variables in a smiliar manner, since the real-valued integral does not generalize to an integral with values on $M$. Instead we generalize the notion of mean value by first defining the variance of a $M$-valued random variable and then defining the so-called \textit{Fréchet means} as minimizers of the variance. 
+
+
+
+
+\end{document}
+
