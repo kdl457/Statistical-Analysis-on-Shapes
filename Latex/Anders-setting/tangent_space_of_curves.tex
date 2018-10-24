@@ -15,15 +15,16 @@ $\I$ is the space of \textit{immersion} of the unit circle into $\R^2$, and $\ma
 When our interest is upon the \textit{shape}, we are not really interested in the underlying parametrization of this shape, and so we are mostly interested in the space $\mathcal{I}$. However, it is easiest to construct a manifold structure on $\I$ and then deduce one on $\mathcal{I}$, so we start by considering the parametrized space of immersions.
 
 \begin{figure}
-  \label{fig:circle-mapping}
   \centerline{\includegraphics[width=0.9\linewidth]{circle_mapping.pdf}}
-  \caption{A simple shape. We can think of a shape as the whole mapping, or simply as the subset to the right.}
+  \caption{A simple shape. We can think of a shape as the whole
+    mapping, or simply as the subset to the right.}
+  \label{fig:circle-mapping}
 \end{figure}
 
-\subsection*{The manifold of parametrized curves -- $\I(\S^1, \R^2)$}
+\subsection{The manifold of parametrized curves -- $\I(\S^1, \R^2)$}
 \label{sec:parametrized-curves}
 
-The first structure we want to impose on our manifold of curves is tangent spaces and tangent vector to our elements in the space.
+The first structure we want to impose on our manifold of curves is tangent spaces and tangent vectors to our elements in the space.
 
 For ordinary finite dimensional manifolds $M$ \hl{we have so far worked with} the definition of tangents vectors as \textit{derivatives}. This is a rather abstract construction, which, however, turns out to be nice to work with. Fortunalety, we know that this definition corresponds to the more geometrically intuitive definition of tangent vectors at a point $m \in M$ as derivatives of paths going through $m$. We shall use this a motivation for our definition of tangent vectors to points in $\I$.
 
@@ -101,7 +102,7 @@ Adding the parameter derivative $c_{\theta}$ makes the metric invariant to repar
 \end{definition}
 
 
-\subsection*{The manifold of unparametrized curves -- $\mathcal{I}(\S^1, \R^2)$}
+\subsection{The manifold of unparametrized curves -- $\mathcal{I}(\S^1, \R^2)$}
 \label{sec:manif-unpar-curv}
 
 Using the setup from the previous section, we now define a manifold structure on $\mathcal{I}$. As it is easiest to represent element of this space with element from $\I$, we are particularly interested in how to calculate the length of a path in $\mathcal{I}$ directly from a parametrized representative of this path in $\I$. For a parametrized curve $c \in \I$ we write $\pi(c) := \mathrm{Im}(c)\in \mathcal{I}$ for the projection onto the quotient space, and we refer to $c\in\I$ as a \textit{(parametrized) representative} for $\pi(c) \in \mathcal{I}$. Similarly for a path $q = q(t, \blank) \in \I$ we construct the projection $\pi(q) = \pi(q(t,\blank)) \in \mathcal{I}$ and refer to $q$ as a representative for $\pi(q)$.
@@ -213,6 +214,7 @@ As the length of a path in $\mathcal{I}$ is our primary concern, we skip straigh
 \end{definition}
 
 \begin{proposition}
+  \label{prop:length-quotient}
     $\mathcal{L}$ is well-defined, and for any representative $t \mapsto q(t, \blank) \in \I $ of the path $t \mapsto \tilde{q}(t) \in B$ the length can be calculated as
     \begin{equation}
       \label{eq:length-quotient}
@@ -344,12 +346,14 @@ from which \eqref{eq:length-quotient} follows immediately by definition.
 
 \hl{Some concluding text...}
 
-\subsection*{\hl{Comparing this to the formal construction as a Frechet manifold}}
+\subsection{\hl{Comparing this to the formal construction as a Frechet manifold}}
 \label{sec:hlcomp-this-form}
 
 \hl{... a lot of references ...}
 
+
+
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: "local-masters/local-tangent-space-of-curves"
+%%% TeX-master: "mainfile"
 %%% End:

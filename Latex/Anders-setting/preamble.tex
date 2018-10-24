@@ -12,21 +12,21 @@
 	{\bfseries}{}
 	{\newline}{}
 \theoremstyle{break}
-\newtheorem{theorem}{Theorem}[subsection]
-\newtheorem{lemma}[subsection]{Lemma}
-\newtheorem{proposition}[subsection]{Proposition}
-\newtheorem{corollary}[subsection]{Corollary}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
 \theoremstyle{definition}
-\newtheorem{definition}[subsection]{Definition}
+\newtheorem{definition}[theorem]{Definition}
 \newtheoremstyle{Break}
 	{\topsep}{\topsep}
 	{}{}
 	{\bfseries}{}
 	{\newline}{}
 \theoremstyle{Break}
-\newtheorem{example}[subsection]{Example}
-\newtheorem{remark}[subsection]{Remark}
-\newtheorem{note}[subsection]{Note}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{note}[theorem]{Note}
 % \setcounter{secnumdepth}{0}
 % \usepackage{xpatch}
 % \xpatchcmd{\proof}{\ignorespaces}{\mbox{}\\\ignorespaces}{}{}
@@ -54,3 +54,8 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \graphicspath{{../figures/},{../../figures/}}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "mainfile"
+%%% End:
