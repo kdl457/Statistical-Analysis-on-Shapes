@@ -15,3 +15,5 @@ Latex/master.run.xml
 Latex/frontpage/frontpage.aux
 Latex/master.out
 Latex/master-blx.bib
+.DS_Store
+Latex/.DS_Store
