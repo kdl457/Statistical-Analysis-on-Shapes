@@ -1,0 +1,169 @@
+
+\section{Question / considerations / imprecisions}
+\label{sec:quest--cons}
+
+Above we made an intuitively reasonable construction, but ignored some
+of technicalities, which we list here.
+\begin{itemize}
+\item Equivalence classes: We should define the tangent vectors as
+  equivalence classes of path in $B$; this should all determine a
+  unique vector field.
+\item The manifold structure of $B$: We simply used the intuitive idea
+  to differentiate in ``time'' for each fixed point on a curve,
+  $q_t(x)$. However, as we have not specified the chart for the
+  manifold $B$, it is not obvious that this construction corresponds
+  to the one made in the finite dimensional case. Technically we
+  would need a chart $\phi \colon U \rightarrow F$, with $F$ some
+  Fr\'echet space and then show some sort of Fr\'echet-differentiability of the
+  composite function $\phi \circ \gamma$.
+\item We mentioned that in the finite dimensional case the two
+  definitions (through derivates and tangents to curves, respectively)
+  are equivalent. It is not obvious that this also hold in the
+  infinite dimensional case.
+\item At the beginning we eliminated the knowledge of the
+  parametrization of a curve $q \in B$ to make the definition of $B$
+  simpler. However, we actually use a parametrization later, and thus
+  we should make sure that reparametrizations does not matter for the
+  construction of the tangent space. (It does not, as it would just
+  move the vector field around $\S^1$ according to the
+  reparametrization.)
+\item Are there any smoothness assumptions (or something) about vector
+  field we need to validate? For example, just the fact that the map
+  $t \mapsto q_t(x)$ behaves nice does of course \textit{not} imply
+  that also the derived vector field $\gamma'_q$ behaves nicely in
+  $x$ -- which is what we would need to get a smooth vector field
+  (?).
+\item Is it correctly formulated that we need to think of $\S^1
+  \subset \R^2$ to make sense of a vector field on the circle?
+\end{itemize}
+
+\section{Sort of the same construction by the argument from Mumford and Michor}
+\label{sec:defin-metr-tang}
+
+\hl{This is the sort of argument they (Mumford and Michor) give in the
+  beginning of section 3.2. Not sure how to exactly finish this.}
+
+Consider the following metric on $\I$.
+
+\begin{definition}[The L2 metric on $\I$]
+  The \textit{L2 metric} $G^2_c$ at the point $c \in \I$ is defined as
+  \begin{equation*}
+    G^2_c(h,k) := \int_{\S^{1}} \left\langle{h(\theta)
+    , k(\theta)}\right\rangle |c_{\theta}| \diff \theta,
+  \end{equation*}
+  $h,k \in T_cB = C^{\infty}(\S^1,\R^2)$.
+\end{definition}
+
+Adding the parametrization derivative $c_{\theta}$ makes this
+invariant under \hl{(orientation preserving?)}
+reparametrizations. Because of that, this metric also induces a metric
+on the quotient space $B$, which we can identify as follows. Consider
+first the tangent space at $c$ to the \textit{orbit} of the diffeomorphism
+group
+\begin{equation*}
+  T_c(c \circ \text{Diff}(\S^{1})), \quad c \circ
+  \text{Diff}(\S^{1}) :=
+  \left\{
+    c \circ \phi \mid \phi \in \text{Diff}(\S^{1})
+  \right\} .
+\end{equation*}
+A path in the orbit $c \circ \text{Diff}(\S^{1})$ reduces to
+\begin{equation*}
+  t \mapsto
+  \left(
+    \theta \mapsto (c \circ \phi_t) (\theta)
+\right).
+\end{equation*}
+Differentiating this with respect to $t$ shows that we can identify
+\begin{equation}
+  \label{eq:tang-orbit}
+  T_c(c \circ \text{Diff}(\S^{1})) =
+  \left\{
+    g c_{\theta} \mid g \in C^{\infty}(\S^1, \R)
+  \right\}.
+\end{equation}
+The \textit{normal space} $\mathcal{N}_c \subset T_c(\I)$ consists of
+tangent vectors that are orthogonal to $T_c(c \circ
+\text{Diff}(\S^{1}))$ with respect to $G_c^2$. As the projection
+\begin{equation*}
+  \pi \colon \I \rightarrow B = \I/\text{Diff}(\S^{1})
+\end{equation*}
+sends the whole orbit to a single point \hl{it follows} that tangents
+vectors to the projected element $\pi(c) \in B$ can essentially
+be identified with elements of the normal space $\mathcal{N}_c$.
+From \eqref{eq:tang-orbit} we see that
+\begin{equation*}
+  \mathcal{N}_c =
+  \left\{
+    g i c_{\theta} \mid g \in C^{\infty}(\S^1, \R)
+  \right\},
+\end{equation*}
+with $i c_{\theta} = |c_{\theta}| n_c$, $n_c$ being the unit normal
+vector field along $c$. Finally, for a given $h \in T_c(\I)$
+we can explicitly find the decomposition of $h$ into the two orthogonal
+subspaces of the tangent space by projecting $h$ onto $c_{\theta}$ and
+$ic_{\theta}$, which gives
+\begin{equation*}
+  \begin{aligned}
+    h &  = p_{c_{\theta}}(h) + p_{ic_{\theta}}(h)
+    \in T_c(c \circ \text{Diff}(\S^{1})) \oplus \mathcal{N}_c
+    ,\\
+    p_{c_{\theta}}(h) & =
+    \frac{\langle h, c_{\theta}\rangle}{|c_{\theta}|^2} c_{\theta}
+    \in T_c(c \circ \text{Diff}(\S^{1})), \\
+    p_{ic_{\theta}}(h) & =
+    \frac{\langle h, ic_{\theta}\rangle}{|c_{\theta}|^2} ic_{\theta}
+    \in \mathcal{N}_c,
+  \end{aligned}
+\end{equation*}
+with $p_{v}(u)$ denoting the standard orthogonal projection in $\R^2$.
+
+This allows us to calculate a formula for
+the induced metric on $B$. In particular, it allows us to explicitly calculate
+the length of a projected path $t \mapsto \pi(q(t,\blank)) \in B $
+where $t \mapsto q(t,\blank) \in \I$ is a path in $\I$.
+In this setting, at each time point $t$
+the tangent vector is $q_t$ so \hl{by the above arguments} we get that
+the induced metric is
+\begin{equation*}
+  \begin{aligned}
+    L^2(\pi(q))& = \int_{0}^{1}
+    G^2_{q(t,\blank)}(p_{iq_{\theta}}(q_t),p_{iq_{\theta}}(q_t)) \diff t \\
+    & = \int_{0}^{1}
+    \int_{\S^1}
+    \left\langle
+      \frac{\langle h, iq_{\theta}\rangle}{|q_{\theta}|^2} iq_{\theta},
+      \frac{\langle h, iq_{\theta}\rangle}{|q_{\theta}|^2} iq_{\theta}
+  \right\rangle | q_{\theta}|\diff \theta \diff t.
+  \end{aligned}
+\end{equation*}
+
+\section{Short construction of tangent vectors from alternative definition}
+\label{sec:short-constr-tang}
+
+Lee defines the tangent
+space at a point $p \in B$ through the notation of
+\textit{derivations};
+
+Using this, one can define the notion of a
+tanget vector to a path in $B$ passing through the point $p$. Then,
+one can define an equivalence relation on the space of such paths and
+obtain an equivalent definition of the tanget space, which is more
+intuitive. One can also work the other way around and start by
+defining the notion of tanget vector to paths in $B$ (as is done on
+Wiki). We briefly do that here:
+
+For a neighbourhood $U \subset B$ containing $p$ we have a smooth coordinate
+chart $\phi\colon U \rightarrow \R^n$. For a path $\gamma \colon
+[-\epsilon,\epsilon] \rightarrow B$ with $\phi(0) = p$, it makes perfect sense to consider
+differentiability of the map $\phi \circ \gamma \colon
+[0,1]\rightarrow \R^n$. Now, the relation
+\begin{equation*}
+  \gamma_1 \sim \gamma_2 \iff
+  (\phi \circ \gamma_1)'(0) = (\phi \circ \gamma_2)'(0),
+\end{equation*}
+defines an equivalence relation on the collection of all such paths
+$\gamma$. An equivalence class of such paths, denoted by $[\gamma'_p]$ (or simply
+$\gamma'_p$), is called a \textit{tangent vector}
+at the point $p$. The collection of all tanget vectors make up the
+tanget space $T_pB$ at $p$.

@@ -1,0 +1,97 @@
+\subsection*{The L2 metric vanishes}
+\label{sec:l2-metric-vanishes}
+
+\hl{Some introductory text...}
+
+Definition of the length of the path $\phi$ directly from the path alone:
+\begin{equation*}
+  L(\phi) = \int_{0}^{1} \int_{\S^{1}}
+  \frac{\langle\phi_{t},i \phi_{\theta}\rangle^2}{|\phi_{\theta}|}  \diff \theta \diff t
+\end{equation*}
+Rewrite this as
+\begin{equation*}
+  \int_{0}^{1} \int_{\S^{1}}
+  \left(
+    \frac{\langle\phi_{t},i
+      \phi_{\theta}\rangle}{|\phi_{t}||\phi_{\theta}|}
+  \right)^2
+  |\phi_t|^2   |\phi_{\theta}|
+  \diff \theta \diff t
+  =
+  \int_{0}^{1} \int_{\S^{1}}
+  \cos(\alpha(\phi_t, i\phi_{\theta}))^2
+  |\phi_t|^2   |\phi_{\theta}|
+  \diff \theta \diff t,
+\end{equation*}
+with $\alpha(x,y)$ denoting the angle between $x$ and $y$. When
+constructing a zigzag-path the angle will be \hl{(approximately?)}
+constant in $\theta$ and $t$,
+and it is given by
+\begin{equation*}
+  n = \tan(\alpha).
+\end{equation*}
+We have that
+\begin{equation*}
+  \cos(\arctan(n)) = (1+n^2)^{-1/2}
+  = O(n^{-1}),
+\end{equation*}
+so we can write
+\begin{equation*}
+  L(\phi) = O(n^{-2})
+  \int_{0}^{1} \int_{\S^{1}}
+  |\phi_t|^2   |\phi_{\theta}|
+  \diff \theta \diff t,
+\end{equation*}
+in this case. To show that such a zigzag path has arbitrary
+small length we just need to show that the integral does not grow
+faster than $n^2$.
+
+As an example, take the simply case where we expand the circle $e^{i\pi\theta}$ to
+$2e^{i\pi\theta}$. The zigzag path in then concretely given as
+\begin{equation*}
+  \phi(t,\theta) = e^{i\pi\theta}
+    \sum_{k=0}^{n-1}
+    h^{n,k}(t,\theta) + g^{n,k}(t,\theta)
+\end{equation*}
+where
+\begin{equation*}
+  \begin{aligned}
+    h^{n,k}(t,\theta) & := 1_{[\frac{k}{n},\frac{k}{n} +
+      \frac{1}{2n})}(\theta) \left( 1+2t(n\theta-k) \right), \\
+    g^{n,k}(t,\theta) & := 1_{[\frac{k}{n} + \frac{1}{2n},\frac{k+1}{n})}(\theta)
+    \left( 1+2t(1-n\theta-k) \right).
+  \end{aligned}
+\end{equation*}
+
+We have that
+\begin{equation*}
+  \begin{aligned}
+    |\phi_t| & = \sum_{k=0}^{n-1} |h^{n,k}_t| + \sum_{k=0}^{n-1}
+    |g^{n,k}_t|, \\
+    |\phi_{\theta}| & = \sum_{k=0}^{n-1} |h^{n,k}_{\theta} + h^{n,k} | +
+    \sum_{k=0}^{n-1}
+    |g^{n,k}_{\theta} + g^{n,k} |,
+  \end{aligned}
+\end{equation*}
+so by symmetry
+\begin{equation*}
+  \begin{aligned}
+    \int_{0}^{1}
+    |\phi_t|^2   |\phi_{\theta}|
+    \diff \theta
+    & =
+    2n \int_{0}^{\frac{1}{2n}} |h^{n,0}_t|^2 |h^{n,0}_{\theta} + h^{n,0} |
+    \diff \theta \\
+    & = 2n \int_{0}^{\frac{1}{2n}}
+    (2n\theta)^2(2tn+1+t2n\theta) \diff \theta \\
+    & = \int_{0}^1
+    u^2(2tn+1+t u) \diff \theta \\
+    & = O(n),
+  \end{aligned}
+\end{equation*}
+for $t\in[0,1]$ which gives the result.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "local-masters/local-main-L2-metric"
+%%% End:

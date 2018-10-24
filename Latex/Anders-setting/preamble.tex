@@ -1,0 +1,56 @@
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{enumerate}
+\usepackage{verbatim}
+
+% Def, theorems, etc.
+\usepackage{amsthm}
+\newtheoremstyle{break}
+	{\topsep}{\topsep}
+	{\bfseries}{}
+	{\newline}{}
+\theoremstyle{break}
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{proposition}[subsection]{Proposition}
+\newtheorem{corollary}[subsection]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[subsection]{Definition}
+\newtheoremstyle{Break}
+	{\topsep}{\topsep}
+	{}{}
+	{\bfseries}{}
+	{\newline}{}
+\theoremstyle{Break}
+\newtheorem{example}[subsection]{Example}
+\newtheorem{remark}[subsection]{Remark}
+\newtheorem{note}[subsection]{Note}
+% \setcounter{secnumdepth}{0}
+% \usepackage{xpatch}
+% \xpatchcmd{\proof}{\ignorespaces}{\mbox{}\\\ignorespaces}{}{}
+
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand*\I{\mathop{}\!\mathrm{Imm}}
+\renewcommand{\S}{\mathbb{S}}
+\renewcommand{\P}{\text{P}}
+\newcommand{\blank}{\makebox[1ex]{\textbf{$\cdot$}}}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+% Figures -- use this instead of full file path because of git.
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\graphicspath{{../figures/},{../../figures/}}
