@@ -1,4 +1,4 @@
-\section*{Concepts of Riemannian geometry}
+\section{Concepts of Riemannian geometry}
 \label{sec:concepts_of_Riemannian_geometry}
 
 \subsection{Notation}
@@ -94,13 +94,13 @@ A connection on $M$ is \textit{symmetric} if
 Given a point $p$ in a Riemannian manifold, $M$, and a vector $v \in T_p M$, the \textit{exponential map} is defined by $\exp_p (v) = \gamma_v(1)$ where $\gamma$ is the unique geodesic with $\gamma(0) = p$ and $\dot{\gamma}(0) = v$.
 \end{definition}
 
-The exponential map pushes a point $p \in M$ a unit distance in the direction of $v$ along the geodesic $\gamma$. Since $\dot{\gamma}(0) = v$, the differential of $\exp_p$ at $p$ is $v$, and so $\exp_p$ is a local diffeomorphism by the implicit function theorem. A Riemannian manifold is said to be \textit{geodesically complete} if every un-exentedable geodesic is defined on all of $\R$, and it follows from the Hopf-Rinow theorem that a manifold is geodesically complete if and only if, there exists a $p \in M$ such that $\exp$ is defined on all of $T_p M$.\\[0.2 cm] 
+The exponential map pushes a point $p \in M$ a unit distance in the direction of $v$ along the geodesic $\gamma$. Since $\dot{\gamma}(0) = v$, the differential of $\exp_p$ at $p$ is $v$, and so $\exp_p$ is a local diffeomorphism by the implicit function theorem. Given two points $p,q \in M$, the inverse of the exponential map, $\exp_p^{-1}(q) = \log_p(q) = \overrightarrow{pq}$, yields the element of $v \in T_p M$ for which $\gamma_v (1) = q$ \\[0.2 cm]
+A Riemannian manifold is said to be \textit{geodesically complete} if every un-exentedable geodesic is defined on all of $\R$, and it follows from the Hopf-Rinow theorem that a manifold is geodesically complete if and only if, there exists a $p \in M$ such that $\exp$ is defined on all of $T_p M$.\\[0.2 cm] 
 If the geodesic $\gamma_v$ is defined on all of $\R$, one can investigate for which values of $t$, the extended geodesic, $\gamma_v(t) = \exp_p (t v)$ is still a geodesic from $p$ to $\exp_p (t v)$. If $\gamma_v$ is a geodesic up to time $t_0$ and not after $t_0$, then $t_0$ is called a \textit{cut point}. The set of all cut points of all geodesics starting at $p$ is called the \textit{cut locus} and is denoted $C(p)$.
 
 \subsection{Curvature}
 
 When defining statistical propoerties such as mean and variance on Riemannian manifolds, measuring geometric propoerties of the manifold is needed. It is therefore of interest to determine on which manifolds these measurements are identical - that is to determine which manifolds are (locally) isomorphic. One way of determining this is to find a local invariant property of a manifold which is preserved by isometries (such that measurements of length are preserved). This property will be the \textit{curvature}. \\[0.2 cm]
-
 Let $M = \R^n$ equipped with the Euclidean metric and consider a vector field $Z$. Given two other vector fields, $X$ and $Y$, we can now differentiate $Z$ first along $X$ and then along $Y$ by using the Riemannian connection;
 \begin{align*}
 \nabla_Y \nabla_X Z,
