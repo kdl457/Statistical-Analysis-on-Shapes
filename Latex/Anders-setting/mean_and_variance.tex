@@ -1,60 +1,3 @@
-\documentclass[a4,danish]{article}
-
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{xcolor}
-\usepackage{soul}
-\usepackage{enumerate}
-
-\newtheoremstyle{break}
-	{\topsep}{\topsep}
-	{\bfseries}{}
-	{\newline}{}
-\theoremstyle{break}
-\newtheorem{theorem}[subsection]{Theorem}
-\newtheorem{lemma}[subsection]{Lemma}
-\newtheorem{proposition}[subsection]{Proposition}
-\newtheorem{corollary}[subsection]{Corollary}
-\theoremstyle{definition}
-\newtheorem{definition}[subsection]{Definition}
-\newtheoremstyle{Break}
-	{\topsep}{\topsep}
-	{}{}
-	{\bfseries}{}
-	{\newline}{}
-\theoremstyle{Break}
-\newtheorem{example}[subsection]{Example}
-\newtheorem{remark}[subsection]{Remark}
-\newtheorem{note}[subsection]{Note}
-\setcounter{secnumdepth}{0}
-\usepackage{xpatch}
-\xpatchcmd{\proof}{\ignorespaces}{\mbox{}\\\ignorespaces}{}{}
-
-
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\C}{\mathbb{C}}
-\renewcommand{\S}{\mathbb{S}}
-\renewcommand{\P}{\text{P}}
-
-\renewcommand{\phi}{\varphi}
-\renewcommand{\epsilon}{\varepsilon}
-
-\newcommand*\diff{\mathop{}\!\mathrm{d}}
-
-\setlength{\parskip}{1em}
-\setlength{\parindent}{0em}
-
-% Figures -- use this instead of full file path because of git.
-\usepackage{graphicx}
-\graphicspath{{../figures/}}
-
-\begin{document}
-% \maketitle
-
 \section*{Mean and variance}
 \label{sec:mean_and_variance}
 
@@ -135,7 +78,4 @@ Let $X$ be a $M$-valued random variable with density $p_X$. If the support of $p
 The preceeding corollary and two theorems give us uniqueness and existence statements of mean points for specific cases. One can then wonder if it is possible to relax the global curvature assumption in the corollary or the assumptions on the well-behaviour of the curvature in the domain of the support of the density. 
 
 
-
-
-\end{document}
 
