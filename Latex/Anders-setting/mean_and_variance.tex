@@ -1,61 +1,4 @@
-\documentclass[a4,danish]{article}
-
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{xcolor}
-\usepackage{soul}
-\usepackage{enumerate}
-
-\newtheoremstyle{break}
-	{\topsep}{\topsep}
-	{\bfseries}{}
-	{\newline}{}
-\theoremstyle{break}
-\newtheorem{theorem}[subsection]{Theorem}
-\newtheorem{lemma}[subsection]{Lemma}
-\newtheorem{proposition}[subsection]{Proposition}
-\newtheorem{corollary}[subsection]{Corollary}
-\theoremstyle{definition}
-\newtheorem{definition}[subsection]{Definition}
-\newtheoremstyle{Break}
-	{\topsep}{\topsep}
-	{}{}
-	{\bfseries}{}
-	{\newline}{}
-\theoremstyle{Break}
-\newtheorem{example}[subsection]{Example}
-\newtheorem{remark}[subsection]{Remark}
-\newtheorem{note}[subsection]{Note}
-\setcounter{secnumdepth}{0}
-\usepackage{xpatch}
-\xpatchcmd{\proof}{\ignorespaces}{\mbox{}\\\ignorespaces}{}{}
-
-
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\C}{\mathbb{C}}
-\renewcommand{\S}{\mathbb{S}}
-\renewcommand{\P}{\text{P}}
-
-\renewcommand{\phi}{\varphi}
-\renewcommand{\epsilon}{\varepsilon}
-
-\newcommand*\diff{\mathop{}\!\mathrm{d}}
-
-\setlength{\parskip}{1em}
-\setlength{\parindent}{0em}
-
-% Figures -- use this instead of full file path because of git.
-\usepackage{graphicx}
-\graphicspath{{../figures/}}
-
-\begin{document}
-% \maketitle
-
-\section*{Mean and variance}
+\section{Mean and variance}
 \label{sec:mean_and_variance}
 
 In order to perform statistics on shapes we must first try to define central statistical concepts on manifolds. In this section we focus on a geodsically complete Riemannian manifold, $(M, g)$, of dimension $n$, and present ways of defining the mean, variance and covariance of $M$-valued random variables. Given an underlying probability space, $(\Omega, \mathcal{F}, P)$, a $M$-valued random variable is a $\mathcal{F}/\mathcal{B}(M)$ measurable map, $X: \, \Omega \rightarrow M$, and we denote by $x = X(\omega)$ a realization of $X$ on $M$.\\[0.2 cm]
@@ -132,10 +75,7 @@ Let $X$ be a $M$-valued random variable with density $p_X$. If the support of $p
 Let $X$ be a $M$-valued random variable with density $p_X$. If the support of $p_X$ is contained in a regular geodesic ball, and the ball with twice the radius is also a regular and geodesic, then $\sigma^2_X(y)$ is convex and has a unique critical point, $\bar{x}$, on the ball. This point must be a minimizer and thus the unique mean point of $X$
 \end{theorem}
 
-The preceeding corollary and two theorems give us uniqueness and existence statements of mean points for specific cases. One can then wonder if it is possible to relax the global curvature assumption in the corollary or the assumptions on the well-behaviour of the curvature in the domain of the support of the density. 
+The preceeding corollary and two theorems give us uniqueness and existence statements of mean points for specific cases. One can then wonder if it is possible to relax the global curvature assumption in the corollary or the assumptions on the well-behaviour of the curvature in the domain of the support of the density. As shown in \hl{The propeller: a counterexample to a conjectured criterion for the existence of certain harmonic functions} some assumptions on the curvature is needed even if there is a unique minimizing geodesic joining any two points.
 
 
-
-
-\end{document}
 
