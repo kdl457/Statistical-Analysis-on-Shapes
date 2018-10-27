@@ -15,27 +15,36 @@ It can seem weird to go through so much trouble to define a useless distance. Bu
 The ``proof'' below is mostly heuristic, and we only consider the very simply case of a path transforming the circle into a larger circle, but this captures the main idea.
 \begin{theorem}
   \label{theorem:l2-metric-vanishes}
-  Let $a,b \in \mathcal{I}$. Then for every $\epsilon >0 $ there exists a path $q$ in $\mathcal{I}$ such that
+  For all $\mathrm{a},\mathrm{b} \in \mathcal{I}$
   \begin{equation*}
-    \mathcal{L}(q) < \epsilon.
+    \mathcal{D}(\mathrm{a},\mathrm{b}) = 0.
   \end{equation*}
 \end{theorem}
-\begin{corollary}
-  For all $a,b \in \mathcal{I}$
-  \begin{equation*}
-    \mathcal{D}(a,b) = 0.
-  \end{equation*}
-\end{corollary}
 
 \begin{proof}[Proof of Theorem~\ref{theorem:l2-metric-vanishes}]
-  Start by rewriting the \eqref{eq:length-quotient} from Proposition~\ref{prop:length-quotient} as follows.
+
+  \begin{figure}
+    \centerline{\includegraphics[width=0.6\linewidth]{zigzag-path0.pdf}}
+    \caption[]{Illustration of a zigzag path moving the unit circle to the circle with radius 2. The path first moves the points along the path sketched in light-gray and then moves them along the dark-gray path.}
+    \label{fig:zigzag-path}
+  \end{figure}
+
+  By the definition of the length $\mathcal{D}$ we need to show that for any two paths $\mathrm{a},\mathrm{b} \in \mathcal{I}$ and any $\epsilon >0 $ there exists a path $\mathrm{q}$ in $\mathcal{I}$ such that
+  \begin{equation*}
+    \mathcal{L}(\mathrm{q}) < \epsilon.
+  \end{equation*}
+  The trick is to construct a path in $\I$ that moves in zigzag and then use Proposition~\ref{prop:length-quotient} to calculate the length of this path in $\mathcal{I}$.
+  It turns out that when we increase the number of teeth of the zigzag path, the length of the path decreases in $\mathcal{I}$.
+  The idea of such a zigzag path is illustrated in figure~\ref{fig:zigzag-path}.
+
+  To see why this  pheonomenon happens, first rewrite the \eqref{eq:length-quotient} from Proposition~\ref{prop:length-quotient} as
   \begin{align*}
     \mathcal{L}(q) &
                      = \int_{0}^{1}
                      \left(
                      \int_{\S^{1}} \frac{\langle q_{t},i q_{\theta}\rangle^2}
-                     {|q_{\theta}|}  \diff
-                     \right)^{1/2} \theta \diff t \\
+                     {|q_{\theta}|}  \diff \theta
+                     \right)^{1/2} \diff t \\
                    & =  \int_{0}^{1}
                      \left(
                      \int_{\S^{1}}
@@ -55,37 +64,72 @@ The ``proof'' below is mostly heuristic, and we only consider the very simply ca
                      \diff \theta
                      \right)^{1/2}\diff t,
   \end{align*}
-with $\alpha(x,y)$ denoting the angle between $x$ and $y$. When
-constructing a zigzag-path the angle will be \hl{(approximately?)}
-constant in $\theta$ and $t$,
-and it is given by
-\begin{equation*}
-  n = \tan(\alpha).
-\end{equation*}
-\end{proof}
+  with $\alpha(x,y)$ denoting the angle between $x$ and $y$.
+  When constructing a zigzag-path the angle will for large enough $n$ be given approximately by
+  \begin{equation}
+    \label{eq:tan-angle}
+    2n \approx \tan(\alpha).
+  \end{equation}
+  Note that this does not depend on $\theta$ nor $t$.
+  \hl{[Maybe not completely obvious that this holds.]}
+  See figure~\ref{fig:angle-arg} for a visual justification of this.
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{angle-argument.pdf}
+    \caption{Relative to $q_t$, $iq_{\theta}$ is by construction a line with slope $2n$, and thus the angle between these two vectors are found by \eqref{eq:tan-angle}. Note that the starting curve, $\mathrm{a}$, is here represented as a straight line to simplify the calculations; this should be a reasonable approximation when $n$ is large.}
+    \label{fig:angle-arg}
+  \end{figure}
 
-We have that
-\begin{equation*}
-  \cos(\arctan(n)) = (1+n^2)^{-1/2}
-  = O(n^{-1}),
-\end{equation*}
-so we can write
-\begin{equation*}
-  L(\phi) = O(n^{-2})
-  \int_{0}^{1} \int_{\S^{1}}
-  |\phi_t|^2   |\phi_{\theta}|
-  \diff \theta \diff t,
-\end{equation*}
-in this case. To show that such a zigzag path has arbitrary
-small length we just need to show that the integral does not grow
-faster than $n^2$.
+  We have that
+  \begin{equation*}
+    \cos(\arctan(2n)) = (1+(2n)^2)^{-1/2}
+    = O(n^{-1}),
+  \end{equation*}
+  so we can write
+  \begin{equation}
+    \label{eq:approx-L-angle}
+    \begin{aligned}
+    \mathcal{L}( \mathrm{q} )
+    & =
+      \int_{0}^{1}
+      \left(
+      \int_{\S^{1}}
+      O(n^{-1})^2
+      | q _t|^2   | q _{\theta}|
+      \diff \theta
+      \right)^{1/2} \diff t \\
+    & =
+      O(n^{-1})
+      \int_{0}^{1}
+      \left(
+      \int_{\S^{1}}
+      | q _t|^2   | q _{\theta}|
+      \diff \theta
+      \right)^{1/2} \diff t.
+    \end{aligned}
+  \end{equation}
+  To show that our zigzag path has arbitrary small length we thus just need to show that the remaining integral does not grow faster than $n^{2}$. Figure~\ref{fig:zigzag-path-angle} illustrates how the angle $\alpha$ increases towards $\pi/2$, making $\cos(\alpha) \rightarrow 0$; at the same time, it is seen how $q_{\theta}$ grows -- not fast enough, however, to kill the $\cos(\alpha)$ term, it turns out.
 
-As an example, take the simply case where we expand the circle $e^{i\pi\theta}$ to
+\begin{figure}
+  \centering
+  \begin{subfigure}{.49\textwidth}
+    \centering
+    \includegraphics[width=1\linewidth]{zigzag-path.pdf}
+  \end{subfigure}
+  \begin{subfigure}{.49\textwidth}
+    \centering
+    \includegraphics[width=1\linewidth]{zigzag-path2.pdf}
+  \end{subfigure}
+  \caption{Illustration of how the angle $\alpha$ increases with the number of teeth of the zigzag path. The red vector gives the time derivate, the gray the path derivative, and the blue the normal of the path derivative. The zigzag path is shown in light-gray in the background. (Note that the length of the vectors are scaled to fit the drawing and does not necessarily reflect an exact relationship between the lengths of the two.)}
+  \label{fig:zigzag-path-angle}
+\end{figure}
+
+As an example, we take the simply case where we expand the circle $e^{i\pi\theta}$ to
 $2e^{i\pi\theta}$. The zigzag path in then concretely given as
 \begin{equation*}
   \phi(t,\theta) = e^{i\pi\theta}
-    \sum_{k=0}^{n-1}
-    h^{n,k}(t,\theta) + g^{n,k}(t,\theta)
+  \sum_{k=0}^{n-1}
+  h^{n,k}(t,\theta) + g^{n,k}(t,\theta)
 \end{equation*}
 where
 \begin{equation*}
@@ -96,7 +140,6 @@ where
     \left( 1+2t(1-n\theta-k) \right).
   \end{aligned}
 \end{equation*}
-
 We have that
 \begin{equation*}
   \begin{aligned}
@@ -123,7 +166,10 @@ so by symmetry
     & = O(n),
   \end{aligned}
 \end{equation*}
-for $t\in[0,1]$ which gives the result.
+for $t\in[0,1]$. Plugging this into \eqref{eq:approx-L-angle} gives the result.
+\end{proof}
+
+
 
 
 %%% Local Variables:
@@ -131,6 +177,6 @@ for $t\in[0,1]$ which gives the result.
 %%% TeX-master: "mainfile"
 %%% End:
 
-\message{ !name(mainfile.tex) !offset(-125) }
+\message{ !name(mainfile.tex) !offset(-171) }
 
 \end{document}
