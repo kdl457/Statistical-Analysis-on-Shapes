@@ -3,7 +3,7 @@
 
 In the previous section we went through some work to construct a measure of length for a path $q$ in the space $\mathcal{I}$. As the tangent spaces were seen to consist of some functions on the circle, it was natural to consider using a version of the L$^2$-metric (a version invariant to reparametrizations). However, as we illustrate in this section, this does not give rise to a usable notation of length, because the geodesic distance following from this metric becomes 0 for every two curves in the space.
 
-It can seem weird to go through so much trouble to define a useless distance. But firstly, the construction illustrates some of the difficulties in defining a reasonable notion on length on $\mathcal{I}$; secondly, and more importantly, the fact that the distance vanishes is a quite surprising result, which depends crucially on the formula for the length of a path given in Proposition~\ref{prop:length-quotient}. This gives us some justification for the somewhat unfruitfull work of definiting the L$^2$-metric.
+It can seem weird to go through so much trouble to define a useless distance. But firstly, the construction illustrates some of the difficulties in defining a reasonable notion on length on $\mathcal{I}$; secondly, and more importantly, the fact that the distance vanishes is a quite surprising result, which depends crucially on the formula for the length of a path given in Proposition~\ref{prop:length-quotient}. This gives us some justification for the somewhat unfruitful work of defining the L$^2$-metric.
 
 The ``proof'' below is mostly heuristic, and we only consider the very simply case of a path transforming the circle into a larger circle, but this captures the main idea.
 \begin{theorem}
@@ -18,7 +18,7 @@ The ``proof'' below is mostly heuristic, and we only consider the very simply ca
 
   \begin{figure}
     \centerline{\includegraphics[width=0.6\linewidth]{zigzag-path0.pdf}}
-    \caption[]{Illustration of a zigzag path moving the unit circle to the circle with radius 2. The path first moves the points along the path sketched in light-gray and then moves them along the dark-gray path.}
+    \caption[]{Illustration of a zigzag path moving the unit circle to the circle with radius 2. The path first moves the points along the path sketched in light-grey and then moves them along the dark-grey path.}
     \label{fig:zigzag-path}
   \end{figure}
 
@@ -30,7 +30,7 @@ The ``proof'' below is mostly heuristic, and we only consider the very simply ca
   It turns out that when we increase the number of teeth of the zigzag path, the length of the path decreases in $\mathcal{I}$.
   The idea of such a zigzag path is illustrated in figure~\ref{fig:zigzag-path}.
 
-  To see why this  pheonomenon happens, first rewrite the \eqref{eq:length-quotient} from Proposition~\ref{prop:length-quotient} as
+  To see why this  phenomenon happens, first rewrite the \eqref{eq:length-quotient} from Proposition~\ref{prop:length-quotient} as
   \begin{align*}
     \mathcal{L}(q) &
                      = \int_{0}^{1}
@@ -101,7 +101,7 @@ The ``proof'' below is mostly heuristic, and we only consider the very simply ca
       \right)^{1/2} \diff t.
     \end{aligned}
   \end{equation}
-  To show that our zigzag path has arbitrary small length we thus just need to show that the remaining integral does not grow faster than $n^{2}$. Figure~\ref{fig:zigzag-path-angle} illustrates how the angle $\alpha$ increases towards $\pi/2$, making $\cos(\alpha) \rightarrow 0$; at the same time, it is seen how $q_{\theta}$ grows -- not fast enough, however, to kill the $\cos(\alpha)$ term, it turns out.
+  To show that our zigzag path has arbitrary small length we thus just need to show that the remaining integral does not grow faster than $n$. Figure~\ref{fig:zigzag-path-angle} illustrates how the angle $\alpha$ increases towards $\pi/2$, making $\cos(\alpha) \rightarrow 0$; at the same time, it is seen how $q_{\theta}$ grows -- not fast enough, however, to kill the $\cos(\alpha)$ term, it turns out.
 
 \begin{figure}
   \centering
@@ -113,7 +113,7 @@ The ``proof'' below is mostly heuristic, and we only consider the very simply ca
     \centering
     \includegraphics[width=1\linewidth]{zigzag-path2.pdf}
   \end{subfigure}
-  \caption{Illustration of how the angle $\alpha$ increases with the number of teeth of the zigzag path. The red vector gives the time derivate, the gray the path derivative, and the blue the normal of the path derivative. The zigzag path is shown in light-gray in the background. (Note that the length of the vectors are scaled to fit the drawing and does not necessarily reflect an exact relationship between the lengths of the two.)}
+  \caption{Illustration of how the angle $\alpha$ increases with the number of teeth of the zigzag path. The red vector gives the time derivative, the grey the path derivative, and the blue the normal of the path derivative. The zigzag path is shown in light-grey in the background. (Note that the length of the vectors are scaled to fit the drawing and does not necessarily reflect an exact relationship between the lengths of the two.)}
   \label{fig:zigzag-path-angle}
 \end{figure}
 
@@ -161,8 +161,6 @@ so by symmetry
 \end{equation*}
 for $t\in[0,1]$. Plugging this into \eqref{eq:approx-L-angle} gives the result.
 \end{proof}
-
-
 
 
 %%% Local Variables:
