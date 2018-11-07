@@ -4,13 +4,15 @@
 A 2-dimensional shape can be thought of as a closed (smooth) curve in $\R^2$. Thus, we want to define a manifold structure on the space of these curves. Doing this mathematically correct is rather technical because we need to consider quotient spaces of infinite dimensional manifolds. In our exposition we shall to a large extend ``define our way out of this'' by, for example, defining tangent vectors of curves instead of deducing how these look like from the formal definition of the underlying manifold. We shall motivate our definitons geometrically and then deduce some properties from these definitons -- properties, which can also be deduced from the formal definitions. At the end of this section we briefly address what we miss with our more informal treatment.
 
 A shape in $\R^2$ can either be thought of as a parametrized object, e.g., as a function $\S^1 \ni \theta \mapsto c(\theta) \in \R^2$; but it can also be thought of as an unparametrized object, e.g., the \textit{image} of such a function $\text{Im}(c) \subset \R^2$ (as illustrated in Figure~\ref{fig:circle-mapping}). We impose some smoothness structure on the curves and define the spaces we want to consider formally as
-\begin{equation*}
-  \begin{aligned}
-    \I & := \I(\S^1, \R^2)  :=  \{ ...? \}, \\
-    \mathcal{I} & := \mathcal{I}(\S^1, \R^2)  := \I(\S^1, \R^2)/\mathrm{Diff}(\S^1).
-  \end{aligned}
-\end{equation*}
+\begin{align*}
+  \I & := \I(\S^1, \R^2)
+       :=  \left\{ q\colon \S^1 \rightarrow \R^2 \mid q \text{ is an immersion} \right\} \\
+     & \quad \quad = \left\{q\colon \S^1 \rightarrow \R^2 \mid q_{\theta} \not = 0 \right\} \text{ \hl{correct?}}, \\
+  \mathcal{I}
+     & := \mathcal{I}(\S^1, \R^2)  := \I(\S^1, \R^2)/\mathrm{Diff}(\S^1).
+\end{align*}
 $\I$ is the space of \textit{immersion} of the unit circle into $\R^2$, and $\mathcal{I}$ is then this space modulo reparametrization, i.e., we identify two object $q,p \in \I$ in $\mathcal{I}$ if $q=p \circ \phi$, where $\phi \in \mathrm{Diff}(\S^1)$ is a diffeomorphism on the unit circle.
+\footnote{Actually, to make the construction work, we need to restrict the space of immersion to the set of all \textit{free} immersion. This is a minor technical detail so we skip these concerns for now. We mention them briefly again in Section~\ref{sec:hlcomp-this-form}.}
 
 When our interest is upon the \textit{shape}, we are not really interested in the underlying parametrization of this shape, and so we are mostly interested in the space $\mathcal{I}$. However, it is easiest to construct a manifold structure on $\I$ and then deduce one on $\mathcal{I}$, so we start by considering the parametrized space of immersions.
 
@@ -41,6 +43,7 @@ i.e., for each $t$ we get a parametrized curve, and at 0 we get the curve $c$. W
 As in the finite dimensional case we can now take the \textit{time derivate} of our path and evaluate this at 0; of course, this is technically not obvious, as our constructed path maps into a function space, but we shall here simply take this derivative to be understood pointwise:
 
 \begin{definition}
+  \label{def:tangt-space-of-curves}
   The tangent space $T_{c}\I$ to an element $c \in \I$ consists of all function
   $h\colon \S^1 \rightarrow \R^2$ such that
   \begin{equation*}
@@ -180,6 +183,7 @@ a consistent way:
 First we note that this gives us the following visualization of the tangents spaces of $B$.
 
 \begin{proposition}
+  \label{prop:tangent-space-orthogonal}
 The tangent space to an element $\pi(c) \in \mathcal{I}$ consists of orthonormal vector fields on the circle, i.e.,
   \begin{equation*}
     T_{\pi(c)}(\mathcal{I}) =
@@ -344,14 +348,24 @@ As the length of a path in $\mathcal{I}$ is our primary concern, we skip straigh
 from which \eqref{eq:length-quotient} follows immediately by definition.
 \end{proof}
 
-\hl{Some concluding text...}
+The above result shows that our definition of the length of a path in the shape space $\I$ is meaningful -- at least at first sight. Because, \hl{as mentioned,} it turns out that this metric vanishes on all of $\mathcal{I}$.
+The result above is still very important, because the formula for directly calculating the length of a path from some parametrized representation of it is essential in showing how the $\mathcal{L}^2$-metric breaks down, as we will see in Section~\ref{sec:l2-metric-vanishes} below.
 
-\subsection{\hl{Comparing this to the formal construction as a Frechet manifold}}
+\subsection{Some notes about a more formal approach}
 \label{sec:hlcomp-this-form}
 
-\hl{... a lot of references ...}
+Before moving on, we pause to make a few comparisons with our approach above in constructing the shape space $\mathcal{I}$ and a more formal one based on some general results of infinite-dimensional manifolds and the diffeomorphism group.
 
-\cite{lee2006riemannian}
+What characterises a finite-dimensional manifold is that it can locally be mapped \hl{homeomorphically} to $\R^n$. As every finite-dimensional vector space is isomorphic to $\R^n$, this is the obvious space to use as a model space. For infinite-dimensional vector spaces there is no longer any ``obvious'' space to use as a local model for a manifold; we can use, e.g., Banach spaces, Hilbert spaces or Fr\'echet as model spaces, depending on how much structure is needed. In our case, it holds that the space $\I$ is a Fr\'echet manifold. This is Theorem 3.1 of \cite{bauer2014overview}, the proof of which essentially follows by showing that $\I$ is open in $C^{\infty}(\S^1, \R^2)$ and using some general result from \cite{kriegl1997convenient}. Our Definition~\ref{def:tangt-space-of-curves} is then no longer a definition but follows directly from the manifold construction \hl{(right?)}.
+
+Some more work is then needed to construct the quotient space $\mathcal{I}$ which is undertaking in, e.g., \cite{michor2003riemannian} and \cite{cervera1991action}. For example, if we simply use the whole space of immersions, modding out with the diffeomorphism group will not give us a manifold. We need instead to consider only \textit{free} immersion, which are immersions $q$ such that $q \circ \phi$ for $\phi \in \mathrm{Diff}(\S^1)$ implies that $\theta = \mathrm{Id}$. Using this, we then get that the quotient space is a manifold (see, e.g., section 2.4 in \cite{michor2003riemannian}).
+
+Eventhough we know that the quotient space turns out to be a manifold as well it is not obvious that is has the geometric structure as described by our Definition~\ref{def:tang-quotient} and Proposition~\ref{prop:tangent-space-orthogonal}. Fortunately, this holds: For example, section 2.4 in \cite{michor2003riemannian} (which is again based on the general setting of \cite{kriegl1997convenient}) shows that the tangent spaces really do consist of orthogonal vector fields along the shape \hl{[I think]}, and then they can use the general results about the structure of the quotient space to derive our Proposition~\ref{prop:length-quotient} (in particular, this is done on pages 14-15 in \cite{michor2003riemannian}).
+
+Thus, in conclusion, the formal approach agrees with the results obtained through our exposition; of course, with the more formal approach, some properties can be proven instead of defined, which is arguable more satisfactory.
+
+
+
 
 %%% Local Variables:
 %%% mode: latex
