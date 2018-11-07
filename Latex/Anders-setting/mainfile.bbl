@@ -1,8 +1,25 @@
 \begin{thebibliography}{1}
 
-\bibitem{lee2006riemannian}
-John~M Lee.
-\newblock {\em Riemannian manifolds: an introduction to curvature}, volume 176.
-\newblock Springer Science \& Business Media, 2006.
+\bibitem{bauer2014overview}
+Martin Bauer, Martins Bruveris, and Peter~W Michor.
+\newblock Overview of the geometries of shape spaces and diffeomorphism groups.
+\newblock {\em Journal of Mathematical Imaging and Vision}, 50(1-2):60--97,
+  2014.
+
+\bibitem{cervera1991action}
+Vicente Cervera, Francisca Mascaro, and Peter~W Michor.
+\newblock The action of the diffeomorphism group on the space of immersions.
+\newblock {\em Differential Geometry and its Applications}, 1(4):391--401,
+  1991.
+
+\bibitem{kriegl1997convenient}
+Andreas Kriegl and Peter~W Michor.
+\newblock {\em The convenient setting of global analysis}, volume~53.
+\newblock American Mathematical Soc., 1997.
+
+\bibitem{michor2003riemannian}
+Peter~W Michor and David Mumford.
+\newblock Riemannian geometries on spaces of plane curves.
+\newblock {\em arXiv preprint math/0312384}, 2003.
 
 \end{thebibliography}
