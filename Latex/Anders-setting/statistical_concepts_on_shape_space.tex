@@ -10,8 +10,11 @@ Secondly, all results regarding existence and uniqueness of mean points have rel
 To make the difficulties stand out explicitly, we write our Definition~\ref{sec:mean_and_variance} when naively replacing the finite-dimensional manifold $M$ with our shape space $\I$ and using an almost local metric. Then we have that $y$ is some fixed shape and $X$ is a random shape (still not defined):
 \begin{align*}
   \sigma^2_X(y) &  = \int_{\I}
-                  \inf_{\stackrel{c \in \mathcal{C}}{c(0,\blank)=y, c(1,\blank)=z}}
-                  L_{G^\Phi}(c)p_X(z)
+                  \inf_{c \in \mathcal{C}_{y}^z}
+                  \left\{
+                  L_{G^\Phi}(c)
+                  \right\}
+                  p_X(z)
                   \diff z
   % \\
   %               &  = \int_{\I}
@@ -19,9 +22,25 @@ To make the difficulties stand out explicitly, we write our Definition~\ref{sec:
   %                 \int_{\S^1} \Phi(\mathrm{Vol}(c(t,\blank),H_{c(t,\blank)},K_{c(t,\blank)}),
   %                 \overline{g}(c_t,c_t) |c_{\theta}| \diff \theta
   %                 \diff z \\
-  .
+  ,
 \end{align*}
-First of all it is not clear that this integral over a function space is well-defined.
+where we let $\mathcal{C}_y^z$ denote all path starting in $y$ and ending in $z$.
+First of all, it is not clear that this integral over a function space is well-defined.
+Secondly, to calculate an explicit expression for the variance at $y$ (and later on the mean), we would most likely need to be able to find a useful expression for the distance $L_{G^{\Phi}}$, which is not trivial.
+Thirdly, if we succeed in making sense of the above expression, the next step would be to consider how to minimize it, i.e., what we are actually interested in is
+\begin{equation*}
+  \argmin_{y \in \I}
+  \int_{\I}
+  \inf_{c \in \mathcal{C}_{y}^z}
+  \left\{
+    L_{G^\Phi}(c)
+  \right\}
+  p_X(z)
+  \diff z.
+\end{equation*}
+This is optimization problem over a function space, so we could maybe use some tools from the calculus of variations to solve it.
+
+All in all, at each step a lot of rather non-trivial problems need to be clarified, we imagine that one could proceed along the way sketched above.
 
 
 %%% Local Variables:
