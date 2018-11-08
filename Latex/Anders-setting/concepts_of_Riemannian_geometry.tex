@@ -45,13 +45,13 @@ satisfying (for $f$, $g \in C^\infty(I)$ and $a$, $b \in \R$);
 Proof of Lemma 4.9 in \cite{lee2006riemannian}
 \end{proof}
 
-$V$ is said to be extendible if it can be constructed by any vector field on $M$, $\tilde{V}$ by letting $V(t) := \tilde{V}_{\gamma(t)}$. This is not always the case; for example if $V$ is the velocity of an intersecting curve $\gamma$ with different covariant derivative at the intersection times. The covariant derivative of the velocity of a curve is now used to define a geodesic.
+$V$ is said to be extendible if it can be constructed by a vector field on $M$, $\tilde{V}$ by letting $V(t) := \tilde{V}_{\gamma(t)}$. This is not always the case; for example if $V$ is the velocity of an intersecting curve $\gamma$ with different covariant derivative at the intersection times. The covariant derivative of the velocity of a curve is now used to define a geodesic.
 
 \begin{definition}
 Let $\nabla$ be a linear connection on $M$ and $\gamma$ a curve in $M$. The acceleration of $\gamma$ is $D_t \dot{\gamma}(t)$. If this vector field is zero, $D_t \dot{\gamma}(t) \equiv 0$, then $\gamma(t)$ is a geodesic with respect to $\nabla$
 \end{definition}
 
-It follows from Theorem $4.10$ in \cite{lee2006riemannian} that for any manifold with a connection, for any $p \in M$ and $v \in T_pM$ and $t_0 \in \R$ there exists an un-extendable geodesic, $\gamma_v: \; I \rightarrow M$, with $\gamma_v(0) = p$ and $\dot{\gamma}_v(0) = V$. The geodseic is called the (maximal) geodesic with initial value $p$ and initial velocity $v$.
+One can show (see for instance Theorem $4.10$ in \cite{lee2006riemannian}) that for any manifold with a connection, for any $p \in M$ and $v \in T_pM$ and $t_0 \in \R$ there exists an un-extendable geodesic, $\gamma_v: \; I \rightarrow M$, with $\gamma_v(0) = p$ and $\dot{\gamma}_v(0) = V$ (un-extendable in the sense that no geodesic exists defined on a larger interval than $I$). The geodseic is called the (maximal) geodesic with initial value $p$ and initial velocity $v$.
 
 In this construction of geodesics the only necessary structure of $M$ is that it should be a smooth manifold. When $M$ is also equipped with a Riemannian metric, making $M$ a Riemannian manifold, the choice of connection (determining the geodesics) should in some way respect the metric. Geodesics resulting from this specific choice of connection are called \textit{Riemannian geodesics}.
 
@@ -67,13 +67,13 @@ A connection on $M$ is \textit{compatible with g} if the product rule
 holds for all vector fields, $X, Y$ and $Z$.
 \end{definition}
 
-By Lemma $5.2$ in \cite{lee2006riemannian} this condiiton is equivalent to
+One can show (see lemma $5.2$ in \cite{lee2006riemannian}) that this condiiton is equivalent to
 \begin{align*}
 \frac{d}{dt} \langle V, W \rangle = \langle D_t V, W \rangle + \langle V, D_t W \rangle,
 \end{align*} 
 for $V, W$ being vector fields along any curve $\gamma$.
 
-The defintion of a symmetric connection involves the Lie bracket of two vector fields. If we think of vector fields on $M$, $X, Y$, as derivtations acting on $C^\infty (M)$, then the Lie brakcet of $X$ and $Y$, $[X , Y]$, is the vector field (derivation) which acts on $f \in C^\infty (M)$ by
+The defintion of a symmetric connection involves the Lie bracket of two vector fields. If we think of vector fields on $M$, $X, Y$, as derivations acting on $C^\infty (M)$, then the Lie brakcet of $X$ and $Y$, $[X , Y]$, is the vector field (derivation) which acts on $f \in C^\infty (M)$ by
 \begin{align*}
 [X , Y] (f) := X(Y(f)) - Y(X(f)),
 \end{align*}
@@ -86,7 +86,7 @@ A connection on $M$ is \textit{symmetric} if
 \end{align*}
 \end{definition}
 
-(Note that interchanging $X$ and $Y$ makes sense, since $[X, Y] = - [Y, X]$.) A symmetric connection is also called \textit{torsion free}, which corresponds to the vector fields along any curve not being "twisted" when they are parallel transported along the curve. By the Fundamental Theorem of Riemannian Geometry, given any Riemannian manifold $(M,g)$, there exists a unique connection, $\nabla$, on $M$ that is symmetric and compatible with $M$. This connection is called the Riemannian connection or the Levi-Civita connection, and geodesics with respect to this connection are called Riemannian geodesics. Since this choice of connection is unique, geodesics in a Riemannian manifold will always mean Riemannian geodesics. Such geodesics can be used to define the exponential map, $\exp: \; TM \rightarrow M$.  
+A symmetric connection is also called \textit{torsion free}, which corresponds to the vector fields along any curve not being "twisted" when they are parallel transported along the curve. By the Fundamental Theorem of Riemannian Geometry, given any Riemannian manifold $(M,g)$, there exists a unique connection, $\nabla$, on $M$ that is symmetric and compatible with $M$. This connection is called the Riemannian connection or the Levi-Civita connection, and geodesics with respect to this connection are called Riemannian geodesics. Since this choice of connection is unique, geodesics in a Riemannian manifold will always mean Riemannian geodesics. Such geodesics can be used to define the exponential map, $\exp: \; TM \rightarrow M$.  
 
 \begin{definition}
 Given a point $p$ in a Riemannian manifold, $M$, and a vector $v \in T_p M$, the \textit{exponential map} is defined by $\exp_p (v) = \gamma_v(1)$ where $\gamma_v$ is the unique geodesic with $\gamma_v(0) = p$ and $\dot{\gamma}_v(0) = v$.
@@ -120,7 +120,7 @@ Since this identity depends on the Levi-Civita connection, it holds for all mani
 \begin{align*}
 R(X,Y)Z =  \nabla_Y \nabla_X Z - \nabla_X \nabla_Y Z - \nabla_{[X,Y]} Z,
 \end{align*}
-which is identically zero for flat manifolds. The curvature transformation can then be used to determine the curvature of a vector field by defining the \textit{curvature tensor};
+which is identically zero for flat manifolds. The curvature transformation can then be used to determine the curvature of a vector field by defining the \textit{curvature tensor}.
 
 \begin{definition}
 The curvature on a Riemannian manifold, $(M, g)$ is

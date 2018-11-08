@@ -6,13 +6,13 @@ A 2-dimensional shape can be thought of as a closed (smooth) curve in $\R^2$. Th
 A shape in $\R^2$ can either be thought of as a parametrized object, e.g., as a function $\S^1 \ni \theta \mapsto c(\theta) \in \R^2$; but it can also be thought of as an unparametrized object, e.g., the \textit{image} of such a function $\text{Im}(c) \subset \R^2$ (as illustrated in Figure~\ref{fig:circle-mapping}). We impose some smoothness structure on the curves and define the spaces we want to consider formally as
 \begin{align*}
   \I & := \I(\S^1, \R^2)
-       :=  \left\{ q\colon \S^1 \rightarrow \R^2 \mid q \text{ is an immersion} \right\} \\
-     & \quad \quad = \left\{q\colon \S^1 \rightarrow \R^2 \mid q_{\theta} \not = 0 \right\} \text{ \hl{correct?}}, \\
+       :=  \left\{ c\colon \S^1 \rightarrow \R^2 \mid c \text{ is an immersion} \right\} \\
+     & \quad \quad = \left\{c\colon \S^1 \rightarrow \R^2 \mid \forall \theta \in S^1: \, c_{\theta} \not = 0 \right\}, \\
   \mathcal{I}
      & := \mathcal{I}(\S^1, \R^2)  := \I(\S^1, \R^2)/\mathrm{Diff}(\S^1).
 \end{align*}
-$\I$ is the space of \textit{immersion} of the unit circle into $\R^2$, and $\mathcal{I}$ is then this space modulo reparametrization, i.e., we identify two object $q,p \in \I$ in $\mathcal{I}$ if $q=p \circ \phi$, where $\phi \in \mathrm{Diff}(\S^1)$ is a diffeomorphism on the unit circle.
-\footnote{Actually, to make the construction work, we need to restrict the space of immersion to the set of all \textit{free} immersion. This is a minor technical detail so we skip these concerns for now. We mention them briefly again in Section~\ref{sec:hlcomp-this-form}.}
+$\I$ is the space of \textit{immersion} of the unit circle into $\R^2$, and $\mathcal{I}$ is then this space modulo reparametrization, i.e., we identify two objects $a,b \in \I$ in $\mathcal{I}$ if $a=b \circ \phi$, where $\phi \in \mathrm{Diff}(\S^1)$ is a diffeomorphism on the unit circle.
+\footnote{Actually, to make the construction work, we need to restrict the space of immersions to the set of all \textit{free} immersions. This is a minor technical detail so we skip these concerns for now. We mention them briefly again in Section~\ref{sec:hlcomp-this-form}.}
 
 When our interest is upon the \textit{shape}, we are not really interested in the underlying parametrization of this shape, and so we are mostly interested in the space $\mathcal{I}$. However, it is easiest to construct a manifold structure on $\I$ and then deduce one on $\mathcal{I}$, so we start by considering the parametrized space of immersions.
 
@@ -28,7 +28,7 @@ When our interest is upon the \textit{shape}, we are not really interested in th
 
 The first structure we want to impose on our manifold of curves is tangent spaces and tangent vectors to our elements in the space.
 
-For ordinary finite dimensional manifolds $M$ \hl{we have so far worked with} the definition of tangents vectors as \textit{derivatives}. This is a rather abstract construction, which, however, turns out to be nice to work with. Fortunalety, we know that this definition corresponds to the more geometrically intuitive definition of tangent vectors at a point $m \in M$ as derivatives of paths going through $m$. We shall use this a motivation for our definition of tangent vectors to points in $\I$.
+For ordinary finite dimensional manifolds $M$ we have worked with so far, tangent vectors are defined as \textit{derivatives}. This is a rather abstract construction, which, however, turns out to be nice to work with. Fortunalety, we know that this definition corresponds to the more geometrically intuitive definition of tangent vectors at a point $m \in M$ as derivatives of paths going through $m$. We shall use this as motivation for our definition of tangent vectors to points in $\I$.
 
 Consider a point $c\in \I$ and a path in $\I$ defined around $0$ that goes through the point $c$. This path is a map
 \begin{equation}
@@ -36,7 +36,7 @@ Consider a point $c\in \I$ and a path in $\I$ defined around $0$ that goes throu
   [-\epsilon, \epsilon] \ni t \mapsto  q(t, \blank) :=  (\theta\mapsto q(t, \theta)) \in \I,
   \quad q(0,\theta) = c(\theta),
 \end{equation}
-i.e., for each $t$ we get a parametrized curve, and at 0 we get the curve $c$. We can also think of this a (smooth) map
+i.e., for each $t$ we get a parametrized curve, and at 0 we get the curve $c$. We can also think of this as a (smooth) map
 \begin{equation*}
   [-\epsilon, \epsilon] \times \S^1  \ni (t, \theta) \mapsto q(t, \theta) \in \R^2.
 \end{equation*}
@@ -44,7 +44,7 @@ As in the finite dimensional case we can now take the \textit{time derivate} of 
 
 \begin{definition}
   \label{def:tangt-space-of-curves}
-  The tangent space $T_{c}\I$ to an element $c \in \I$ consists of all function
+  The tangent space $T_{c}\I$ to an element $c \in \I$ consists of all functions
   $h\colon \S^1 \rightarrow \R^2$ such that
   \begin{equation*}
     h(\theta) = q_t(0, \theta) := \frac{\partial }{\partial t} \bigg\vert_{t=0} q(t,\theta),
@@ -68,9 +68,7 @@ By this definition, we can essentially think of tangent vectors in $\I$ as vecto
   \label{fig:def-tang-imm}
 \end{figure}
 
-We want to make our space of curves into a Riemmanian manifold so the next step is to impose a metric
-\hl{[why do we/others call it a metric -- shouldn't it be an inner product?]}
-on the tangent spaces. Because the tangent spaces are function spaces, the most obvious metric to use is some version of the $\mathrm{L}^2$ metric.
+We want to make our space of curves into a Riemmanian manifold so the next step is to impose a metric on the manifold via an inner product on the tangent spaces. Because the tangent spaces are function spaces, the most obvious metric to use is some version of the $\mathrm{L}^2$ metric.
 
 \begin{definition}
   The \textit{$\mathrm{G}$ metric} or \textit{$\mathrm{G}_c$ metric} at the point $c \in \I$ is defined as
@@ -97,7 +95,7 @@ Adding the parameter derivative $c_{\theta}$ makes the metric invariant to repar
     \right)^{\frac{1}{2}}
     \diff t.
   \end{equation*}
-  The \textit{geodesic distance} \hl{[geodesic?]} between to curves $b,c \in \I$ (with respect to the $\mathrm{G}$ metric) is
+  The \textit{geodesic} (or shortest) distance between two curves $b,c \in \I$ (with respect to the $\mathrm{G}$ metric) is
   \begin{equation*}
     D(b,c) := \inf_{q \in \mathcal{Q}} L(q),
   \end{equation*}
@@ -108,9 +106,9 @@ Adding the parameter derivative $c_{\theta}$ makes the metric invariant to repar
 \subsection{The manifold of unparametrized curves -- $\mathcal{I}(\S^1, \R^2)$}
 \label{sec:manif-unpar-curv}
 
-Using the setup from the previous section, we now define a manifold structure on $\mathcal{I}$. As it is easiest to represent element of this space with element from $\I$, we are particularly interested in how to calculate the length of a path in $\mathcal{I}$ directly from a parametrized representative of this path in $\I$. For a parametrized curve $c \in \I$ we write $\pi(c) := \mathrm{Im}(c)\in \mathcal{I}$ for the projection onto the quotient space, and we refer to $c\in\I$ as a \textit{(parametrized) representative} for $\pi(c) \in \mathcal{I}$. Similarly for a path $q = q(t, \blank) \in \I$ we construct the projection $\pi(q) = \pi(q(t,\blank)) \in \mathcal{I}$ and refer to $q$ as a representative for $\pi(q)$.
+Using the setup from the previous section, we now define a manifold structure on $\mathcal{I}$. As it is easiest to represent elements of this space with elements from $\I$, we are particularly interested in how to calculate the length of a path in $\mathcal{I}$ directly from a parametrized representative of this path in $\I$. For a parametrized curve $c \in \I$ we write $\pi(c) := \mathrm{Im}(c)\in \mathcal{I}$ for the projection onto the quotient space, and we refer to $c\in\I$ as a \textit{(parametrized) representative} for $\pi(c) \in \mathcal{I}$. Similarly for a path $q = q(t, \blank) \in \I$ we construct the projection $\pi(q) = \pi(q(t,\blank)) \in \mathcal{I}$ and refer to $q$ as a representative for $\pi(q)$.
 
-First of all we need to know how the tangent vectors of the quotient space $\mathcal{I}$ look like. We cannot directly use the same approach as in the previous subsection, because our definition of tangent vector would then be
+First of all we need to know how the tangent vectors of the quotient space $\mathcal{I}$ look like. We cannot directly use the same approach as in the previous subsection, because our definition of tangent vectors would then be
 sensitive to reparametrizations: Consider a time-dependent
 reparametrization $\phi(t,\theta)$, or, equivalently, a path $t \mapsto \phi(t,
 \blank)$ in $\text{Diff}(\S^1)$; then the two paths $t \mapsto
@@ -118,7 +116,7 @@ reparametrization $\phi(t,\theta)$, or, equivalently, a path $t \mapsto \phi(t,
 identical in $\mathcal{I}$ but give rise to two different vector fields.
 
 To make better sense of the tangents vectors of the quotient space, we
-use the following result.
+use the following result, with $q \circ \phi$ meaning $q(t,\phi(t,\theta))$ to ease notation.
 
 \begin{proposition}
   \label{prop:horizontal-path}
@@ -140,7 +138,7 @@ use the following result.
 \end{proposition}
 
 \begin{proof}
-  \hl{todo or ref.}
+  See section $2.5$ of \cite{michor2003riemannian} 
 \end{proof}
 
 \begin{remark}
@@ -169,15 +167,13 @@ a consistent way:
 
 \begin{definition}
   \label{def:tang-quotient}
-  A \textit{tangent vector} $h$ to an element $\pi(c) \in \mathcal{I}$ is defined as a vector fields obtained from some path $(-\epsilon, \epsilon) \ni t \mapsto q(t, \blank) \in \I$, with $q(0,\blank) = c$, by
+  A \textit{tangent vector} $h$ to an element $\pi(c) \in \mathcal{I}$ is defined as a vector field obtained from some path $(-\epsilon, \epsilon) \ni t \mapsto q(t, \blank) \in \I$, with $q(0,\blank) = c$, by
   \begin{equation}
     \label{eq:tang-quotient}
     h(\theta) = \frac{\partial }{\partial t} \bigg\vert_{t=0} \tilde{q}(t,\theta)
     = \frac{\partial }{\partial t} \bigg\vert_{t=0} q(t, \phi(t,\theta)),
   \end{equation}
   with $\tilde{q}$ and $\phi$ given in accordance with remark~\ref{remark:ortho-decom}.
-
-  \hl{[NB: Does this actually solve the problem about define the ubiquity in defining tangent vectors? Not clear that applying $\phi$ to a reparametrization of $q$ will yield the same result? However, it shows that we can always think of are path as moving orthonormally; but maybe we should compine this definition with the proposition below?]}
 \end{definition}
 
 First we note that this gives us the following visualization of the tangents spaces of $B$.
@@ -219,7 +215,7 @@ As the length of a path in $\mathcal{I}$ is our primary concern, we skip straigh
 
 \begin{proposition}
   \label{prop:length-quotient}
-    $\mathcal{L}$ is well-defined, and for any representative $t \mapsto q(t, \blank) \in \I $ of the path $t \mapsto \tilde{q}(t) \in B$ the length can be calculated as
+    $\mathcal{L}$ is well-defined, and for any representative $t \mapsto q(t, \blank) \in \I $ of the path $t \mapsto \tilde{q}(t) \in \mathcal{I}$ the length can be calculated as
     \begin{equation}
       \label{eq:length-quotient}
     \mathcal{L}(\tilde{q}) = \int_{0}^{1}
@@ -230,7 +226,7 @@ As the length of a path in $\mathcal{I}$ is our primary concern, we skip straigh
 \end{proposition}
 
 \begin{proof}
-  For ease of notation, write $q \circ \phi$ to mean $q(t, \phi(t,\theta))$ and so on during this proof.
+  Again, to ease notation we write $q \circ \phi$ to mean $q(t, \phi(t,\theta))$ and so on during this proof.
   First, we shows that \eqref{eq:length-quotient} implies that $\mathcal{L}$ is well-defined; so assume \eqref{eq:length-quotient} holds and let $q(t,\blank)$ and $p(t, \blank)$ be two different representatives for $\tilde{q}(t)$. This means that we must have a reparametrization $\psi(t,\theta)$ such that
   \begin{equation*}
     p(t, \psi(t,\theta)) = q(t, \theta).
@@ -348,7 +344,7 @@ As the length of a path in $\mathcal{I}$ is our primary concern, we skip straigh
 from which \eqref{eq:length-quotient} follows immediately by definition.
 \end{proof}
 
-The above result shows that our definition of the length of a path in the shape space $\I$ is meaningful -- at least at first sight. Because, \hl{as mentioned,} it turns out that this metric vanishes on all of $\mathcal{I}$.
+The above result shows that our definition of the length of a path in the shape space $\I$ is meaningful -- at least at first sight. However, it turns out that this metric vanishes on all of $\mathcal{I}$.
 The result above is still very important, because the formula for directly calculating the length of a path from some parametrized representation of it is essential in showing how the $\mathcal{L}^2$-metric breaks down, as we will see in Section~\ref{sec:l2-metric-vanishes} below.
 
 \subsection{Some notes about a more formal approach}
@@ -356,11 +352,11 @@ The result above is still very important, because the formula for directly calcu
 
 Before moving on, we pause to make a few comparisons with our approach above in constructing the shape space $\mathcal{I}$ and a more formal one based on some general results of infinite-dimensional manifolds and the diffeomorphism group.
 
-What characterises a finite-dimensional manifold is that it can locally be mapped \hl{homeomorphically} to $\R^n$. As every finite-dimensional vector space is isomorphic to $\R^n$, this is the obvious space to use as a model space. For infinite-dimensional vector spaces there is no longer any ``obvious'' space to use as a local model for a manifold; we can use, e.g., Banach spaces, Hilbert spaces or Fr\'echet as model spaces, depending on how much structure is needed. In our case, it holds that the space $\I$ is a Fr\'echet manifold. This is Theorem 3.1 of \cite{bauer2014overview}, the proof of which essentially follows by showing that $\I$ is open in $C^{\infty}(\S^1, \R^2)$ and using some general result from \cite{kriegl1997convenient}. Our Definition~\ref{def:tangt-space-of-curves} is then no longer a definition but follows directly from the manifold construction \hl{(right?)}.
+What characterises a finite-dimensional manifold is that it can locally be mapped homeomorphically to $\R^n$. As every finite-dimensional vector space is isomorphic to $\R^n$, this is the obvious space to use as a model space. For infinite-dimensional vector spaces there is no longer any ``obvious'' space to use as a local model for a manifold; we can use, e.g., Banach, Hilbert, or Fr\'echet spaces as model spaces, depending on how much structure is needed. In our case, it holds that the space $\I$ is a Fr\'echet manifold. This is Theorem 3.1 of \cite{bauer2014overview}, the proof of which essentially follows by showing that $\I$ is open in $C^{\infty}(\S^1, \R^2)$ and using some general result from \cite{kriegl1997convenient}. Our Definition~\ref{def:tangt-space-of-curves} is then no longer a definition but follows directly from the manifold construction.
 
-Some more work is then needed to construct the quotient space $\mathcal{I}$ which is undertaking in, e.g., \cite{michor2003riemannian} and \cite{cervera1991action}. For example, if we simply use the whole space of immersions, modding out with the diffeomorphism group will not give us a manifold. We need instead to consider only \textit{free} immersion, which are immersions $q$ such that $q \circ \phi = q$ for $\phi \in \mathrm{Diff}(\S^1)$ implies that $\phi = \mathrm{Id}$. Using this, we then get that the quotient space is a manifold (see, e.g., section 2.4 in \cite{michor2003riemannian}).
+Some more work is then needed to construct the quotient space $\mathcal{I}$ which is undertaken in, e.g., \cite{michor2003riemannian} and \cite{cervera1991action}. For example, if we simply use the whole space of immersions, modding out with the diffeomorphism group will not give us a manifold. We need instead to consider only \textit{free} immersion, which are immersions $q$ such that $q \circ \phi = q$ for $\phi \in \mathrm{Diff}(\S^1)$ implies that $\phi = \mathrm{Id}$. Using this, we then get that the quotient space is a manifold (see, e.g., section 2.4 in \cite{michor2003riemannian}).
 
-Eventhough we know that the quotient space turns out to be a manifold as well it is not obvious that is has the geometric structure as described by our Definition~\ref{def:tang-quotient} and Proposition~\ref{prop:tangent-space-orthogonal}. Fortunately, this holds: For example, section 2.4 in \cite{michor2003riemannian} (which is again based on the general setting of \cite{kriegl1997convenient}) shows that the tangent spaces really do consist of orthogonal vector fields along the shape \hl{[I think]}, and then they can use the general results about the structure of the quotient space to derive our Proposition~\ref{prop:length-quotient} (in particular, this is done on pages 14-15 in \cite{michor2003riemannian}).
+Even though we know that the quotient space turns out to be a manifold as well it is not obvious that is has the geometric structure as described by our Definition~\ref{def:tang-quotient} and Proposition~\ref{prop:tangent-space-orthogonal}. Fortunately, this holds: For example, section 2.4 in \cite{michor2003riemannian} (which is again based on the general setting of \cite{kriegl1997convenient}) shows that the tangent spaces really do consist of orthogonal vector fields along the shape, and general results about the structure of the quotient space are used to derive our Proposition~\ref{prop:length-quotient} (in particular, this is done on pages 14-15 in \cite{michor2003riemannian}).
 
 Thus, in conclusion, the formal approach agrees with the results obtained through our exposition; of course, with the more formal approach, some properties can be proven instead of defined, which is arguable more satisfactory.
 

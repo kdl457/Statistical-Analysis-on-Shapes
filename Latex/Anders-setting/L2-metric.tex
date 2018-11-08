@@ -10,7 +10,7 @@ In the previous section we went through some work to construct a measure of leng
 
 It can seem weird to go through so much trouble to define a useless distance. But firstly, the construction illustrates some of the difficulties in defining a reasonable notion on length on $\mathcal{I}$; secondly, and more importantly, the fact that the distance vanishes is a quite surprising result, which depends crucially on the formula for the length of a path given in Proposition~\ref{prop:length-quotient}. This gives us some justification for the somewhat unfruitful work of defining the L$^2$-metric.
 
-The ``proof'' below is mostly heuristic, and we only consider the very simply case of a path transforming the circle into a larger circle, but this captures the main idea.
+The ``proof'' below is mostly heuristic, and we only consider the very simple case of a path transforming the circle into a larger circle, but this captures the main idea.
 \begin{theorem}
   \label{theorem:l2-metric-vanishes}
   For all $\mathrm{a},\mathrm{b} \in \mathcal{I}$
@@ -35,7 +35,7 @@ The ``proof'' below is mostly heuristic, and we only consider the very simply ca
   It turns out that when we increase the number of teeth of the zigzag path, the length of the path decreases in $\mathcal{I}$.
   The idea of such a zigzag path is illustrated in figure~\ref{fig:zigzag-path}.
 
-  To see why this  phenomenon happens, first rewrite the \eqref{eq:length-quotient} from Proposition~\ref{prop:length-quotient} as
+  To see why this  phenomenon happens, first rewrite \eqref{eq:length-quotient} from Proposition~\ref{prop:length-quotient} as
   \begin{align*}
     \mathcal{L}(q) &
                      = \int_{0}^{1}
@@ -69,7 +69,6 @@ The ``proof'' below is mostly heuristic, and we only consider the very simply ca
     2n \approx \tan(\alpha).
   \end{equation}
   Note that this does not depend on $\theta$ nor $t$.
-  \hl{[Maybe not completely obvious that this holds.]}
   See figure~\ref{fig:angle-arg} for a visual justification of this.
   \begin{figure}[h]
     \centering
@@ -122,8 +121,8 @@ The ``proof'' below is mostly heuristic, and we only consider the very simply ca
   \label{fig:zigzag-path-angle}
 \end{figure}
 
-As an example, we take the simply case where we expand the circle $e^{i\pi\theta}$ to
-$2e^{i\pi\theta}$. The zigzag path in then concretely given as
+As an example, we take the simple case where we expand the circle $e^{i\pi\theta}$ to
+$2e^{i\pi\theta}$. The zigzag path is then concretely given as
 \begin{equation*}
   \phi(t,\theta) = e^{i\pi\theta}
   \sum_{k=0}^{n-1}
