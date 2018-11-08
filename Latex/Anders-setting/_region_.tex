@@ -1,3 +1,10 @@
+\message{ !name(mainfile.tex)}\documentclass[a4,danish]{article}
+\input{preamble}
+\input{frontpage}
+
+\begin{document}
+
+\message{ !name(statistical_concepts_on_shape_space.tex) !offset(-7) }
 \section{Statistical concepts on shape space}
 \label{sec:statistical_concepts_on_shape_space}
 
@@ -7,7 +14,7 @@ For example, the prime example of a infinite-dimensional shape space is a functi
 
 Secondly, all results regarding existence and uniqueness of mean points have relied on either a global assumption or local assumptions on the Riemannian curvature of the manifold. The behaviour of the curvature of our shape space is not at all well understood, especially since the choice of metric is non-trivial to begin with. One might think that the curvature of $\mathcal{I}$ equipped with the $L^2$-metric is the least difficult to examine, but since the distance function induced by this metric is vanishing, the resulting variance, $\sigma^2_X(y)$ would be $0$ for all random variables $X$ and shapes $y$ (if it is even possible to generalize the variance-formulas in section \ref{sec:mean_and_variance} to the infinite dimensional case.). Thus every point would be a mean point of $X$ which is not a very informative statement.
 
-To make the difficulties stand out explicitly, we write our Definition~\ref{sec:mean_and_variance} when naively replacing the finite-dimensional manifold $M$ with our shape space $\I$ and using an almost local metric. Then we have that $y$ is be some fixed shape and $X$ is a random shape (still not defined):
+To make the difficulties stand out explicitly, we write our Definition~\ref{sec:mean_and_variance} when naively replacing the finite-dimensional manifold $M$ with our shape space $\mathcal{I}$ and using an almost local metric. Then we have that $y$ is be some fixed shape and $X$ is a random shape (still not defined):
 \begin{align*}
   \sigma^2_X(y) &  = \int_{\I}
                   \inf_{\stackrel{c \in \mathcal{C}}{c(0,\blank)=y, c(1,\blank)=z}}
@@ -19,9 +26,7 @@ To make the difficulties stand out explicitly, we write our Definition~\ref{sec:
   %                 \int_{\S^1} \Phi(\mathrm{Vol}(c(t,\blank),H_{c(t,\blank)},K_{c(t,\blank)}),
   %                 \overline{g}(c_t,c_t) |c_{\theta}| \diff \theta
   %                 \diff z \\
-  .
 \end{align*}
-First of all it is not clear that this integral over a function space is well-defined.
 
 
 %%% Local Variables:
@@ -29,3 +34,7 @@ First of all it is not clear that this integral over a function space is well-de
 %%% TeX-master: "mainfile"
 %%% reftex-default-bibliography: ("litteratur.bib")
 %%% End:
+
+\message{ !name(mainfile.tex) !offset(-5) }
+
+\end{document}

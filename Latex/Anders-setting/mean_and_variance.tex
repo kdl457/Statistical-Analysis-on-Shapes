@@ -7,18 +7,19 @@ In order to perform statistics on $M$ we need to construct a measure on $M$. Thi
 P(X \in \mathcal{A}) = \int_{\mathcal{A}} p_X(y) d M(y),
 \end{align*}
 holds for all $\mathcal{A} \in \mathcal{B}(M)$ and if the integral over $M$ is equal to $1$. Here
-$p_X$ is a density in the usual sense; a real-valued, positive and integrable function. If $\pi$ is a chart of the manifold, then $r := \pi(X(\omega))$ defines a random vector with density, $\rho_r$, w.r.t to the Lebesgue measure given by 
+$p_X$ is a density in the usual sense; a real-valued, positive and integrable function. If $\pi$ is a chart of the manifold, then $r := \pi(X(\omega))$ defines a random vector with density, $\rho_r$, w.r.t to the Lebesgue measure given by
 \begin{align*}
-\rho_r (y) = p_X \left(\pi^{-1}(y))\right) \sqrt{\left| \det G\left(\pi^{-1}(y)\right) \right|}. 
+\rho_r (y) = p_X \left(\pi^{-1}(y))\right) \sqrt{\left| \det G\left(\pi^{-1}(y)\right) \right|}.
 \end{align*}
 
 If $\phi: \, M \rightarrow \R$ is a $\mathcal{B}(M)/ \mathcal{B}(\R)$-measurable map, then $\phi(X)$ defines a real-valued random variable for which the expection is
 \begin{align*}
 \mathbb{E} (\phi(X)) = \int_M \phi(y) p_X(y) d M(y).
 \end{align*}
-Unfortunately, we cannot define the expectation of $M$-valued random variables in a similar manner, since the real-valued integral does not generalize to an integral with values on $M$. Instead we generalize the notion of mean value by first defining the variance of a $M$-valued random variable and then defining the so-called \textit{Frechet means} as minimizers of the variance (this is just one possible way of generalizing mean points). 
+Unfortunately, we cannot define the expectation of $M$-valued random variables in a similar manner, since the real-valued integral does not generalize to an integral with values on $M$. Instead we generalize the notion of mean value by first defining the variance of a $M$-valued random variable and then defining the so-called \textit{Frechet means} as minimizers of the variance (this is just one possible way of generalizing mean points).
 
 \begin{definition}
+  \label{def:variance}
 Let $X$ be a $M$-valued random variable with density $p_X$. Given a point $y \in M$, the \textit{variance} of $X$ is
 \begin{align*}
 \sigma^2_X (y) = \mathbb{E} ( \text{D} (y,X)^2 ) = \int_M \text{D} (y,z) p_X(z) dM(z).
@@ -36,7 +37,7 @@ If a mean point $\bar{x}$ exists, the variance of $X$ is defined by $\sigma^2 (X
 \end{definition}
 
 \begin{note}
-Given a series of measurements $x_1, \ldots , x_n$ seen as realizations of $X$, we define the empirical mean points of $X$ to be the minimizers of 
+Given a series of measurements $x_1, \ldots , x_n$ seen as realizations of $X$, we define the empirical mean points of $X$ to be the minimizers of
 \begin{align*}
 \frac{1}{n} \sum_{i = 1}^n \text{dist}(y, x_i)^2,
 \end{align*}
@@ -59,15 +60,15 @@ Let $\mathcal{A}$ be the set of points for which the cut locus has non-zero prob
 Since the Riemannian centers of mass are local minimizers of the variance, the set of mean points is included in the set of centers of mass. If there is only one Riemannian center of mass it therefore follows that it must be the unique mean point. The following corollary gives uniqueness of centers of mass not in $\mathcal{A}$ for a class of manifolds (Hadamard manifolds).
 
 \begin{corollary}
-Let $M$ be a simply connected, complete manifold with non-positive Riemannian curvature, and let $X$ be a random variable with values in $M$ and finite variance. Then there exists one and only one Riemannian center of mass characterized by $\mathbb{E}(\overrightarrow{\bar{x}x}) = 0$. If the cut locus has measure zero everywhere, then this point $\bar{x}$ must be a mean point. 
+Let $M$ be a simply connected, complete manifold with non-positive Riemannian curvature, and let $X$ be a random variable with values in $M$ and finite variance. Then there exists one and only one Riemannian center of mass characterized by $\mathbb{E}(\overrightarrow{\bar{x}x}) = 0$. If the cut locus has measure zero everywhere, then this point $\bar{x}$ must be a mean point.
 \end{corollary}
-If we want to assert uniqueness for a larger class of manifolds, we have to make assumptions not only on the curvature of the manifold but on the support of the densities. Compact support of the densities is actually not sufficient - the support of the densities have to be contained in a \textit{regular geodesic ball}. 
+If we want to assert uniqueness for a larger class of manifolds, we have to make assumptions not only on the curvature of the manifold but on the support of the densities. Compact support of the densities is actually not sufficient - the support of the densities have to be contained in a \textit{regular geodesic ball}.
 
 \begin{definition}
 A ball, $B(x,r) = \left\{ y \in M \, | \, \text{dist}(x,y) < r  \right\}$, is geodesic if $B(x,r) \cap C(x) = \emptyset$ and it is regular if $2r \sqrt{\kappa} < \pi$ where $\kappa$ is the maximum of the Riemannian curvature in $B(x,r)$.
 \end{definition}
 
-Note that the assumption on the curvature of $M$ is no longer global but local. We have thus replaced the global assumption on the curvature with a local one, but have now restricted ourselves to densities with compact support on locally well-behaved parts of the manifold. Under these assumptions the following results hold (\cite{kendall1990probability}, \cite{karcher1977center}), where the case of $\bar{x} \in A$ is not possible since the balls, on which the densities have support, are geodesic. 
+Note that the assumption on the curvature of $M$ is no longer global but local. We have thus replaced the global assumption on the curvature with a local one, but have now restricted ourselves to densities with compact support on locally well-behaved parts of the manifold. Under these assumptions the following results hold (\cite{kendall1990probability}, \cite{karcher1977center}), where the case of $\bar{x} \in A$ is not possible since the balls, on which the densities have support, are geodesic.
 
 \begin{theorem}
 Let $X$ be a $M$-valued random variable with density $p_X$. If the support of $p_X$ is contained in a regular geodesic ball, then there exists one unique Riemannian center of mass on this ball.
@@ -78,6 +79,6 @@ Let $X$ be a $M$-valued random variable with density $p_X$. If the support of $p
 \end{theorem}
 The preceeding corollary and two theorems yield uniqueness and existence statements of mean points for specific cases. One can then wonder if it is possible to relax the global curvature assumption in the corollary or the assumptions on the well-behaviour of the curvature in the domain of the support of the density. As shown in \cite{kendall1992propeller} some assumptions on the curvature is needed even if there is a unique minimizing geodesic joining any two points.
 
-With the introduction of statistical concepts on manifolds in mind we now turn to defining manifolds of curves and equipping these with suitable metrics. These manifolds are infinite-dimensional so the methods introduced in this section cannot be directly applied. Nonetheless we aim to define length of paths in these manifolds which is the first step in trying to perform statistics on the space of shapes. 
+With the introduction of statistical concepts on manifolds in mind we now turn to defining manifolds of curves and equipping these with suitable metrics. These manifolds are infinite-dimensional so the methods introduced in this section cannot be directly applied. Nonetheless we aim to define length of paths in these manifolds which is the first step in trying to perform statistics on the space of shapes.
 
 
