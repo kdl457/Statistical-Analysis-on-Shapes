@@ -18,7 +18,7 @@ Vol$(f)$ is a non-local property of $f$, and thus the metrics are not only depen
 \begin{remark}
 Both curvatures and the volume form of a shape in $\R^2$ take on a particular nice form, but expressions can also be found for the general case where $f \in  B_e(M, \R^n)$ with $M$ a compact orientable $n-1$ dimensional manifold. This is done by using the Levi-Civita connections of the Riemannian manifolds $(\R^n,\bar{g})$ and $(M,G^\Phi)$ to construct the Weingarten mapping (see sections $3.4$ and $3.9$ of \cite{bauer2010almost}).   
 \end{remark}
-Note that if $\Phi$ depends only on $f$ through Vol$(f)$ then $G_f^\Phi (h,k)$ is equal to the L$^2$-metric (up to a constant) (\hl{is this obvious from our definition of the L$^2$ metric ?}). But if $\Phi$ actually depends on either curvature and the total volume, then point-separation is achieved under certain conditions imposed on $\Phi$;
+Note that if $\Phi$ depends only on $f$ through Vol$(f)$ then $G_f^\Phi (h,k)$ is equal to the L$^2$-metric (up to a constant). But if $\Phi$ actually depends on either curvature and the total volume, then point-separation is achieved under certain conditions imposed on $\Phi$;
 
 \begin{theorem}\label{point_sep}
 If $\Phi(\text{Vol} \, (f), H_f, K_f) = 1 + A H_f^2$ for some $A > 0$, then $G_f^\Phi$ induces a point-separating metric on $B_e(S^1, \R^2)$.
@@ -48,8 +48,15 @@ where the first factor is the curve length of $c(t_0, \cdot)$ to the power of $-
 \begin{align*}
 \int_0^1 \int_{S^1} \left| c_t(t, \theta) \right| \left| c_\theta(t, \theta) \right| d \theta dt = \int_0^1 \int_{S^1} \left| \det (d c(t, \theta) \right| d \theta dt,
 \end{align*}
-which is the area in $\R^2$ swept out by the path $c$ (\hl{make a figure}). We note that if the shape is not trivially a point in $\R^2$ (such that the length at time $t_0$ is $0$) and if the path is not trivial (such that $c(0, \cdot) = c(1, \cdot)$), then this lower bound is strictly positive. Thus any path from two distinct shapes have length greater than $0$, such that the metric induces a point-separating distance function. 
+which is the area in $\R^2$ swept out by the path $c$ (see Figure \ref{fig:area-swep}). We note that if the shape is not trivially a point in $\R^2$ (such that the length at time $t_0$ is $0$) and if the path is not trivial (such that $c(0, \cdot) = c(1, \cdot)$), then this lower bound is strictly positive. Thus any path from two distinct shapes have length greater than $0$, such that the metric induces a point-separating distance function. 
 \end{proof}
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[scale = 1]{deform_circle.pdf}
+  \caption{Illustration of the area swept out by a path $c$ in $\mathcal{I}$ with $c(0) = S^1$.}
+  \label{fig:area-swep}
+\end{figure}
 
 No matter the choice of $\Phi$, an almost local metric is never point-separating on Imm$(S^1, \R^2)$ - the shape space without quotienting out reparametrizations. To see this let $f \in$ Imm$(S^1, \R^2)$ and take $\tilde{f}$ to be in the orbit of $f$ of the Diff$(S^1)$ action - i.e. $\tilde{f} = \phi \circ f$ for some $\phi \in$ Diff$(S^1)$. Since $\Phi$ is equivariant w.r.t. the action of Diff$(S^1)$, 
 \begin{align*}

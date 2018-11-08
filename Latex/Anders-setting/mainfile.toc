@@ -9,4 +9,4 @@
 \contentsline {subsection}{\numberline {3.3}Some notes about a more formal approach}{19}
 \contentsline {subsection}{\numberline {3.4}The L2 metric vanishes}{20}
 \contentsline {section}{\numberline {4}Almost local metrics}{24}
-\contentsline {section}{\numberline {5}Statistical concepts on shape space}{27}
+\contentsline {section}{\numberline {5}Statistical concepts on shape space}{28}
