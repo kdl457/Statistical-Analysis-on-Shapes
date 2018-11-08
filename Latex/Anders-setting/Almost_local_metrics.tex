@@ -60,15 +60,16 @@ G_{\tilde{f}}^\Phi (h,k) = \int_{S^1} \Phi(\tilde{f}) \bar{g}(h,k) \text{vol}(f^
 \end{align*}
 so if one chooses suitable diffeomorphisms $\phi$ then $\Phi(f)$ is a constant element of $C^\infty(S^1, \R_{> 0})$. The length of a path from $f$ to $\tilde{f}$ in the orbit of $f$ is then bounded by
 \begin{align*}
-\mathrm{L}_{G^\Phi}(q) & = \int_0^1 \int_{S^1} \Phi(f) \circ \phi \bar{g}(h,k) \text{vol}(f^* \bar{g}) dt \\ 
+\mathrm{L}_{G^\Phi}(q) & = \int_0^1 \int_{S^1} \Phi(f) \circ \phi \bar{g}(h,k) \text{vol}(f^* \bar{g}) dt \\
 & = \int_0^1 \left( \int_{S^1} \Phi(f) \circ \phi \vert q_t(t, \theta) \vert ^2 \vert q_\theta(t, \theta) \vert d \theta d \theta \right) ^{\frac{1}{2}} dt \\
-& \leq \max_{\theta \in S^1} \Phi(f) \int_0^1 \left( \int_{S^1} \vert q_t(t, \theta) \vert ^2 \vert q_\theta(t, \theta) \vert d \theta d \theta \right) ^{\frac{1}{2}} dt, 
+& \leq \max_{\theta \in S^1} \Phi(f) \int_0^1 \left( \int_{S^1} \vert q_t(t, \theta) \vert ^2 \vert q_\theta(t, \theta) \vert d \theta d \theta \right) ^{\frac{1}{2}} dt,
 \end{align*}
 which is a weighted version of the $L^2$ metric. As the geodesic distance function induced by weighted $L^2$ metrics vanishes, the almost local metric vanishes for points in Imm$(S^1, \R^2)$ which are in the same orbit of the Diff$(S^1)$-action.
 
 In general, existence and uniqueness of geodesics w.r.t. almost local metrics are not ensured and thus the length of a path in $\mathcal{I}$ cannot be determined by constructing a geodesic and computing its length (section 5.2 in \cite{bauer2014overview}). In certain cases however, the length of a path is exactly the lower bound derived in \ref{point_sep} (see theorem 3.1 in \cite{shah2007h0type}).
 
 \begin{example}
+  \label{ex:almost-local-calculate-length}
 Define an almost local metric on $\mathcal{I}$ as above with $\Phi(f) = \ell(f)$ where $\ell(f)$ is the ordinary curve length of $f$ (which implicit is a function of the curvatures of $f$). Let $f, g \in \mathcal{I}$ be shapes and let $q \, : \, [0,1] \rightarrow \mathcal{I}$ be a path from $f$ to $g$ such that $q(0) = f$ and $q(1) = g$. The length of the path $q$ is then the area swept out by $q$ in $\R^2$,
 \begin{align*}
 L_{G^\Phi}(q) = \int_{[0,1]} \int_{S^1} \left| q_t(t, \theta) \right| \left| q_\theta(t, \theta) \right| d\theta dt,

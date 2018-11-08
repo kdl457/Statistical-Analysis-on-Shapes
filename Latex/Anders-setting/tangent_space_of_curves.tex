@@ -9,12 +9,14 @@ A shape in $\R^2$ can either be thought of as a parametrized object, e.g., as a 
        :=  \left\{ c\colon \S^1 \rightarrow \R^2 \mid c \text{ is an immersion} \right\} \\
      & \quad \quad = \left\{c\colon \S^1 \rightarrow \R^2 \mid \forall \theta \in S^1: \, c_{\theta} \not = 0 \right\}, \\
   \mathcal{I}
-     & := \mathcal{I}(\S^1, \R^2)  := \I(\S^1, \R^2)/\mathrm{Diff}(\S^1).
+     & := \mathcal{I}(\S^1, \R^2)  := \I(\S^1, \R^2)/\mathrm{Diff}(\S^1),
 \end{align*}
-$\I$ is the space of \textit{immersion} of the unit circle into $\R^2$, and $\mathcal{I}$ is then this space modulo reparametrization, i.e., we identify two objects $a,b \in \I$ in $\mathcal{I}$ if $a=b \circ \phi$, where $\phi \in \mathrm{Diff}(\S^1)$ is a diffeomorphism on the unit circle.
+$\I$ is the space of \textit{immersions} of the unit circle into $\R^2$, and $\mathcal{I}$ is then this space modulo reparametrization, i.e., we identify two objects $a,b \in \I$ in $\mathcal{I}$ if $a=b \circ \phi$, where $\phi \in \mathrm{Diff}(\S^1)$ is a diffeomorphism on the unit circle.
 \footnote{Actually, to make the construction work, we need to restrict the space of immersions to the set of all \textit{free} immersions. This is a minor technical detail so we skip these concerns for now. We mention them briefly again in Section~\ref{sec:hlcomp-this-form}.}
 
 When our interest is upon the \textit{shape}, we are not really interested in the underlying parametrization of this shape, and so we are mostly interested in the space $\mathcal{I}$. However, it is easiest to construct a manifold structure on $\I$ and then deduce one on $\mathcal{I}$, so we start by considering the parametrized space of immersions.
+
+In the following we shall often consider a path of curves which we denote by $q(t,\theta)$; thus, for every fixed $t$ we have a parametrized shape $q(t, \blank)$. We denote the time and the parameter derivates as $q_t$ and $q_{\theta}$ respectively.
 
 \begin{figure}
   \centerline{\includegraphics[width=0.9\linewidth]{circle_mapping.pdf}}
@@ -138,7 +140,7 @@ use the following result, with $q \circ \phi$ meaning $q(t,\phi(t,\theta))$ to e
 \end{proposition}
 
 \begin{proof}
-  See section $2.5$ of \cite{michor2003riemannian} 
+  See section $2.5$ of \cite{michor2003riemannian}
 \end{proof}
 
 \begin{remark}

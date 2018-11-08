@@ -1,13 +1,13 @@
 \section{Concepts of Riemannian geometry}
 \label{sec:concepts_of_Riemannian_geometry}
 
-We start by introducing some important concepts of Riemannian geometry. These will be used to define ideas like distance and length on manifolds which are crucial in attempting to perform statistics on manifolds. We define geodesics which are used to define the distance between two points, and the concept of curvature, which plays an important role in existence of mean points, is introduced. In the following $p \in M$ denotes a point in a smooth manifold and $TM$ the tangent bundle of $M$ and $\mathcal{T}(M)$ denotes the space of all vector fields on $M$. For $I \subset \R$, $\gamma: \; I \rightarrow M$ is a curve in $M$, i.e. a smooth map, and we denote by $\gamma_t$ the time-derivative of the curve.    
+We start by introducing some important concepts of Riemannian geometry. These will be used to define ideas like distance and length on manifolds which are crucial in attempting to perform statistics on manifolds. We define geodesics which are used to define the distance between two points, and the concept of curvature, which plays an important role in existence of mean points, is introduced. In the following $p \in M$ denotes a point in a smooth manifold and $TM$ the tangent bundle of $M$ and $\mathcal{T}(M)$ denotes the space of all vector fields on $M$. For $I \subset \R$, $\gamma: \; I \rightarrow M$ is a curve in $M$, i.e. a smooth map, and we denote by $\gamma_t$ the time-derivative of the curve.
 
 \subsection{Connections}
 
 To consider the shortest (or geodesic) distance between two points in a manifold, geodesics need to be defined in a coordinate-invariant way such that the distance is independent of the coordinate charts. One property of geodesics in a Euclidean space, straight lines, is that they have acceleration $0$. In order to make sense of acceleration of a curve in a manifold, we need to be able to compute "differences" between tangent spaces along the curve. \textit{Connections} are exactly a way of making computations between tangent spaces possible - they allow us to differentiate vector fields along curves.
 
-Since our use of connections is to define geodesics, we define connections in the tangent bundle of a manifold (instead of defining them generally on smooth sections of vector bundles) follwing chapter $4$ of \cite{lee2006riemannian}. 
+Since our use of connections is to define geodesics, we define connections in the tangent bundle of a manifold (instead of defining them generally on smooth sections of vector bundles) following chapter $4$ of \cite{lee2006riemannian}.
 
 \begin{definition}
 A connection in $TM$ is a map
@@ -25,15 +25,15 @@ written $(X, Y) \mapsto \nabla_X Y$ satisfying (for $f$, $g \in C^\infty(M)$ and
 In accordance with connections allowing "differences" between tangent spaces, $ \nabla_X Y $ is called the $\textit{covariant derivative of Y in the direction of X}$. Note that the product rule for connections is identical to the product rule of derivations on a manifold. To use connections to derivate along curves, we need the definition of a \textit{vector field along a curve}, which is a smooth map $V: \, I \rightarrow TM$ such that $V(t) \in T_{\gamma(t)} M$ for all $t \in I$. The prime example of a vector field along a curve is its velocity, $\dot{\gamma}(t) \in T_{\gamma(t)} M$, which acts on functions, $f \in C^\infty(M)$, by
 \begin{align*}
 \dot{\gamma}(t) f = \frac{\text{d}}{\text{dt}} (f \circ \gamma)(t).
-\end{align*} 
-We denote by $\mathcal{T}(\gamma)$ all vector fields along $\gamma$. 
+\end{align*}
+We denote by $\mathcal{T}(\gamma)$ all vector fields along $\gamma$.
 To define geodesics all we now need is to define what is means to take the covariant derivative of $V \in \mathcal{T}(\gamma)$ along $\gamma$. This covariant derivative is noted $D_t V$ and is has the following properties.
 
 \begin{lemma}
 Let $\nabla$ be a connection on $M$. For each $\gamma: \; I \rightarrow M$, $\nabla$ determines a unique operator
 \begin{align*}
 D_t: \; \mathcal{T}(\gamma) \rightarrow \mathcal{T}(\gamma),
-\end{align*} 
+\end{align*}
 satisfying (for $f$, $g \in C^\infty(I)$ and $a$, $b \in \R$);
 \begin{align*}
 & a) \; D_t(aV + bW) = aD_tV + bD_tW & \text{(linearity over} \; \R \\
@@ -70,35 +70,35 @@ holds for all vector fields, $X, Y$ and $Z$.
 One can show (see lemma $5.2$ in \cite{lee2006riemannian}) that this condiiton is equivalent to
 \begin{align*}
 \frac{d}{dt} \langle V, W \rangle = \langle D_t V, W \rangle + \langle V, D_t W \rangle,
-\end{align*} 
+\end{align*}
 for $V, W$ being vector fields along any curve $\gamma$.
 
 The defintion of a symmetric connection involves the Lie bracket of two vector fields. If we think of vector fields on $M$, $X, Y$, as derivations acting on $C^\infty (M)$, then the Lie brakcet of $X$ and $Y$, $[X , Y]$, is the vector field (derivation) which acts on $f \in C^\infty (M)$ by
 \begin{align*}
 [X , Y] (f) := X(Y(f)) - Y(X(f)),
 \end{align*}
-where $X(f) \in C^\infty (M)$ is the function which evaluated at $p$ is the derivative of $f$ at $p$ in the direction of $X(p)$. 
+where $X(f) \in C^\infty (M)$ is the function which evaluated at $p$ is the derivative of $f$ at $p$ in the direction of $X(p)$.
 
 \begin{definition}
-A connection on $M$ is \textit{symmetric} if 
+A connection on $M$ is \textit{symmetric} if
 \begin{align*}
 \nabla_X Y - \nabla_Y X \equiv [X, Y].
 \end{align*}
 \end{definition}
 
-A symmetric connection is also called \textit{torsion free}, which corresponds to the vector fields along any curve not being "twisted" when they are parallel transported along the curve. By the Fundamental Theorem of Riemannian Geometry, given any Riemannian manifold $(M,g)$, there exists a unique connection, $\nabla$, on $M$ that is symmetric and compatible with $M$. This connection is called the Riemannian connection or the Levi-Civita connection, and geodesics with respect to this connection are called Riemannian geodesics. Since this choice of connection is unique, geodesics in a Riemannian manifold will always mean Riemannian geodesics. Such geodesics can be used to define the exponential map, $\exp: \; TM \rightarrow M$.  
+A symmetric connection is also called \textit{torsion free}, which corresponds to the vector fields along any curve not being "twisted" when they are parallel transported along the curve. By the Fundamental Theorem of Riemannian Geometry, given any Riemannian manifold $(M,g)$, there exists a unique connection, $\nabla$, on $M$ that is symmetric and compatible with $M$. This connection is called the Riemannian connection or the Levi-Civita connection, and geodesics with respect to this connection are called Riemannian geodesics. Since this choice of connection is unique, geodesics in a Riemannian manifold will always mean Riemannian geodesics. Such geodesics can be used to define the exponential map, $\exp: \; TM \rightarrow M$.
 
 \begin{definition}
 Given a point $p$ in a Riemannian manifold, $M$, and a vector $v \in T_p M$, the \textit{exponential map} is defined by $\exp_p (v) = \gamma_v(1)$ where $\gamma_v$ is the unique geodesic with $\gamma_v(0) = p$ and $\dot{\gamma}_v(0) = v$.
 \end{definition}
 
 The exponential map pushes a point $p \in M$ a unit distance in the direction of $v$ along the geodesic $\gamma_v$. Since $\dot{\gamma}_v(0) = v$, the differential of $\exp_p$ at $p$ is $v$, and so $\exp_p$ is a local diffeomorphism by the implicit function theorem. Given two points $p,q \in M$, the inverse of the exponential map, $\exp_p^{-1}(q) = \log_p(q) = \overrightarrow{pq}$, yields the element of $v \in T_p M$ for which $\gamma_v (1) = q$ \\[0.2 cm]
-A Riemannian manifold is said to be \textit{geodesically complete} if every un-exentedable geodesic is defined on all of $\R$, and it follows from the Hopf-Rinow theorem that a manifold is geodesically complete if and only if, there exists a $p \in M$ such that $\exp$ is defined on all of $T_p M$.\\[0.2 cm] 
+A Riemannian manifold is said to be \textit{geodesically complete} if every un-exentedable geodesic is defined on all of $\R$, and it follows from the Hopf-Rinow theorem that a manifold is geodesically complete if and only if there exists a $p \in M$ such that $\exp$ is defined on all of $T_p M$.\\[0.2 cm]
 If the geodesic $\gamma_v$ is defined on all of $\R$, one can investigate for which values of $t$, the extended geodesic, $\gamma_v(t) = \exp_p (t v)$ is still a geodesic from $p$ to $\exp_p (t v)$. If $\gamma_v$ is a geodesic up to time $t_0$ and not after $t_0$, then $t_0$ is called a \textit{cut point}. The set of all cut points of all geodesics starting at $p$ is called the \textit{cut locus} and is denoted $C(p)$.
 
 \subsection{Curvature}
 
-When defining statistical propoerties such as mean and variance on Riemannian manifolds, measuring geometric propoerties of the manifold is needed. It is therefore of interest to determine on which manifolds these measurements are identical - that is to determine which manifolds are (locally) isomorphic. One way of determining this is to find a local invariant property of a manifold which is preserved by isometries (such that measurements of length are preserved). This property will be the \textit{curvature}.
+When defining statistical properties such as mean and variance on Riemannian manifolds, measuring geometric propoerties of the manifold is needed. It is therefore of interest to determine on which manifolds these measurements are identical - that is to determine which manifolds are (locally) isomorphic. One way of determining this is to find a local invariant property of a manifold which is preserved by isometries (such that measurements of length are preserved). This property will be the \textit{curvature}.
 
 Let $M = \R^n$ by equipped with the Euclidean metric and consider a vector field $Z$. Given two other vector fields, $X$ and $Y$, we can now differentiate $Z$ first along $X$ and then along $Y$ by using the Riemannian connection;
 \begin{align*}

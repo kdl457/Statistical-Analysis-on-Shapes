@@ -1,8 +1,8 @@
 \section{Mean and variance}
 \label{sec:mean_and_variance}
 
-In order to perform statistics on shapes we must first try to define central statistical concepts on manifolds. In this section we focus on a geodsically complete Riemannian manifold, $(M, g)$, of dimension $n$, and present ways of defining the mean, variance and covariance of $M$-valued random variables. Given an underlying probability space, $(\Omega, \mathcal{F}, P)$, an $M$-valued random variable is a $\mathcal{F}/\mathcal{B}(M)$ measurable map, $X: \, \Omega \rightarrow M$, and we denote by $x = X(\omega)$ a realization of $X$ on $M$.\\[0.2 cm]
-In order to perform statistics on $M$ we need to construct a measure on $M$. This measure is induced by the metric $g$ in the following way. Let $x = (x^1, \ldots , x^n)$ be representation of $x \in M$ in local coordinates, and let $\frac{\partial}{\partial x} = (\frac{\partial}{\partial x^1}, \ldots , \frac{\partial}{\partial x^n})$ be the corresponding basis of $T_x M$. The metric $g$ is then expressed in this basis by the matrix $G = [g_{ij}(x)]$ where $g_{ij}(x) = \langle \frac{\partial}{\partial x^i} , \frac{\partial}{\partial x^j} \rangle = g\left(\frac{\partial}{\partial x^i}, \frac{\partial}{\partial x^j}\right)$. The measure on $M$ is then defined by $d M(x) = \sqrt{\left| \det G(x) \right|} dx$ (here $dx$ indicates regular Lebesgue-integration of the coordinate-representation of $x$ in $\R^n$). $X$ is said to have density $p_X$ w.r.t. $d M$ if
+In order to perform statistics on shapes we must first try to define central statistical concepts on manifolds. In this section we focus on a geodesically complete Riemannian manifold, $(M, g)$, of dimension $n$, and present ways of defining the mean and variance of $M$-valued random variables. Given an underlying probability space, $(\Omega, \mathcal{F}, P)$, an $M$-valued random variable is a $\mathcal{F}/\mathcal{B}(M)$ measurable map, $X: \, \Omega \rightarrow M$, and we denote by $x = X(\omega)$ a realization of $X$ on $M$.\\[0.2 cm]
+In order to perform statistics on $M$ we need to construct a measure on $M$. This measure is induced by the metric $g$ in the following way. Let $x = (x^1, \ldots , x^n)$ be a representation of $x \in M$ in local coordinates, and let $\frac{\partial}{\partial x} = (\frac{\partial}{\partial x^1}, \ldots , \frac{\partial}{\partial x^n})$ be the corresponding basis of $T_x M$. The metric $g$ is then expressed in this basis by the matrix $G = [g_{ij}(x)]$ where $g_{ij}(x) = \langle \frac{\partial}{\partial x^i} , \frac{\partial}{\partial x^j} \rangle = g\left(\frac{\partial}{\partial x^i}, \frac{\partial}{\partial x^j}\right)$. The measure on $M$ is then defined by $d M(x) = \sqrt{\left| \det G(x) \right|} dx$ (here $dx$ indicates regular Lebesgue-integration of the coordinate-representation of $x$ in $\R^n$). $X$ is said to have density $p_X$ w.r.t. $d M$ if
 \begin{align*}
 P(X \in \mathcal{A}) = \int_{\mathcal{A}} p_X(y) d M(y),
 \end{align*}
@@ -12,7 +12,7 @@ $p_X$ is a density in the usual sense; a real-valued, positive and integrable fu
 \rho_r (y) = p_X \left(\pi^{-1}(y))\right) \sqrt{\left| \det G\left(\pi^{-1}(y)\right) \right|}.
 \end{align*}
 
-If $\phi: \, M \rightarrow \R$ is a $\mathcal{B}(M)/ \mathcal{B}(\R)$-measurable map, then $\phi(X)$ defines a real-valued random variable for which the expection is
+If $\phi: \, M \rightarrow \R$ is a $\mathcal{B}(M)/ \mathcal{B}(\R)$-measurable map, then $\phi(X)$ defines a real-valued random variable for which the expectation is
 \begin{align*}
 \mathbb{E} (\phi(X)) = \int_M \phi(y) p_X(y) d M(y).
 \end{align*}

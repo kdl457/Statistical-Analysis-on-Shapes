@@ -1,4 +1,4 @@
-\section{Statistical concepts on shape space}
+\section{Statistical concepts on shape spaces}
 \label{sec:statistical_concepts_on_shape_space}
 
 If we wish to define statistical concepts like mean and variance on our shape space - the manifold of unparametrized curves - we are faced with some challenges. To begin with our manifold fold is infinite-dimensional, and all theory developed so far in this exposition has been on finite-dimensional manifolds. This is an important part of the generalizations of mean and variance, since we can quite easily define a measure on $M$. If a point $x \in M$ can be written in finitely many local coordinates, a measure can be defined via the use of the metric on the induced (finite) basis of $T_x M$. It is not at all obvious how this method of constructing a measure on $M$ generalizes to the infinite-dimensional case.
@@ -24,9 +24,9 @@ To make the difficulties stand out explicitly, we write our Definition~\ref{def:
   %                 \diff z \\
   ,
 \end{align*}
-where we let $\mathcal{C}_y^z$ denote all path starting in $y$ and ending in $z$.
+where we let $\mathcal{C}_y^z$ denote all paths starting in $y$ and ending in $z$.
 First of all, it is not clear that this integral over a function space is well-defined.
-Secondly, to calculate an explicit expression for the variance at $y$ (and later on the mean), we would most likely need to be able to find a useful expression for the distance $L_{G^{\Phi}}$, which is not trivial.
+Secondly, to calculate an explicit expression for the variance at $y$ (and later on the mean), we would most likely need to be able to find a useful expression for the distance $L_{G^{\Phi}}$. We have seen that this can be done in some cases (see Example~\ref{ex:almost-local-calculate-length}), but in general this is not trivial.
 Thirdly, if we succeed in making sense of the above expression, the next step would be to consider how to minimize it, i.e., what we are actually interested in is
 \begin{equation*}
   \argmin_{y \in \I}
@@ -38,9 +38,9 @@ Thirdly, if we succeed in making sense of the above expression, the next step wo
   p_X(z)
   \diff z.
 \end{equation*}
-This is optimization problem over a function space, so we could maybe use some tools from the calculus of variations to solve it.
+This is an optimization problem over a function space, so we could maybe use some tools from the calculus of variations to solve it.
 
-All in all, at each step a lot of rather non-trivial problems need to be clarified, we imagine that one could proceed along the way sketched above.
+All in all, at each step a lot of rather non-trivial problems need to be clarified, but we imagine that one could proceed along the way sketched above.
 
 
 %%% Local Variables:

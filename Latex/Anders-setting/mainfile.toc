@@ -3,11 +3,11 @@
 \contentsline {subsection}{\numberline {1.2}Riemannian Geodesics and the Exponential Map}{7}
 \contentsline {subsection}{\numberline {1.3}Curvature}{8}
 \contentsline {section}{\numberline {2}Mean and variance}{9}
-\contentsline {section}{\numberline {3}The manifold of curves}{13}
+\contentsline {section}{\numberline {3}The manifold of curves}{12}
 \contentsline {subsection}{\numberline {3.1}The manifold of parametrized curves -- $\mathop {}\tmspace -\thinmuskip {.1667em}\mathrm {Imm}(\mathbb {S}^1, \mathbb {R}^2)$}{13}
 \contentsline {subsection}{\numberline {3.2}The manifold of unparametrized curves -- $\mathcal {I}(\mathbb {S}^1, \mathbb {R}^2)$}{16}
 \contentsline {subsection}{\numberline {3.3}Some notes about a more formal approach}{19}
 \contentsline {section}{\numberline {4}Metrics on the shape space}{20}
 \contentsline {subsection}{\numberline {4.1}The L2 metric vanishes}{20}
 \contentsline {subsection}{\numberline {4.2}Almost local metrics}{24}
-\contentsline {section}{\numberline {5}Statistical concepts on shape space}{27}
+\contentsline {section}{\numberline {5}Statistical concepts on shape spaces}{27}
