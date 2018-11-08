@@ -4,29 +4,89 @@
 
 \begin{document}
 
-\message{ !name(statistical_concepts_on_shape_space.tex) !offset(-7) }
-\section{Statistical concepts on shape space}
-\label{sec:statistical_concepts_on_shape_space}
+\message{ !name(mean_and_variance.tex) !offset(-7) }
+\section{Mean and variance}
+\label{sec:mean_and_variance}
 
-If we wish to define statistical concepts like mean and variance on our shape space - the manifold of unparametrized curves - we are faced with some challenges. To begin with our manifold fold is infinite-dimensional, and all theory developed so far in this exposition has been on finite-dimensional manifolds. This is an important part of the generalizations of mean and variance, since we can quite easily define a measure on $M$. If a point $x \in M$ can be written in finitely many local coordinates, a measure can be defined via the use of the metric on the induced (finite) basis of $T_x M$. It is not at all obvious how this method of constructing a measure on $M$ generalizes to the infinite-dimensional case.
-
-For example, the prime example of a infinite-dimensional shape space is a function space, e.g., the space of all continuous function. As is well-known, simply constructing a random variable on such a space is non-trivial; a fundamental construction is the Brownian motion, the existence of which relies on a deep result of Kolmogorov. Our space $\I$ is an example of a restriction of a space of continuous functions (to immersions), and the space $\mathcal{I}$ is even more involved. Thus, simply defining the random points to work with on the shape space promises some challenges.
-
-Secondly, all results regarding existence and uniqueness of mean points have relied on either a global assumption or local assumptions on the Riemannian curvature of the manifold. The behaviour of the curvature of our shape space is not at all well understood, especially since the choice of metric is non-trivial to begin with. One might think that the curvature of $\mathcal{I}$ equipped with the $L^2$-metric is the least difficult to examine, but since the distance function induced by this metric is vanishing, the resulting variance, $\sigma^2_X(y)$ would be $0$ for all random variables $X$ and shapes $y$ (if it is even possible to generalize the variance-formulas in section \ref{sec:mean_and_variance} to the infinite dimensional case.). Thus every point would be a mean point of $X$ which is not a very informative statement.
-
-To make the difficulties stand out explicitly, we write our Definition~\ref{sec:mean_and_variance} when naively replacing the finite-dimensional manifold $M$ with our shape space $\mathcal{I}$ and using an almost local metric. Then we have that $y$ is be some fixed shape and $X$ is a random shape (still not defined):
+In order to perform statistics on shapes we must first try to define central statistical concepts on manifolds. In this section we focus on a geodsically complete Riemannian manifold, $(M, g)$, of dimension $n$, and present ways of defining the mean, variance and covariance of $M$-valued random variables. Given an underlying probability space, $(\Omega, \mathcal{F}, P)$, an $M$-valued random variable is a $\mathcal{F}/\mathcal{B}(M)$ measurable map, $X: \, \Omega \rightarrow M$, and we denote by $x = X(\omega)$ a realization of $X$ on $M$.\\[0.2 cm]
+In order to perform statistics on $M$ we need to construct a measure on $M$. This measure is induced by the metric $g$ in the following way. Let $x = (x^1, \ldots , x^n)$ be representation of $x \in M$ in local coordinates, and let $\frac{\partial}{\partial x} = (\frac{\partial}{\partial x^1}, \ldots , \frac{\partial}{\partial x^n})$ be the corresponding basis of $T_x M$. The metric $g$ is then expressed in this basis by the matrix $G = [g_{ij}(x)]$ where $g_{ij}(x) = \langle \frac{\partial}{\partial x^i} , \frac{\partial}{\partial x^j} \rangle = g\left(\frac{\partial}{\partial x^i}, \frac{\partial}{\partial x^j}\right)$. The measure on $M$ is then defined by $d M(x) = \sqrt{\left| \det G(x) \right|} dx$ (here $dx$ indicates regular Lebesgue-integration of the coordinate-representation of $x$ in $\R^n$). $X$ is said to have density $p_X$ w.r.t. $d M$ if
 \begin{align*}
-  \sigma^2_X(y) &  = \int_{\I}
-                  \inf_{\stackrel{c \in \mathcal{C}}{c(0,\blank)=y, c(1,\blank)=z}}
-                  L_{G^\Phi}(c)p_X(z)
-                  \diff z
-  % \\
-  %               &  = \int_{\I}
-  %                 \inf_{\stackrel{c \in \mathcal{C}}{c(0,\blank)=y, c(1,\blank)=z}}
-  %                 \int_{\S^1} \Phi(\mathrm{Vol}(c(t,\blank),H_{c(t,\blank)},K_{c(t,\blank)}),
-  %                 \overline{g}(c_t,c_t) |c_{\theta}| \diff \theta
-  %                 \diff z \\
+P(X \in \mathcal{A}) = \int_{\mathcal{A}} p_X(y) d M(y),
 \end{align*}
+holds for all $\mathcal{A} \in \mathcal{B}(M)$ and if the integral over $M$ is equal to $1$. Here
+$p_X$ is a density in the usual sense; a real-valued, positive and integrable function. If $\pi$ is a chart of the manifold, then $r := \pi(X(\omega))$ defines a random vector with density, $\rho_r$, w.r.t to the Lebesgue measure given by
+\begin{align*}
+\rho_r (y) = p_X \left(\pi^{-1}(y))\right) \sqrt{\left| \det G\left(\pi^{-1}(y)\right) \right|}.
+\end{align*}
+
+If $\phi: \, M \rightarrow \R$ is a $\mathcal{B}(M)/ \mathcal{B}(\R)$-measurable map, then $\phi(X)$ defines a real-valued random variable for which the expection is
+\begin{align*}
+\mathbb{E} (\phi(X)) = \int_M \phi(y) p_X(y) d M(y).
+\end{align*}
+Unfortunately, we cannot define the expectation of $M$-valued random variables in a similar manner, since the real-valued integral does not generalize to an integral with values on $M$. Instead we generalize the notion of mean value by first defining the variance of a $M$-valued random variable and then defining the so-called \textit{Frechet means} as minimizers of the variance (this is just one possible way of generalizing mean points).
+
+\begin{definition}
+  \label{def:variance}
+Let $X$ be a $M$-valued random variable with density $p_X$. Given a point $y \in M$, the \textit{variance} of $X$ is
+\begin{align*}
+\sigma^2_X (y) = \mathbb{E} ( \text{D} (y,X)^2 ) = \int_M \text{D} (y,z) p_X(z) dM(z).
+\end{align*}
+\end{definition}
+
+Here the distance between two points, $D(x,y)$, is the infimum of the lengths of all paths in $M$ from $x$ to $y$, with the length of a path $c: \, [0,1] \rightarrow M$ defined by $L(c) = \int_0^1 g_{c(t, \cdot)} (c_t, c_t) dt$.
+
+\begin{definition}
+Let $X$ be a $M$-valued random variable with density $p_X$. If $\sigma^2_X (y)$ is finite for all $y \in M$, we define \textit{Frechet mean points} of $X$ as all points in $M$ minimizing $\sigma^2_X (y)$;
+\begin{align*}
+\mathbb{E} (X) := \text{arg} \min_{y \in M} \sigma^2_X (y).
+\end{align*}
+If a mean point $\bar{x}$ exists, the variance of $X$ is defined by $\sigma^2 (X) := \sigma^2_{\bar{x}} (X)$. We can further define the \textit{median points} of $X$ as all minimizers of $\mathbb{E} ( \text{dist} (y,X))$.
+\end{definition}
+
+\begin{note}
+Given a series of measurements $x_1, \ldots , x_n$ seen as realizations of $X$, we define the empirical mean points of $X$ to be the minimizers of
+\begin{align*}
+\frac{1}{n} \sum_{i = 1}^n \text{dist}(y, x_i)^2,
+\end{align*}
+and the empirical variance is, as before, defined as the variance of $X$ evaluated at a minimizer. Note that this corresponds to the standard notion of the empirical mean as the minimizer of the sum of squares and the empirical variance as the sum of squared deviations from this mean.
+\end{note}
+
+The most apparent question is now whether a mean point exists for $X$ and if it is unique. To give conditions for existence and uniqueness, we follow \cite{karcher1977center} and define \textit{Riemannian centers of mass} as local minimizers of $\sigma_X^2 (y)$. The Riemannian centers of mass have the added benefit of encoding more information about the distribution of $X$ than the mean points, since the centers of mass represent local maxima of the distribution of $X$ (where the mean points only represent the global maximum). The definition of these centers of mass amounts to finding local extrema of $\sigma_X^2 (y)$, in which the following theorem due to \cite{pennec2006intrinsic} plays an important part.
+
+\begin{theorem}
+Let $X$ be a $M$-valued random variable with density $p_X$. If $\sigma^2_X(y) < \infty$ and the image measure of the cut locus is zero, $X(P)(C(y)) = 0$, then $\sigma^2_X(y)$ is differentiable with
+\begin{align*}
+(\mathrm{grad} \, \sigma^2) (y) = -2 \mathbb{E(\overrightarrow{yx})} = - 2 \int_{M/C(y)} \overrightarrow{yz} p_X(z) d M(z).
+\end{align*}
+\end{theorem}
+The theorem ensures differentiability of $\sigma^2_X(y)$ in points where the cut locus has measure zero, and in this case the extrema of $\sigma^2$ are points where $($grad $\sigma^2) (y) = 0$. If the cut locus has positive measure, the variance may still attain an extremum. This leads to the following characterization of Riemanninan centers of mass.
+
+\begin{corollary}
+Let $\mathcal{A}$ be the set of points for which the cut locus has non-zero probability. If $\sigma^2_X(y) < \infty$ for all $y \in M$, then a necessary condition for $\bar{x}$ to be a Riemannian center of mass is $x \in \mathcal{A}$ or $\mathbb{E}(\overrightarrow{\bar{x}x}) = 0$ for $\bar{x} \notin A$.
+\end{corollary}
+Since the Riemannian centers of mass are local minimizers of the variance, the set of mean points is included in the set of centers of mass. If there is only one Riemannian center of mass it therefore follows that it must be the unique mean point. The following corollary gives uniqueness of centers of mass not in $\mathcal{A}$ for a class of manifolds (Hadamard manifolds).
+
+\begin{corollary}
+Let $M$ be a simply connected, complete manifold with non-positive Riemannian curvature, and let $X$ be a random variable with values in $M$ and finite variance. Then there exists one and only one Riemannian center of mass characterized by $\mathbb{E}(\overrightarrow{\bar{x}x}) = 0$. If the cut locus has measure zero everywhere, then this point $\bar{x}$ must be a mean point.
+\end{corollary}
+If we want to assert uniqueness for a larger class of manifolds, we have to make assumptions not only on the curvature of the manifold but on the support of the densities. Compact support of the densities is actually not sufficient - the support of the densities have to be contained in a \textit{regular geodesic ball}.
+
+\begin{definition}
+A ball, $B(x,r) = \left\{ y \in M \, | \, \text{dist}(x,y) < r  \right\}$, is geodesic if $B(x,r) \cap C(x) = \emptyset$ and it is regular if $2r \sqrt{\kappa} < \pi$ where $\kappa$ is the maximum of the Riemannian curvature in $B(x,r)$.
+\end{definition}
+
+Note that the assumption on the curvature of $M$ is no longer global but local. We have thus replaced the global assumption on the curvature with a local one, but have now restricted ourselves to densities with compact support on locally well-behaved parts of the manifold. Under these assumptions the following results hold (\cite{kendall1990probability}, \cite{karcher1977center}), where the case of $\bar{x} \in A$ is not possible since the balls, on which the densities have support, are geodesic.
+
+\begin{theorem}
+Let $X$ be a $M$-valued random variable with density $p_X$. If the support of $p_X$ is contained in a regular geodesic ball, then there exists one unique Riemannian center of mass on this ball.
+\end{theorem}
+
+\begin{theorem}
+Let $X$ be a $M$-valued random variable with density $p_X$. If the support of $p_X$ is contained in a regular geodesic ball, and the ball with twice the radius is also a regular and geodesic, then $\sigma^2_X(y)$ is convex and has a unique critical point, $\bar{x}$, on the ball. This point must be a minimizer and thus the unique mean point of $X$
+\end{theorem}
+The preceeding corollary and two theorems yield uniqueness and existence statements of mean points for specific cases. One can then wonder if it is possible to relax the global curvature assumption in the corollary or the assumptions on the well-behaviour of the curvature in the domain of the support of the density. As shown in \cite{kendall1992propeller} some assumptions on the curvature is needed even if there is a unique minimizing geodesic joining any two points.
+
+With the introduction of statistical concepts on manifolds in mind we now turn to defining manifolds of curves and equipping these with suitable metrics. These manifolds are infinite-dimensional so the methods introduced in this section cannot be directly applied. Nonetheless we aim to define length of paths in these manifolds which is the first step in trying to perform statistics on the space of shapes.
 
 
 %%% Local Variables:
@@ -35,6 +95,6 @@ To make the difficulties stand out explicitly, we write our Definition~\ref{sec:
 %%% reftex-default-bibliography: ("litteratur.bib")
 %%% End:
 
-\message{ !name(mainfile.tex) !offset(-5) }
+\message{ !name(mainfile.tex) !offset(-65) }
 
 \end{document}
