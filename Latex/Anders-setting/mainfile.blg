@@ -1,46 +1,46 @@
-This is BibTeX, Version 0.99d (TeX Live 2015)
+This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: mainfile.aux
 The style file: plain.bst
 Database file #1: litteratur.bib.bib
-You've used 4 entries,
+You've used 11 entries,
             2118 wiz_defined-function locations,
-            524 strings with 4671 characters,
-and the built_in function-call counts, 1236 in all, are:
-= -- 118
-> -- 62
-< -- 1
-+ -- 26
-- -- 20
-* -- 89
-:= -- 219
-add.period$ -- 12
-call.type$ -- 4
-change.case$ -- 21
+            568 strings with 5726 characters,
+and the built_in function-call counts, 2991 in all, are:
+= -- 291
+> -- 122
+< -- 2
++ -- 52
+- -- 38
+* -- 198
+:= -- 533
+add.period$ -- 33
+call.type$ -- 11
+change.case$ -- 50
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 44
-empty$ -- 92
-format.name$ -- 20
-if$ -- 246
+cite$ -- 11
+duplicate$ -- 119
+empty$ -- 242
+format.name$ -- 38
+if$ -- 605
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 5
-newline$ -- 23
-num.names$ -- 8
-pop$ -- 21
+int.to.str$ -- 11
+missing$ -- 13
+newline$ -- 58
+num.names$ -- 22
+pop$ -- 42
 preamble$ -- 1
-purify$ -- 18
+purify$ -- 41
 quote$ -- 0
-skip$ -- 30
+skip$ -- 81
 stack$ -- 0
-substring$ -- 66
-swap$ -- 5
-text.length$ -- 1
+substring$ -- 157
+swap$ -- 13
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 14
+type$ -- 40
 warning$ -- 0
-while$ -- 12
-width$ -- 5
-write$ -- 45
+while$ -- 30
+width$ -- 13
+write$ -- 122

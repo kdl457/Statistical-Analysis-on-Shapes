@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{bauer2014overview}
 Martin Bauer, Martins Bruveris, and Peter~W Michor.
@@ -6,20 +6,59 @@ Martin Bauer, Martins Bruveris, and Peter~W Michor.
 \newblock {\em Journal of Mathematical Imaging and Vision}, 50(1-2):60--97,
   2014.
 
+\bibitem{bauer2010almost}
+Martin Bauer, Philipp Harms, and Peter Michor.
+\newblock Almost local metrics on shape space of hypersurfaces in n-space.
+\newblock {\em Siam Journal on Imaging Sciences}, 5(1), 2010.
+
 \bibitem{cervera1991action}
 Vicente Cervera, Francisca Mascaro, and Peter~W Michor.
 \newblock The action of the diffeomorphism group on the space of immersions.
 \newblock {\em Differential Geometry and its Applications}, 1(4):391--401,
   1991.
 
+\bibitem{karcher1977center}
+Hermann Karcher.
+\newblock Riemannian center of mass and mollifier smoothing.
+\newblock {\em Communications on pure and applied mathematics}, 30, 1977.
+
+\bibitem{kendall1992propeller}
+Wilfrid Kendall.
+\newblock The propeller: A counterexample to a conjectured criterion for the
+  existence of certain convex functions.
+\newblock {\em Journal of the London Mathematical Society}, s2-46, 10 1992.
+
+\bibitem{kendall1990probability}
+Wilfrid~S. Kendall.
+\newblock Probability, convexity, and harmonic maps with small image i:
+  Uniqueness and fine existence.
+\newblock {\em Proceedings of the London Mathematical Society},
+  s3-61(2):371--406, 1990.
+
 \bibitem{kriegl1997convenient}
 Andreas Kriegl and Peter~W Michor.
 \newblock {\em The convenient setting of global analysis}, volume~53.
 \newblock American Mathematical Soc., 1997.
 
+\bibitem{lee2006riemannian}
+John~M Lee.
+\newblock {\em Riemannian manifolds: an introduction to curvature}, volume 176.
+\newblock Springer Science \& Business Media, 2006.
+
 \bibitem{michor2003riemannian}
 Peter~W Michor and David Mumford.
 \newblock Riemannian geometries on spaces of plane curves.
 \newblock {\em arXiv preprint math/0312384}, 2003.
+
+\bibitem{pennec2006intrinsic}
+Xavier Pennec.
+\newblock Intrinsic statistics on riemannian manifolds: Basic tools for
+  geometric measurements.
+\newblock {\em Journal of Mathematical Imaging and Vision}, 25(1):127, 2006.
+
+\bibitem{shah2007h0type}
+Jayant Shah.
+\newblock H0-type riemannian metrics on the space of planar curves.
+\newblock {\em Quarterly of applied mathematics}, 66:123--137, 2007.
 
 \end{thebibliography}
